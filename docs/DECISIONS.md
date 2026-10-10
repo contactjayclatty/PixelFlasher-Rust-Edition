@@ -152,3 +152,14 @@ core AGENTS, ARCHITECTURE, RELEASING, PARITY, VALIDATION and release-validation.
 Publication includes source and checksums; it does not certify full 1.0 parity or
 hardware workflows. User data, credentials, cached HTML and developer artifacts
 are excluded from the public repository and release archives.
+
+## 0.3.3 — familiar shell and catalog tables
+
+The owner asked for a cleaner layout that still feels like PixelFlasher: the same
+nine destinations, the device back in a top bar, and real selectors for long lists.
+Overview drops the marketing panel. The Google catalog groups factory and OTA file
+names by model and downloads one selected row. Nested egui grids inside scroll areas
+painted a black frame, so those lists use fixed columns. Device mutations stay behind
+reviewed plans. Knowledge delta: README, CHANGELOG, PARITY, VALIDATION, this decision
+and docs/releases/v0.3.3.md. This prerelease does not certify hardware workflows.
+

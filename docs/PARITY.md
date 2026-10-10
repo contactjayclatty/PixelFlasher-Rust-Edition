@@ -80,6 +80,8 @@ This release is not v1.0 and does not satisfy every row of the approved plan.
 
 ### 0.3.1 catalog repair
 
+The desktop catalog is a model selector and a three-column table (file, build, SHA-256) with one selected row and one Download action. Root-manager release assets use that same table. Retrieval behavior is unchanged.
+
 Google factory/full-OTA table retrieval now supplies the appropriate Devsite
 acknowledgement cookie after explicit caller consent. Factory/OTA row fixtures
 retain source SHA-256 values. Live packaged-executable verification is recorded

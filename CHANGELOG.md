@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.3 — Familiar shell and catalog tables
+
+- Keep the nine destinations and put the device, Scan, and Inspect in one top bar.
+- Replace the overview marketing panel with status rows for the device, images, and platform tools.
+- Choose a Google firmware model, then one build row, then Download. Factory and Full OTA stay separate.
+- Show boot images, applications, modules, partitions, and backup sets as column lists.
+- Applications and backup sets still allow several selections. Device changes still require a reviewed plan.
+
 ## 0.3.2 — PixelFlasher Rust Edition
 
 - Rename the application, repository documentation and release packages.

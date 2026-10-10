@@ -126,6 +126,12 @@ firmware-page captures in both themes show the acknowledgement control and links
 Independent source/document review returned CLEAR. Counts are a live snapshot,
 not a permanent catalog size guarantee; no firmware was downloaded or flashed.
 
+## Shell and catalog table
+
+The device bar is drawn once above the page, with Scan and Inspect. Overview no longer paints the marketing panel or the four-step essay; its three status rows open Update Studio, Firmware & Images, and Settings. Google catalog rows are grouped by the filename model and listed only for the chosen model. Boot images, applications, modules, and partitions use the same table layout. Applications and verified backup sets stay multi-select because those actions apply to a set. Reboot, flash, lock, wipe, and patch stay on their pages and still open a reviewed plan.
+
+`cargo fmt --all` was applied. `cargo test --workspace -j 2` passed (77 tests), including `catalog_file_names_split_into_model_and_build`, `catalog_table_lists_only_the_chosen_model`, the nine-page widget-id check, and both themes at 1024x720. `cargo clippy --workspace -j 2 --all-targets -- -D warnings` passed. Native captures of the empty overview, firmware, applications, root, and backups pages were taken from the debug binary with an isolated `PIXELFLASHER_DATA_DIR` and inspected. A nested grid inside a scroll area painted a black frame; those lists use fixed columns instead. No phone operation was performed.
+
 ## Version 0.3.2 — Rust Edition release preparation
 
 The shared core relocation and branding changes pass all 75 workspace tests,

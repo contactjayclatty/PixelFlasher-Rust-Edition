@@ -2,101 +2,21 @@ use super::*;
 
 impl PixelFlasher {
     pub(super) fn overview(&mut self, ui: &mut egui::Ui) {
-        card(ui, |ui| {
-            ui.horizontal(|ui| {
-                let (rect, _) =
-                    ui.allocate_exact_size(Vec2::new(100.0, 155.0), egui::Sense::hover());
-                let phone = rect.shrink2(Vec2::new(18.0, 4.0));
-                ui.painter()
-                    .rect_filled(phone, 18, Color32::from_rgb(36, 57, 61));
-                ui.painter().rect_stroke(
-                    phone,
-                    18,
-                    egui::Stroke::new(2.0_f32, ACCENT),
-                    egui::StrokeKind::Inside,
-                );
-                ui.painter().circle_filled(
-                    egui::pos2(phone.center().x, phone.top() + 12.0),
-                    3.0,
-                    ACCENT,
-                );
-                ui.painter().rect_filled(
-                    egui::Rect::from_center_size(
-                        egui::pos2(phone.center().x, phone.bottom() - 12.0),
-                        Vec2::new(30.0, 3.0),
-                    ),
-                    2,
-                    ACCENT,
-                );
-                ui.add_space(18.0);
-                ui.vertical(|ui| {
-                    ui.label(
-                        RichText::new("A CLEARER PATH TO YOUR NEXT UPDATE")
-                            .size(10.0)
-                            .color(accent(ui)),
-                    );
-                    ui.add_space(8.0);
-                    ui.label(
-                        RichText::new(
-                            self.device()
-                                .map(|d| d.name())
-                                .unwrap_or_else(|_| "Your Pixel. Your control.".into()),
-                        )
-                        .size(29.0)
-                        .strong(),
-                    );
-                    ui.add_space(6.0);
-                    ui.label(
-                        RichText::new(
-                            "Inspect the device, prepare your images, and review every operation.",
-                        )
-                        .color(muted(ui)),
-                    );
-                    ui.add_space(14.0);
-                    ui.horizontal(|ui| {
-                        if ui.button("Prepare firmware").clicked() {
-                            self.page = Page::Firmware;
-                        }
-                        if ui.button("Open flash workspace").clicked() {
-                            self.page = Page::Flash;
-                        }
-                    });
-                });
-            });
-        });
-        ui.add_space(18.0);
+        let connection = self
+            .device()
+            .map(|d| d.mode.label().to_owned())
+            .unwrap_or_else(|_| "Not connected".into());
+        let images = format!("{} images", self.images.len());
+        let tools = if self.config.tools_ready() {
+            "Folder selected"
+        } else {
+            "Setup required"
+        };
         ui.columns(3, |columns| {
-            card(&mut columns[0], |ui| {
-                field(
-                    ui,
-                    "DEVICE CONNECTION",
-                    self.device()
-                        .map(|d| d.mode.label().to_owned())
-                        .unwrap_or_else(|_| "Not connected".into())
-                        .as_str(),
-                )
-            });
-            card(&mut columns[1], |ui| {
-                field(
-                    ui,
-                    "IMAGE LIBRARY",
-                    &format!("{} images", self.images.len()),
-                )
-            });
-            card(&mut columns[2], |ui| {
-                field(
-                    ui,
-                    "PLATFORM TOOLS",
-                    if self.config.tools_ready() {
-                        "Folder selected"
-                    } else {
-                        "Setup required"
-                    },
-                )
-            });
+            self.status_link(&mut columns[0], "DEVICE", &connection, Page::Flash);
+            self.status_link(&mut columns[1], "IMAGE LIBRARY", &images, Page::Firmware);
+            self.status_link(&mut columns[2], "PLATFORM TOOLS", tools, Page::Settings);
         });
-        ui.add_space(18.0);
-        self.readiness(ui);
         ui.add_space(12.0);
         self.journal_panel(ui);
         ui.add_space(18.0);
@@ -194,7 +114,51 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
                 }
             });
         } else {
-            ui.label(RichText::new("No phone needed to prepare firmware. Drop a ZIP or image onto this window to get started.").color(muted(ui)));
+            ui.label(
+                RichText::new("Drop a ZIP or image onto this window to process firmware.")
+                    .color(muted(ui)),
+            );
+        }
+    }
+    fn status_link(&mut self, ui: &mut egui::Ui, label: &str, value: &str, page: Page) {
+        card(ui, |ui| {
+            field(ui, label, value);
+            if ui.button("Open").clicked() {
+                self.page = page;
+            }
+        });
+    }
+    pub(super) fn process_firmware(&mut self) {
+        let path = PathBuf::from(&self.firmware_path);
+        let data = self.data.clone();
+        self.config.last_firmware = path.clone();
+        self.run("Processing firmware", move |_, cancel, tx| {
+            Ok(Payload::Firmware(firmware::process(
+                &path,
+                &data,
+                &cancel,
+                &|line| {
+                    let _ = tx.send(Event::Log(line));
+                },
+            )?))
+        });
+    }
+    pub(super) fn load_apps(&mut self) {
+        if let Ok(d) = self.device() {
+            self.run("Reading applications", move |t, _, _| {
+                Ok(Payload::Apps(services::packages(&t, &d)?))
+            });
+        } else {
+            self.error = Some("Select a device first".into());
+        }
+    }
+    pub(super) fn list_partitions(&mut self) {
+        if let Ok(d) = self.device() {
+            self.run("Reading partitions", move |t, _, _| {
+                Ok(Payload::Partitions(services::partitions(&t, &d)?))
+            });
+        } else {
+            self.error = Some("Select a device first".into());
         }
     }
     pub(super) fn firmware_page(&mut self, ui: &mut egui::Ui) {
@@ -206,43 +170,18 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
                 "Firmware",
                 &["zip", "img", "bin", "tgz", "tar", "gz"],
             );
-            ui.horizontal(|ui| {
-                if ui
-                    .add_enabled(
-                        !self.busy && !self.firmware_path.is_empty(),
-                        egui::Button::new("Process & verify").fill(mint_surface(ui)),
-                    )
-                    .clicked()
-                {
-                    let path = PathBuf::from(&self.firmware_path);
-                    let data = self.data.clone();
-                    self.config.last_firmware = path.clone();
-                    self.run("Processing firmware", move |_, cancel, tx| {
-                        Ok(Payload::Firmware(firmware::process(
-                            &path,
-                            &data,
-                            &cancel,
-                            &|line| {
-                                let _ = tx.send(Event::Log(line));
-                            },
-                        )?))
-                    });
-                }
-                if let Some(f) = &self.firmware {
-                    ui.label(
-                        RichText::new(format!(
-                            "{} · {} · {} extracted images",
-                            f.kind,
-                            f.product,
-                            f.images.len()
-                        ))
-                        .color(accent(ui)),
-                    );
-                }
-            });
+            if let Some(f) = &self.firmware {
+                ui.label(
+                    RichText::new(format!(
+                        "{} · {} · {} extracted images",
+                        f.kind,
+                        f.product,
+                        f.images.len()
+                    ))
+                    .color(accent(ui)),
+                );
+            }
         });
-        ui.add_space(16.0);
-        self.image_library(ui);
         ui.add_space(16.0);
         card(ui, |ui| {
             ui.heading("Official firmware & root releases");
@@ -266,7 +205,15 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
                 );
             });
             ui.horizontal(|ui| {
-                ui.checkbox(&mut self.ota_catalog, "Full OTA packages");
+                let previous = self.ota_catalog;
+                ui.selectable_value(&mut self.ota_catalog, false, "Factory");
+                ui.selectable_value(&mut self.ota_catalog, true, "Full OTA");
+                if previous != self.ota_catalog {
+                    self.downloads.clear();
+                    self.catalog_model.clear();
+                    self.selected_download = None;
+                    self.status = "Load the catalog again to show this package type.".into();
+                }
                 if ui
                     .add_enabled(
                         !self.busy && self.config.google_terms_accepted,
@@ -292,44 +239,98 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
                     });
                 }
             });
-            ui.add(
-                egui::TextEdit::singleline(&mut self.download_filter)
-                    .hint_text("Filter by product, build or asset name")
-                    .desired_width(f32::INFINITY),
+            let counts = self.downloads.iter().fold(
+                std::collections::BTreeMap::<String, usize>::new(),
+                |mut counts, item| {
+                    *counts
+                        .entry(services::catalog_model(&item.name))
+                        .or_default() += 1;
+                    counts
+                },
             );
-            let items = self.downloads.clone();
-            let download_filter = self.download_filter.to_lowercase();
+            ui.horizontal(|ui| {
+                let selected_text = if self.catalog_model.is_empty() {
+                    "Choose a model".to_owned()
+                } else {
+                    format!(
+                        "{} ({})",
+                        self.catalog_model,
+                        counts.get(&self.catalog_model).copied().unwrap_or(0)
+                    )
+                };
+                egui::ComboBox::from_id_salt("catalog-model")
+                    .selected_text(selected_text)
+                    .show_ui(ui, |ui| {
+                        for (model, count) in &counts {
+                            ui.selectable_value(
+                                &mut self.catalog_model,
+                                model.clone(),
+                                format!("{model} ({count})"),
+                            );
+                        }
+                    });
+                ui.add(
+                    egui::TextEdit::singleline(&mut self.download_filter)
+                        .hint_text("Filter this model's builds")
+                        .desired_width(ui.available_width().max(80.0)),
+                );
+            });
+            let items = self.visible_downloads();
+            let selected = items
+                .iter()
+                .find(|item| self.selected_download.as_deref() == Some(item.url.as_str()));
+            if ui
+                .add_enabled(
+                    !self.busy && selected.is_some(),
+                    egui::Button::new("Download"),
+                )
+                .clicked()
+                && let Some(item) = selected.cloned()
+                && let Some(path) = rfd::FileDialog::new()
+                    .set_file_name(item.url.rsplit('/').next().unwrap_or("download.zip"))
+                    .save_file()
+            {
+                self.run("Downloading", move |_, cancel, tx| {
+                    services::download(&item, &path, &cancel, &|line| {
+                        let _ = tx.send(Event::Log(line));
+                    })?;
+                    Ok(Payload::Finished)
+                });
+            }
             egui::ScrollArea::vertical()
                 .id_salt("firmware-downloads")
-                .max_height(220.0)
+                .max_height(280.0)
                 .show(ui, |ui| {
-                    for item in items
-                        .iter()
-                        .filter(|i| i.name.to_lowercase().contains(&download_filter))
-                    {
+                    ui.horizontal(|ui| {
+                        sized_text(ui, 420.0, RichText::new("File").strong());
+                        sized_text(ui, 220.0, RichText::new("Build").strong());
+                        sized_text(ui, 140.0, RichText::new("SHA-256").strong());
+                    });
+                    if self.downloads.is_empty() {
+                        ui.label("Load the catalog and choose a model.");
+                    } else if self.catalog_model.is_empty() {
+                        ui.label("Choose a model to list builds.");
+                    } else if items.is_empty() {
+                        ui.label("No builds match this filter.");
+                    }
+                    for item in &items {
+                        let picked = self.selected_download.as_deref() == Some(item.url.as_str());
+                        let build = services::catalog_build(&item.name);
+                        let hash = short_hash(item.sha256.as_deref());
                         ui.horizontal(|ui| {
-                            ui.label(&item.name);
-                            if ui
-                                .add_enabled(!self.busy, egui::Button::new("Download"))
-                                .clicked()
-                            {
-                                let name = item.url.rsplit('/').next().unwrap_or("download.zip");
-                                if let Some(path) =
-                                    rfd::FileDialog::new().set_file_name(name).save_file()
-                                {
-                                    let item = item.clone();
-                                    self.run("Downloading", move |_, cancel, tx| {
-                                        services::download(&item, &path, &cancel, &|line| {
-                                            let _ = tx.send(Event::Log(line));
-                                        })?;
-                                        Ok(Payload::Finished)
-                                    });
-                                }
+                            let file = sized_select(ui, 420.0, picked, &item.name);
+                            let build_cell = sized_select(ui, 220.0, picked, &build);
+                            let hash_cell = sized_select(ui, 140.0, picked, &hash)
+                                .on_hover_text(item.sha256.clone().unwrap_or_default());
+                            if file.clicked() || build_cell.clicked() || hash_cell.clicked() {
+                                self.selected_download = Some(item.url.clone());
                             }
                         });
                     }
                 });
         });
+        ui.add_space(16.0);
+        self.image_library(ui);
     }
     fn image_library(&mut self, ui: &mut egui::Ui) {
         card(ui, |ui| {
@@ -357,7 +358,7 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
                 ui.add(
                     egui::TextEdit::singleline(&mut self.image_filter)
                         .hint_text("Search image, device or root solution")
-                        .desired_width(ui.available_width() - 170.0),
+                        .desired_width((ui.available_width() - 150.0).max(80.0)),
                 );
                 ui.checkbox(&mut self.only_patched, "Patched only");
             });
@@ -376,94 +377,106 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
                 })
                 .cloned()
                 .collect::<Vec<_>>();
-            if images.is_empty() {
-                ui.label(
-                    RichText::new("Processed stock and patched images appear here.")
-                        .color(muted(ui)),
-                );
-            }
             egui::ScrollArea::vertical()
                 .id_salt("boot-image-library")
-                .max_height(230.0)
+                .max_height(260.0)
                 .show(ui, |ui| {
+                    ui.horizontal(|ui| {
+                        for (width, title) in [
+                            (90.0, "Kind"),
+                            (160.0, "Stock or patch"),
+                            (80.0, "Size"),
+                            (120.0, "Product"),
+                            (150.0, "Added"),
+                        ] {
+                            sized_text(ui, width, RichText::new(title).strong());
+                        }
+                    });
+                    if images.is_empty() {
+                        ui.label("Processed stock and patched images appear here.");
+                    }
                     for record in &images {
                         let selected = self.image == Some(record.id);
-                        if ui
-                            .selectable_label(
-                                selected,
-                                format!(
-                                    "{}   ·   {}   ·   {:.1} MiB   ·   {}",
-                                    record.info.kind,
-                                    if record.patched_with.is_empty() {
-                                        "Stock / imported"
-                                    } else {
-                                        &record.patched_with
-                                    },
-                                    record.info.size as f64 / 1048576.0,
-                                    record.product
-                                ),
-                            )
-                            .clicked()
-                        {
-                            self.image = Some(record.id);
-                            self.partition = record.info.kind.clone();
-                        }
-                        if selected {
-                            if let Some(lineage) = &record.lineage {
-                                ui.label(format!(
-                                    "{} {} · {}",
-                                    lineage.provider.label(),
-                                    lineage.version,
-                                    lineage.method
-                                ));
-                                ui.label(
-                                    RichText::new(format!("Stock SHA256 {}", lineage.stock_sha256))
-                                        .monospace()
-                                        .size(10.0),
-                                );
+                        let source = if record.patched_with.is_empty() {
+                            "Stock / imported".to_owned()
+                        } else {
+                            record.patched_with.clone()
+                        };
+                        let cells = [
+                            (90.0, record.info.kind.clone()),
+                            (160.0, source),
+                            (
+                                80.0,
+                                format!("{:.1} MiB", record.info.size as f64 / 1048576.0),
+                            ),
+                            (120.0, record.product.clone()),
+                            (150.0, record.created.clone()),
+                        ];
+                        ui.horizontal(|ui| {
+                            let mut picked = false;
+                            for (width, cell) in cells {
+                                if sized_select(ui, width, selected, cell).clicked() {
+                                    picked = true;
+                                }
                             }
-                            ui.label(
-                                RichText::new(record.path.display().to_string())
-                                    .size(10.0)
-                                    .color(muted(ui)),
-                            );
-                            ui.label(
-                                RichText::new(format!("SHA256 {}", record.info.sha256))
-                                    .monospace()
-                                    .size(10.0),
-                            );
-                            ui.horizontal(|ui| {
-                                if ui.small_button("Inspect metadata").clicked() {
-                                    self.utility_json = serde_json::to_string_pretty(&record.info)
-                                        .unwrap_or_default();
-                                    self.page = Page::Utilities;
-                                }
-                                if ui.small_button("Export copy").clicked()
-                                    && let Some(dest) = rfd::FileDialog::new()
-                                        .set_file_name(&record.info.name)
-                                        .save_file()
-                                {
-                                    if dest.exists() {
-                                        self.error = Some(
-                                            "Destination exists; choose a new filename".into(),
-                                        );
-                                    } else if let Err(e) = fs::copy(&record.path, dest) {
-                                        self.error = Some(e.to_string());
-                                    }
-                                }
-                                if ui.small_button("Remove from library").clicked() {
-                                    if let Err(e) =
-                                        Library::open(&self.data).and_then(|l| l.remove(record.id))
-                                    {
-                                        self.error = Some(e.to_string());
-                                    }
-                                    self.image = None;
-                                    self.refresh_library();
-                                }
-                            });
-                        }
+                            if picked {
+                                self.image = Some(record.id);
+                                self.partition = record.info.kind.clone();
+                            }
+                        });
                     }
                 });
+            if let Some(record) = images.iter().find(|record| self.image == Some(record.id)) {
+                if let Some(lineage) = &record.lineage {
+                    ui.label(format!(
+                        "{} {} · {}",
+                        lineage.provider.label(),
+                        lineage.version,
+                        lineage.method
+                    ));
+                    ui.label(
+                        RichText::new(format!("Stock SHA256 {}", lineage.stock_sha256))
+                            .monospace()
+                            .size(10.0),
+                    );
+                }
+                ui.label(
+                    RichText::new(record.path.display().to_string())
+                        .size(10.0)
+                        .color(muted(ui)),
+                );
+                ui.label(
+                    RichText::new(format!("SHA256 {}", record.info.sha256))
+                        .monospace()
+                        .size(10.0),
+                );
+                ui.horizontal(|ui| {
+                    if ui.small_button("Inspect metadata").clicked() {
+                        self.utility_json =
+                            serde_json::to_string_pretty(&record.info).unwrap_or_default();
+                        self.page = Page::Utilities;
+                    }
+                    if ui.small_button("Export copy").clicked()
+                        && let Some(dest) = rfd::FileDialog::new()
+                            .set_file_name(&record.info.name)
+                            .save_file()
+                    {
+                        if dest.exists() {
+                            self.error = Some("Destination exists; choose a new filename".into());
+                        } else if let Err(e) = fs::copy(&record.path, dest) {
+                            self.error = Some(e.to_string());
+                        }
+                    }
+                    if ui.small_button("Remove from library").clicked() {
+                        if let Err(e) = Library::open(&self.data).and_then(|l| l.remove(record.id))
+                        {
+                            self.error = Some(e.to_string());
+                        }
+                        self.image = None;
+                        self.refresh_library();
+                    }
+                });
+            }
         });
     }
     pub(super) fn flash_page(&mut self, ui: &mut egui::Ui) {
@@ -698,18 +711,6 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
         card(ui, |ui| {
             ui.horizontal(|ui| {
                 ui.heading("Installed applications");
-                if ui
-                    .add_enabled(!self.busy, egui::Button::new("Load apps"))
-                    .clicked()
-                {
-                    if let Ok(d) = self.device() {
-                        self.run("Reading applications", move |t, _, _| {
-                            Ok(Payload::Apps(services::packages(&t, &d)?))
-                        });
-                    } else {
-                        self.error = Some("Select a device first".into());
-                    }
-                }
                 if ui.button("Install APK").clicked()
                     && let (Some(path), Ok(d)) = (
                         rfd::FileDialog::new()
@@ -803,34 +804,71 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
                 ))
                 .color(muted(ui)),
             );
+            let packages = self
+                .packages
+                .iter()
+                .filter(|package| {
+                    package
+                        .name
+                        .to_lowercase()
+                        .contains(&self.search.to_lowercase())
+                })
+                .cloned()
+                .collect::<Vec<_>>();
             egui::ScrollArea::vertical()
                 .id_salt("installed-app-list")
                 .max_height(380.0)
                 .show(ui, |ui| {
-                    for package in self
-                        .packages
-                        .iter()
-                        .filter(|p| p.name.to_lowercase().contains(&self.search.to_lowercase()))
-                    {
+                    ui.horizontal(|ui| {
+                        ui.add_sized([28.0, 18.0], egui::Label::new(RichText::new("").strong()));
+                        ui.add_sized(
+                            [360.0, 18.0],
+                            egui::Label::new(RichText::new("Package").strong()),
+                        );
+                        ui.add_sized(
+                            [80.0, 18.0],
+                            egui::Label::new(RichText::new("UID").strong()),
+                        );
+                        ui.add_sized(
+                            [140.0, 18.0],
+                            egui::Label::new(RichText::new("State").strong()),
+                        );
+                    });
+                    if packages.is_empty() {
+                        ui.label("Load apps to list installed packages.");
+                    }
+                    for package in &packages {
                         ui.horizontal(|ui| {
                             let mut selected = self.selected_packages.contains(&package.name);
-                            if ui.checkbox(&mut selected, &package.name).changed() {
+                            if ui
+                                .add_sized(
+                                    [28.0, 18.0],
+                                    egui::Checkbox::without_text(&mut selected),
+                                )
+                                .changed()
+                            {
                                 if selected {
                                     self.selected_packages.insert(package.name.clone());
                                 } else {
                                     self.selected_packages.remove(&package.name);
                                 }
                             }
-                            if package.system {
-                                ui.label(RichText::new("SYSTEM").size(9.0).color(muted(ui)));
-                            }
-                            if package.disabled {
-                                ui.label(
-                                    RichText::new("DISABLED")
-                                        .size(9.0)
-                                        .color(Color32::from_rgb(255, 189, 108)),
-                                );
-                            }
+                            ui.add_sized([360.0, 18.0], egui::Label::new(&package.name));
+                            ui.add_sized(
+                                [80.0, 18.0],
+                                egui::Label::new(if package.uid.is_empty() {
+                                    "—"
+                                } else {
+                                    &package.uid
+                                }),
+                            );
+                            let state = match (package.system, package.disabled) {
+                                (true, true) => "System, disabled",
+                                (true, false) => "System",
+                                (false, true) => "Disabled",
+                                (false, false) => "Installed",
+                            };
+                            ui.add_sized([140.0, 18.0], egui::Label::new(state));
                         });
                     }
                 });
@@ -975,28 +1013,80 @@ if ui.button("Lock bootloader").clicked(){let mut p=Plan::new("Lock bootloader",
 if ui.button("Install module ZIP").clicked()&& let(Some(path),Ok(d))=(rfd::FileDialog::new().add_filter("Root module",&["zip"]).pick_file(),self.device()){self.prepare(root::install_module(&d,&path,self.solution));}
 if ui.button("Disable all modules").clicked()&& let Ok(d)=self.device(){self.prepare(flash::simple(&d,"Disable all root modules",&["shell","su","-c","for p in /data/adb/modules/*; do [ ! -f \"$p/module.prop\" ] || touch \"$p/disable\"; done"],true,false));}});
                 let modules = self.modules.clone();
-                for module in modules {
-                    ui.separator();
-                    ui.horizontal(|ui| {
-                        ui.label(RichText::new(&module.name).strong());
-                        ui.label(
-                            RichText::new(format!("{} · {}", module.version, module.author))
-                                .size(11.0)
-                                .color(muted(ui)),
-                        );
-                        for action in [
-                            if module.disabled { "enable" } else { "disable" },
-                            if module.removed { "restore" } else { "remove" },
-                            "action",
-                        ] {
-                            if ui.small_button(action).clicked() {
-                                self.prepare(
-                                    self.device()
-                                        .and_then(|d| root::module_action(&d, &module.id, action)),
-                                );
+                let selected = modules
+                    .iter()
+                    .find(|module| self.selected_module.as_deref() == Some(module.id.as_str()))
+                    .cloned();
+                ui.horizontal(|ui| {
+                    let (disable_label, remove_label) = selected
+                        .as_ref()
+                        .map(|module| {
+                            (
+                                if module.disabled { "enable" } else { "disable" },
+                                if module.removed { "restore" } else { "remove" },
+                            )
+                        })
+                        .unwrap_or(("disable", "remove"));
+                    for action in [disable_label, remove_label, "action"] {
+                        if ui
+                            .add_enabled(
+                                selected.is_some() && !self.busy,
+                                egui::Button::new(action),
+                            )
+                            .clicked()
+                            && let Some(module) = &selected
+                        {
+                            self.prepare(
+                                self.device()
+                                    .and_then(|d| root::module_action(&d, &module.id, action)),
+                            );
+                        }
+                    }
+                });
+                egui::ScrollArea::vertical()
+                    .id_salt("root-module-table")
+                    .max_height(260.0)
+                    .show(ui, |ui| {
+                        ui.horizontal(|ui| {
+                            for (width, title) in [
+                                (180.0, "Name"),
+                                (90.0, "Version"),
+                                (140.0, "Author"),
+                                (90.0, "State"),
+                            ] {
+                                sized_text(ui, width, RichText::new(title).strong());
                             }
+                        });
+                        if modules.is_empty() {
+                            ui.label("Refresh modules to list installed modules.");
+                        }
+                        for module in &modules {
+                            let picked =
+                                self.selected_module.as_deref() == Some(module.id.as_str());
+                            let state = match (module.disabled, module.removed) {
+                                (_, true) => "Removed",
+                                (true, false) => "Disabled",
+                                (false, false) => "Enabled",
+                            };
+                            ui.horizontal(|ui| {
+                                let mut choose = false;
+                                for (width, cell) in [
+                                    (180.0, module.name.as_str()),
+                                    (90.0, module.version.as_str()),
+                                    (140.0, module.author.as_str()),
+                                    (90.0, state),
+                                ] {
+                                    if sized_select(ui, width, picked, cell).clicked() {
+                                        choose = true;
+                                    }
+                                }
+                                if choose {
+                                    self.selected_module = Some(module.id.clone());
+                                }
+                            });
                         }
                     });
+                if let Some(module) = &selected {
                     ui.label(
                         RichText::new(&module.description)
                             .size(11.0)
@@ -1063,26 +1153,14 @@ if ui.button("Disable all modules").clicked()&& let Ok(d)=self.device(){self.pre
         card(ui, |ui| {
             ui.heading("Partition backups");
             ui.horizontal(|ui| {
-                if ui
-                    .add_enabled(!self.busy, egui::Button::new("List partitions"))
-                    .clicked()
-                    && let Ok(d) = self.device()
-                {
-                    self.run("Reading partitions", move |t, _, _| {
-                        Ok(Payload::Partitions(services::partitions(&t, &d)?))
-                    });
-                }
-                egui::ComboBox::from_id_salt("backup-partition")
-                    .selected_text(if self.selected_partition.is_empty() {
-                        "Select partition"
+                ui.label(
+                    RichText::new(if self.selected_partition.is_empty() {
+                        "Select a partition in the table"
                     } else {
                         &self.selected_partition
                     })
-                    .show_ui(ui, |ui| {
-                        for p in &self.partitions {
-                            ui.selectable_value(&mut self.selected_partition, p.clone(), p);
-                        }
-                    });
+                    .color(muted(ui)),
+                );
                 if ui.button("Back up partition").clicked()
                     && let (Some(path), Ok(d)) = (
                         rfd::FileDialog::new()
@@ -1114,6 +1192,23 @@ if ui.button("Disable all modules").clicked()&& let Ok(d)=self.device(){self.pre
                 RichText::new("Dumping partitions requires a rooted device in Android mode.")
                     .color(muted(ui)),
             );
+            let partitions = self.partitions.clone();
+            egui::ScrollArea::vertical()
+                .id_salt("partition-picker-table")
+                .max_height(220.0)
+                .show(ui, |ui| {
+                    sized_text(ui, 240.0, RichText::new("Partition").strong());
+                    if partitions.is_empty() {
+                        ui.label("List partitions to choose one.");
+                    }
+                    for partition in &partitions {
+                        if sized_select(ui, 240.0, self.selected_partition == *partition, partition)
+                            .clicked()
+                        {
+                            self.selected_partition = partition.clone();
+                        }
+                    }
+                });
         });
         ui.add_space(16.0);
         card(ui, |ui| {

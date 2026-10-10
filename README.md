@@ -16,7 +16,7 @@ Modern egui interface • Reviewed operation plans • Shared Rust core • Wind
 
 ---
 
-> **⚠️ Development Preview (v0.3.2)**
+> **⚠️ Development Preview (v0.3.3)**
 >
 > This is an active port of [badabing2005/PixelFlasher](https://github.com/badabing2005/PixelFlasher) (reference revision `081286d6…`, upstream v10.1.1.1).  
 > Full feature parity is **not** complete. Device flashing, rooting, and wireless workflows have **not** been validated on real hardware.  
@@ -46,7 +46,8 @@ The goal is a clean, performant, safety-focused native rewrite that preserves th
 - **Reviewed operation plans** — every mutation is frozen, hashed, and requires explicit confirmation
 - **Durable journals** and SQLite migrations with automatic backups
 - **Multi-partition backup/restore planning** with content verification
-- **Google catalog** (factory + full OTA) with explicit terms acknowledgement
+- **Google catalog** (factory + full OTA) with explicit terms acknowledgement, a model selector, and one selected build row
+- **Familiar shell** — device, Scan, and Inspect stay above every page; long lists use columns
 - **Light / dark themes** with mint accents and compact density
 - **CLI tools** for inspect, process, library, and legacy import
 - **Optional local MCP** that can only queue intents for desktop review (never executes changes)

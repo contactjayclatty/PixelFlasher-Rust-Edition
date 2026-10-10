@@ -39,6 +39,18 @@ fn live_google_factory_and_ota_rows_keep_their_checksums() {
     }
 }
 #[test]
+fn catalog_file_names_split_into_model_and_build() {
+    let factory = services::catalog_name("cubs-cd1a.260618.001.a7-factory-fe27e572.zip").unwrap();
+    assert_eq!(factory.model, "cubs");
+    assert_eq!(factory.build, "cd1a.260618.001.a7");
+    let ota = services::catalog_name("cubs-ota-cd1a.260618.001.a7-7f02515d.zip").unwrap();
+    assert_eq!(ota.model, "cubs");
+    assert_eq!(ota.build, "cd1a.260618.001.a7");
+    assert!(services::catalog_name("Magisk-v27.0.zip").is_none());
+    assert_eq!(services::catalog_model("Magisk-v27.0.zip"), "Other");
+    assert_eq!(services::catalog_build("Magisk-v27.0.zip"), "—");
+}
+#[test]
 fn catalog_without_acknowledgement_fails_before_network() {
     for ota in [true, false] {
         assert!(

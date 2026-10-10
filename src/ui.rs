@@ -29,7 +29,6 @@ use std::{
 };
 mod advanced_pages;
 mod pages;
-mod readiness;
 mod studio;
 
 const ACCENT: Color32 = Color32::from_rgb(128, 218, 188);
@@ -139,6 +138,7 @@ pub struct PixelFlasher {
     packages: Vec<Package>,
     selected_packages: BTreeSet<String>,
     modules: Vec<Module>,
+    selected_module: Option<String>,
     partitions: Vec<String>,
     selected_partition: String,
     backup_partitions: BTreeSet<String>,
@@ -162,6 +162,8 @@ pub struct PixelFlasher {
     live: bool,
     downloads: Vec<Download>,
     download_filter: String,
+    catalog_model: String,
+    selected_download: Option<String>,
     ota_catalog: bool,
     solution: Solution,
     root_apk: String,
@@ -234,6 +236,7 @@ impl PixelFlasher {
             packages: vec![],
             selected_packages: BTreeSet::new(),
             modules: vec![],
+            selected_module: None,
             partitions: vec![],
             selected_partition: String::new(),
             backup_partitions: BTreeSet::new(),
@@ -254,6 +257,8 @@ impl PixelFlasher {
             live: false,
             downloads: vec![],
             download_filter: String::new(),
+            catalog_model: String::new(),
+            selected_download: None,
             ota_catalog: false,
             solution,
             root_apk: String::new(),
@@ -540,10 +545,34 @@ impl PixelFlasher {
                                     self.refresh_library();
                                 }
                                 Payload::Apps(p) => self.packages = p,
-                                Payload::Modules(m) => self.modules = m,
+                                Payload::Modules(m) => {
+                                    if self
+                                        .selected_module
+                                        .as_ref()
+                                        .is_some_and(|id| !m.iter().any(|module| &module.id == id))
+                                    {
+                                        self.selected_module = None;
+                                    }
+                                    self.modules = m;
+                                }
                                 Payload::Partitions(p) => self.partitions = p,
                                 Payload::Backups(p) => self.magisk_backups = p,
-                                Payload::Downloads(d) => self.downloads = d,
+                                Payload::Downloads(d) => {
+                                    let models = d
+                                        .iter()
+                                        .map(|item| services::catalog_model(&item.name))
+                                        .collect::<BTreeSet<_>>();
+                                    if !models.contains(&self.catalog_model) {
+                                        self.catalog_model =
+                                            if models.len() == 1 && models.contains("Other") {
+                                                "Other".into()
+                                            } else {
+                                                String::new()
+                                            };
+                                    }
+                                    self.selected_download = None;
+                                    self.downloads = d;
+                                }
                                 Payload::FileText { serial, path, text } => {
                                     if self.device().is_ok_and(|d| d.serial == serial)
                                         && self.file_path == path
@@ -751,22 +780,6 @@ impl PixelFlasher {
                         .color(muted(ui)),
                 );
             });
-            ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                if ui
-                    .add_enabled(
-                        !self.busy && self.config.tools_ready(),
-                        egui::Button::new("Scan devices")
-                            .fill(mint_surface(ui))
-                            .min_size(Vec2::new(120.0, 34.0)),
-                    )
-                    .clicked()
-                {
-                    self.scan();
-                }
-                if self.busy {
-                    ui.spinner();
-                }
-            });
         });
         ui.add_space(18.0);
         ui.separator();
@@ -816,6 +829,15 @@ impl PixelFlasher {
                 });
                 if ui
                     .add_enabled(
+                        !self.busy && self.config.tools_ready(),
+                        egui::Button::new("Scan").fill(mint_surface(ui)),
+                    )
+                    .clicked()
+                {
+                    self.scan();
+                }
+                if ui
+                    .add_enabled(
                         self.selected.is_some() && !self.busy,
                         egui::Button::new("Inspect"),
                     )
@@ -844,7 +866,71 @@ impl PixelFlasher {
         if old_selection != self.selected {
             self.clear_device_caches();
         }
-        ui.add_space(16.0);
+        ui.add_space(8.0);
+    }
+    fn action_row(&mut self, ui: &mut egui::Ui) {
+        let show_primary = matches!(
+            self.page,
+            Page::Overview | Page::Firmware | Page::Apps | Page::Backups
+        );
+        if !show_primary && !self.busy {
+            return;
+        }
+        ui.horizontal(|ui| {
+            match self.page {
+                Page::Overview if ui.button("Prepare firmware").clicked() => {
+                    self.page = Page::Firmware;
+                }
+                Page::Firmware
+                    if ui
+                        .add_enabled(
+                            !self.busy && !self.firmware_path.is_empty(),
+                            egui::Button::new("Process & verify").fill(mint_surface(ui)),
+                        )
+                        .clicked() =>
+                {
+                    self.process_firmware();
+                }
+                Page::Apps
+                    if ui
+                        .add_enabled(!self.busy, egui::Button::new("Load apps"))
+                        .clicked() =>
+                {
+                    self.load_apps();
+                }
+                Page::Backups
+                    if ui
+                        .add_enabled(!self.busy, egui::Button::new("List partitions"))
+                        .clicked() =>
+                {
+                    self.list_partitions();
+                }
+                _ => {}
+            }
+            if self.busy {
+                ui.spinner();
+                ui.label(&self.status);
+            }
+        });
+        ui.add_space(8.0);
+    }
+    fn visible_downloads(&self) -> Vec<Download> {
+        if self.catalog_model.is_empty() {
+            return Vec::new();
+        }
+        let filter = self.download_filter.to_lowercase();
+        self.downloads
+            .iter()
+            .filter(|item| {
+                services::catalog_model(&item.name) == self.catalog_model
+                    && (filter.is_empty()
+                        || item.name.to_lowercase().contains(&filter)
+                        || services::catalog_build(&item.name)
+                            .to_lowercase()
+                            .contains(&filter))
+            })
+            .cloned()
+            .collect()
     }
     fn confirmation_modal(&mut self, ctx: &egui::Context) {
         let Some(pending) = &self.pending else {
@@ -983,23 +1069,20 @@ impl PixelFlasher {
                     });
                     ui.add_space(12.0);
                 }
+                self.device_bar(ui);
+                self.action_row(ui);
                 egui::ScrollArea::vertical()
                     .id_salt(("main-content", self.page.name()))
-                    .show(ui, |ui| {
-                        if self.page != Page::Settings {
-                            self.device_bar(ui);
-                        }
-                        match self.page {
-                            Page::Overview => self.overview(ui),
-                            Page::Firmware => self.firmware_page(ui),
-                            Page::Flash => self.flash_page(ui),
-                            Page::Apps => self.apps_page(ui),
-                            Page::Root => self.root_page(ui),
-                            Page::Backups => self.backups_page(ui),
-                            Page::Wireless => self.wireless_page(ui),
-                            Page::Utilities => self.utilities_page(ui),
-                            Page::Settings => self.settings_page(ui),
-                        }
+                    .show(ui, |ui| match self.page {
+                        Page::Overview => self.overview(ui),
+                        Page::Firmware => self.firmware_page(ui),
+                        Page::Flash => self.flash_page(ui),
+                        Page::Apps => self.apps_page(ui),
+                        Page::Root => self.root_page(ui),
+                        Page::Backups => self.backups_page(ui),
+                        Page::Wireless => self.wireless_page(ui),
+                        Page::Utilities => self.utilities_page(ui),
+                        Page::Settings => self.settings_page(ui),
                     });
             });
         self.confirmation_modal(ctx);
@@ -1103,6 +1186,24 @@ fn card<R>(ui: &mut egui::Ui, content: impl FnOnce(&mut egui::Ui) -> R) -> R {
             content(ui)
         })
         .inner
+}
+fn sized_text(ui: &mut egui::Ui, width: f32, text: impl Into<egui::WidgetText>) {
+    ui.add_sized([width, 20.0], egui::Label::new(text));
+}
+fn sized_select(
+    ui: &mut egui::Ui,
+    width: f32,
+    on: bool,
+    text: impl Into<egui::WidgetText>,
+) -> egui::Response {
+    ui.add_sized([width, 22.0], egui::Button::selectable(on, text))
+}
+fn short_hash(value: Option<&str>) -> String {
+    match value {
+        Some(hash) if hash.len() > 12 => format!("{}…", &hash[..12]),
+        Some(hash) if !hash.is_empty() => hash.to_owned(),
+        _ => "—".into(),
+    }
 }
 fn field(ui: &mut egui::Ui, label: &str, value: &str) {
     ui.label(RichText::new(label).size(10.0).color(muted(ui)));
@@ -1235,6 +1336,44 @@ mod workflow_tests {
                 }
             }
         }
+    }
+    #[test]
+    fn catalog_table_lists_only_the_chosen_model() {
+        let (_directory, mut app) = app();
+        app.downloads = vec![
+            Download {
+                name: "lynx-ap2a.240805.005-factory-aaaaaaaa.zip".into(),
+                url: "https://dl.google.com/dl/android/aosp/lynx.zip".into(),
+                sha256: Some("abc".into()),
+                size: None,
+            },
+            Download {
+                name: "husky-ap2a.240805.005-factory-bbbbbbbb.zip".into(),
+                url: "https://dl.google.com/dl/android/aosp/husky.zip".into(),
+                sha256: None,
+                size: None,
+            },
+        ];
+        assert!(app.visible_downloads().is_empty());
+        app.catalog_model = "lynx".into();
+        let rows = app.visible_downloads();
+        assert_eq!(rows.len(), 1);
+        assert!(rows[0].name.starts_with("lynx-"));
+        app.download_filter = "missing-build".into();
+        assert!(app.visible_downloads().is_empty());
+        app.download_filter.clear();
+        app.tx
+            .send(Event::Result(Ok(Payload::Downloads(vec![Download {
+                name: "Magisk-v27.0.zip".into(),
+                url: "https://example.invalid/magisk.zip".into(),
+                sha256: None,
+                size: None,
+            }]))))
+            .unwrap();
+        app.poll();
+        assert_eq!(app.catalog_model, "Other");
+        assert!(app.selected_download.is_none());
+        assert_eq!(app.visible_downloads().len(), 1);
     }
     #[test]
     fn diagnostic_results_never_overwrite_root_configuration() {

@@ -362,6 +362,52 @@ pub fn validate_resume_range(header: &str, offset: u64) -> Result<u64> {
     );
     Ok(total)
 }
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct CatalogName {
+    pub model: String,
+    pub build: String,
+}
+pub fn catalog_name(file_name: &str) -> Option<CatalogName> {
+    let stem = file_name.strip_suffix(".zip")?;
+    let (model, rest) = stem.split_once('-')?;
+    if model.is_empty()
+        || !model
+            .chars()
+            .all(|c| c.is_ascii_lowercase() || c.is_ascii_digit())
+    {
+        return None;
+    }
+    let build = if let Some(after) = rest.strip_prefix("ota-") {
+        let (build, hash) = after.rsplit_once('-')?;
+        if build.is_empty() || !is_short_hash(hash) {
+            return None;
+        }
+        build
+    } else {
+        let (build, hash) = rest.rsplit_once("-factory-")?;
+        if build.is_empty() || !is_short_hash(hash) {
+            return None;
+        }
+        build
+    };
+    Some(CatalogName {
+        model: model.to_owned(),
+        build: build.to_owned(),
+    })
+}
+pub fn catalog_model(file_name: &str) -> String {
+    catalog_name(file_name)
+        .map(|name| name.model)
+        .unwrap_or_else(|| "Other".into())
+}
+pub fn catalog_build(file_name: &str) -> String {
+    catalog_name(file_name)
+        .map(|name| name.build)
+        .unwrap_or_else(|| "—".into())
+}
+fn is_short_hash(value: &str) -> bool {
+    value.len() >= 8 && value.chars().all(|c| c.is_ascii_hexdigit())
+}
 pub fn parse_google_images(html: &str) -> Vec<Download> {
     let re = regex::Regex::new(
         r#"https://(?:dl\.google\.com|storage\.googleapis\.com)/[^\s\"<>]+\.zip"#,

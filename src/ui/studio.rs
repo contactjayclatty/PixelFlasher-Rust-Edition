@@ -135,18 +135,38 @@ impl PixelFlasher {
         card(ui, |ui| {
             ui.heading("Verified backup sets");
             ui.label("List partitions below, then select the partitions to include. Each image is checked against its device-side SHA-256.");
-            ui.horizontal_wrapped(|ui| {
-                for partition in &self.partitions {
-                    let mut selected = self.backup_partitions.contains(partition);
-                    if ui.checkbox(&mut selected, partition).changed() {
-                        if selected {
-                            self.backup_partitions.insert(partition.clone());
-                        } else {
-                            self.backup_partitions.remove(partition);
-                        }
+            let partitions = self.partitions.clone();
+            egui::ScrollArea::vertical()
+                .id_salt("backup-set-table")
+                .max_height(200.0)
+                .show(ui, |ui| {
+                    ui.horizontal(|ui| {
+                        sized_text(ui, 28.0, RichText::new("").strong());
+                        sized_text(ui, 220.0, RichText::new("Partition").strong());
+                    });
+                    if partitions.is_empty() {
+                        ui.label("List partitions to build a backup set.");
                     }
-                }
-            });
+                    for partition in &partitions {
+                        ui.horizontal(|ui| {
+                            let mut selected = self.backup_partitions.contains(partition);
+                            if ui
+                                .add_sized(
+                                    [28.0, 18.0],
+                                    egui::Checkbox::without_text(&mut selected),
+                                )
+                                .changed()
+                            {
+                                if selected {
+                                    self.backup_partitions.insert(partition.clone());
+                                } else {
+                                    self.backup_partitions.remove(partition);
+                                }
+                            }
+                            sized_text(ui, 220.0, partition.as_str());
+                        });
+                    }
+                });
             if ui
                 .add_enabled(
                     !self.busy && !self.backup_partitions.is_empty(),
