@@ -1,0 +1,90 @@
+{
+  "version": "0.3.0",
+  "tests": 72,
+  "original_tests_retained": 45,
+  "minimum_size_full_frame_render_cases": 90,
+  "fmt": "pass",
+  "strict_workspace_clippy": "pass",
+  "release_build": "pass",
+  "native_captures": [
+    {
+      "page": "overview",
+      "theme": "dark",
+      "file": "v03-overview-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "firmware",
+      "theme": "dark",
+      "file": "v03-firmware-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "flash",
+      "theme": "dark",
+      "file": "v03-flash-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "apps",
+      "theme": "dark",
+      "file": "v03-apps-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "root",
+      "theme": "dark",
+      "file": "v03-root-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "backups",
+      "theme": "dark",
+      "file": "v03-backups-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "wireless",
+      "theme": "dark",
+      "file": "v03-wireless-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "utilities",
+      "theme": "dark",
+      "file": "v03-utilities-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "settings",
+      "theme": "dark",
+      "file": "v03-settings-dark.png",
+      "exit": 0
+    },
+    {
+      "page": "overview",
+      "theme": "light",
+      "file": "v03-overview-light.png",
+      "exit": 0
+    },
+    {
+      "page": "root",
+      "theme": "light",
+      "file": "v03-root-light.png",
+      "exit": 0
+    },
+    {
+      "page": "settings",
+      "theme": "light",
+      "file": "v03-settings-light.png",
+      "exit": 0
+    }
+  ],
+  "desktop_sha256": "ebb21a87eb41cf560e5591343fec39a40cf6f87b19d0779ddfafab4590fd77ee",
+  "mcp_sha256": "3677b3f2e4c8666320a051f7e5cdd163f3f4e77e56f44990e084bcbc34fd9572",
+  "packaged_cli_smoke": "pass",
+  "packaged_mcp_smoke": "pass",
+  "hardware_verified": false,
+  "full_plan_complete": false,
+  "librarian_review": "CLEAR"
+}

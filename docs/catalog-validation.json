@@ -1,0 +1,29 @@
+{
+  "version": "0.3.1",
+  "tests": 75,
+  "catalogs": {
+    "factory": {
+      "entries": 2359,
+      "entries_with_sha256": 2359,
+      "first_filename": "cubs-cd1a.260618.001.a7-factory-fe27e572.zip"
+    },
+    "ota": {
+      "entries": 2121,
+      "entries_with_sha256": 2121,
+      "first_filename": "cubs-ota-cd1a.260618.001.a7-7f02515d.zip"
+    }
+  },
+  "device_operations": 0,
+  "firmware_downloads": 0,
+  "desktop_sha256": "e60e04ff985985fbc11388aea78837d41823c318a84ccc8b6f62ded7cb270374",
+  "fmt": "pass",
+  "strict_clippy": "pass",
+  "release_build": "pass",
+  "cli_smoke": "pass",
+  "mcp_smoke": "pass",
+  "librarian_review": "CLEAR",
+  "native_captures": [
+    "v031-firmware-dark.png",
+    "v031-firmware-light.png"
+  ]
+}

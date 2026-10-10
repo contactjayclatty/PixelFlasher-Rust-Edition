@@ -1,0 +1,37 @@
+[package]
+name = "pixelflasher-rust"
+version = "0.3.2"
+edition = "2024"
+license = "AGPL-3.0-or-later"
+description = "Native Rust port of PixelFlasher with reviewed device operations"
+
+[workspace]
+members=["crates/core", "crates/mcp"]
+default-members=["."]
+resolver="3"
+[lib]
+path="src/facade.rs"
+[dependencies]
+pixelflasher-core={path="crates/core"}
+anyhow="1"
+eframe={version="0.32.3",default-features=false,features=["default_fonts","glow","accesskit","x11","wayland","__screenshot"]}
+rfd="0.15"
+serde={version="1",features=["derive"]}
+serde_json="1"
+chrono={version="0.4",features=["serde"]}
+[dev-dependencies]
+tempfile = "3"
+zip={version="4.6.1",default-features=false,features=["deflate"]}
+prost="0.14"
+sha2="0.10"
+rusqlite={version="0.38",features=["bundled"]}
+flate2="1"
+tar="0.4"
+
+[profile.dev]
+debug = 0
+
+[profile.release]
+lto = "thin"
+strip = true
+

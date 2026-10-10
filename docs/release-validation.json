@@ -1,0 +1,26 @@
+{
+  "product": "PixelFlasher Rust Edition",
+  "version": "0.3.2",
+  "tests": 75,
+  "fmt": "pass",
+  "strict_clippy": "pass",
+  "release_build": "pass",
+  "cli_smoke": "pass",
+  "mcp_smoke": "pass",
+  "live_catalog_counts": {
+    "factory": 2359,
+    "ota": 2121
+  },
+  "desktop_sha256": "4978ac0104ff76493005b4ebe9c56df94a2f7d346638298ea889b9fb34c990cc",
+  "mcp_sha256": "336e14e1cca9c2894c761947ae9144f5f4b6fb9bc25fcb4f424d7c00fcfa179c",
+  "source_layout": "crates/core/src; src desktop; crates/mcp",
+  "hardware_verified": false,
+  "full_parity": false,
+  "github_ci": "not yet run",
+  "public_secret_scan": "no private key or token findings",
+  "portable_archive_integrity": "pass",
+  "source_archive_integrity": "pass",
+  "portable_required_docs": "pass",
+  "extracted_cli_and_mcp_smoke": "pass",
+  "librarian_review": "CLEAR"
+}

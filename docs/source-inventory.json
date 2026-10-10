@@ -1,0 +1,8216 @@
+[
+  {
+    "file": "About.py",
+    "lines": 104,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 78,
+        "end": 98,
+        "class": "AboutDlg"
+      },
+      {
+        "name": "OnLinkClicked",
+        "line": 102,
+        "end": 103,
+        "class": "HtmlWindow"
+      }
+    ]
+  },
+  {
+    "file": "advanced_settings.py",
+    "lines": 670,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 49,
+        "end": 427,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "on_init_dialog",
+        "line": 430,
+        "end": 443,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "on_resize",
+        "line": 446,
+        "end": 455,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "enable_disable_widgets",
+        "line": 458,
+        "end": 470,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "_on_offer_patch_methods",
+        "line": 473,
+        "end": 474,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "_on_use_custom_fontface",
+        "line": 477,
+        "end": 478,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "_onFontSelect",
+        "line": 481,
+        "end": 487,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "_open_scrcpy_link",
+        "line": 489,
+        "end": 496,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "_onResetMagiskPkg",
+        "line": 498,
+        "end": 499,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "_onCancel",
+        "line": 502,
+        "end": 503,
+        "class": "AdvancedSettings"
+      },
+      {
+        "name": "_onOk",
+        "line": 506,
+        "end": 670,
+        "class": "AdvancedSettings"
+      }
+    ]
+  },
+  {
+    "file": "apk.py",
+    "lines": 703,
+    "functions": [
+      {
+        "name": "is_axml_format",
+        "line": 239,
+        "end": 247,
+        "class": null
+      },
+      {
+        "name": "is_plain_xml",
+        "line": 249,
+        "end": 256,
+        "class": null
+      },
+      {
+        "name": "is_android_packages_binary",
+        "line": 258,
+        "end": 272,
+        "class": null
+      },
+      {
+        "name": "detect_xml_format",
+        "line": 274,
+        "end": 283,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 34,
+        "end": 80,
+        "class": "StringBlock"
+      },
+      {
+        "name": "getRaw",
+        "line": 82,
+        "end": 104,
+        "class": "StringBlock"
+      },
+      {
+        "name": "decode",
+        "line": 106,
+        "end": 121,
+        "class": "StringBlock"
+      },
+      {
+        "name": "decode2",
+        "line": 123,
+        "end": 129,
+        "class": "StringBlock"
+      },
+      {
+        "name": "getVarint",
+        "line": 131,
+        "end": 138,
+        "class": "StringBlock"
+      },
+      {
+        "name": "getShort",
+        "line": 140,
+        "end": 146,
+        "class": "StringBlock"
+      },
+      {
+        "name": "getShort2",
+        "line": 148,
+        "end": 149,
+        "class": "StringBlock"
+      },
+      {
+        "name": "show",
+        "line": 151,
+        "end": 154,
+        "class": "StringBlock"
+      },
+      {
+        "name": "__init__",
+        "line": 157,
+        "end": 159,
+        "class": "SV"
+      },
+      {
+        "name": "_get",
+        "line": 161,
+        "end": 162,
+        "class": "SV"
+      },
+      {
+        "name": "__str__",
+        "line": 164,
+        "end": 165,
+        "class": "SV"
+      },
+      {
+        "name": "__int__",
+        "line": 167,
+        "end": 168,
+        "class": "SV"
+      },
+      {
+        "name": "get_value_buff",
+        "line": 170,
+        "end": 171,
+        "class": "SV"
+      },
+      {
+        "name": "get_value",
+        "line": 173,
+        "end": 174,
+        "class": "SV"
+      },
+      {
+        "name": "set_value",
+        "line": 176,
+        "end": 177,
+        "class": "SV"
+      },
+      {
+        "name": "__init__",
+        "line": 180,
+        "end": 182,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "size",
+        "line": 184,
+        "end": 185,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "set_idx",
+        "line": 187,
+        "end": 188,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "get_idx",
+        "line": 190,
+        "end": 191,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "readNullString",
+        "line": 193,
+        "end": 194,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "read_b",
+        "line": 196,
+        "end": 197,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "read_at",
+        "line": 199,
+        "end": 200,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "read",
+        "line": 202,
+        "end": 209,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "end",
+        "line": 211,
+        "end": 212,
+        "class": "BuffHandle"
+      },
+      {
+        "name": "__init__",
+        "line": 286,
+        "end": 310,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "reset",
+        "line": 312,
+        "end": 320,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "next",
+        "line": 322,
+        "end": 324,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "doNext",
+        "line": 326,
+        "end": 432,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getPrefixByUri",
+        "line": 434,
+        "end": 438,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getPrefix",
+        "line": 440,
+        "end": 444,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getName",
+        "line": 446,
+        "end": 450,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getText",
+        "line": 452,
+        "end": 456,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getNamespacePrefix",
+        "line": 458,
+        "end": 460,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getNamespaceUri",
+        "line": 462,
+        "end": 464,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getXMLNS",
+        "line": 466,
+        "end": 472,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getNamespaceCount",
+        "line": 474,
+        "end": 475,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getAttributeOffset",
+        "line": 477,
+        "end": 487,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getAttributeCount",
+        "line": 489,
+        "end": 493,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getAttributePrefix",
+        "line": 495,
+        "end": 504,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getAttributeName",
+        "line": 506,
+        "end": 513,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getAttributeValueType",
+        "line": 515,
+        "end": 517,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getAttributeValueData",
+        "line": 519,
+        "end": 521,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "getAttributeValue",
+        "line": 523,
+        "end": 530,
+        "class": "AXMLParser"
+      },
+      {
+        "name": "__init__",
+        "line": 561,
+        "end": 625,
+        "class": "AXMLPrinter"
+      },
+      {
+        "name": "_escape",
+        "line": 628,
+        "end": 634,
+        "class": "AXMLPrinter"
+      },
+      {
+        "name": "get_buff",
+        "line": 636,
+        "end": 637,
+        "class": "AXMLPrinter"
+      },
+      {
+        "name": "get_xml",
+        "line": 639,
+        "end": 642,
+        "class": "AXMLPrinter"
+      },
+      {
+        "name": "get_xml_obj",
+        "line": 644,
+        "end": 647,
+        "class": "AXMLPrinter"
+      },
+      {
+        "name": "getPrefix",
+        "line": 649,
+        "end": 653,
+        "class": "AXMLPrinter"
+      },
+      {
+        "name": "getAttributeValue",
+        "line": 655,
+        "end": 695,
+        "class": "AXMLPrinter"
+      },
+      {
+        "name": "complexToFloat",
+        "line": 697,
+        "end": 698,
+        "class": "AXMLPrinter"
+      },
+      {
+        "name": "getPackage",
+        "line": 700,
+        "end": 703,
+        "class": "AXMLPrinter"
+      }
+    ]
+  },
+  {
+    "file": "avbtool.py",
+    "lines": 5141,
+    "functions": [
+      {
+        "name": "get_release_string",
+        "line": 243,
+        "end": 248,
+        "class": null
+      },
+      {
+        "name": "round_to_multiple",
+        "line": 251,
+        "end": 265,
+        "class": null
+      },
+      {
+        "name": "round_to_pow2",
+        "line": 268,
+        "end": 279,
+        "class": null
+      },
+      {
+        "name": "encode_long",
+        "line": 282,
+        "end": 301,
+        "class": null
+      },
+      {
+        "name": "decode_long",
+        "line": 304,
+        "end": 322,
+        "class": null
+      },
+      {
+        "name": "egcd",
+        "line": 325,
+        "end": 342,
+        "class": null
+      },
+      {
+        "name": "modinv",
+        "line": 345,
+        "end": 363,
+        "class": null
+      },
+      {
+        "name": "parse_number",
+        "line": 366,
+        "end": 383,
+        "class": null
+      },
+      {
+        "name": "lookup_algorithm_by_type",
+        "line": 598,
+        "end": 614,
+        "class": null
+      },
+      {
+        "name": "lookup_hash_size_by_type",
+        "line": 617,
+        "end": 633,
+        "class": null
+      },
+      {
+        "name": "verify_vbmeta_signature",
+        "line": 636,
+        "end": 743,
+        "class": null
+      },
+      {
+        "name": "create_avb_hashtree_hasher",
+        "line": 746,
+        "end": 752,
+        "class": null
+      },
+      {
+        "name": "parse_descriptors",
+        "line": 2045,
+        "end": 2065,
+        "class": null
+      },
+      {
+        "name": "calc_hash_level_offsets",
+        "line": 4164,
+        "end": 4198,
+        "class": null
+      },
+      {
+        "name": "calc_fec_data_size",
+        "line": 4206,
+        "end": 4228,
+        "class": null
+      },
+      {
+        "name": "generate_fec_data",
+        "line": 4231,
+        "end": 4266,
+        "class": null
+      },
+      {
+        "name": "generate_hash_tree",
+        "line": 4269,
+        "end": 4338,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 85,
+        "end": 86,
+        "class": "AvbError"
+      },
+      {
+        "name": "__init__",
+        "line": 106,
+        "end": 113,
+        "class": "Algorithm"
+      },
+      {
+        "name": "__init__",
+        "line": 460,
+        "end": 475,
+        "class": "RSAPublicKey"
+      },
+      {
+        "name": "encode",
+        "line": 477,
+        "end": 504,
+        "class": "RSAPublicKey"
+      },
+      {
+        "name": "sign",
+        "line": 506,
+        "end": 595,
+        "class": "RSAPublicKey"
+      },
+      {
+        "name": "__init__",
+        "line": 773,
+        "end": 811,
+        "class": "ImageChunk"
+      },
+      {
+        "name": "__init__",
+        "line": 845,
+        "end": 860,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "_read_header",
+        "line": 862,
+        "end": 981,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "_update_chunks_and_blocks",
+        "line": 983,
+        "end": 994,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "append_dont_care",
+        "line": 996,
+        "end": 1031,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "append_raw",
+        "line": 1033,
+        "end": 1071,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "append_fill",
+        "line": 1073,
+        "end": 1109,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "seek",
+        "line": 1111,
+        "end": 1122,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "read",
+        "line": 1124,
+        "end": 1173,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "tell",
+        "line": 1175,
+        "end": 1181,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "truncate",
+        "line": 1183,
+        "end": 1255,
+        "class": "ImageHandler"
+      },
+      {
+        "name": "__init__",
+        "line": 1271,
+        "end": 1288,
+        "class": "AvbDescriptor"
+      },
+      {
+        "name": "print_desc",
+        "line": 1290,
+        "end": 1303,
+        "class": "AvbDescriptor"
+      },
+      {
+        "name": "encode",
+        "line": 1305,
+        "end": 1318,
+        "class": "AvbDescriptor"
+      },
+      {
+        "name": "verify",
+        "line": 1320,
+        "end": 1341,
+        "class": "AvbDescriptor"
+      },
+      {
+        "name": "__init__",
+        "line": 1360,
+        "end": 1389,
+        "class": "AvbPropertyDescriptor"
+      },
+      {
+        "name": "print_desc",
+        "line": 1391,
+        "end": 1407,
+        "class": "AvbPropertyDescriptor"
+      },
+      {
+        "name": "encode",
+        "line": 1409,
+        "end": 1424,
+        "class": "AvbPropertyDescriptor"
+      },
+      {
+        "name": "verify",
+        "line": 1426,
+        "end": 1443,
+        "class": "AvbPropertyDescriptor"
+      },
+      {
+        "name": "__init__",
+        "line": 1491,
+        "end": 1548,
+        "class": "AvbHashtreeDescriptor"
+      },
+      {
+        "name": "_hashtree_digest_size",
+        "line": 1550,
+        "end": 1551,
+        "class": "AvbHashtreeDescriptor"
+      },
+      {
+        "name": "print_desc",
+        "line": 1553,
+        "end": 1575,
+        "class": "AvbHashtreeDescriptor"
+      },
+      {
+        "name": "encode",
+        "line": 1577,
+        "end": 1598,
+        "class": "AvbHashtreeDescriptor"
+      },
+      {
+        "name": "verify",
+        "line": 1600,
+        "end": 1658,
+        "class": "AvbHashtreeDescriptor"
+      },
+      {
+        "name": "__init__",
+        "line": 1687,
+        "end": 1732,
+        "class": "AvbHashDescriptor"
+      },
+      {
+        "name": "print_desc",
+        "line": 1734,
+        "end": 1746,
+        "class": "AvbHashDescriptor"
+      },
+      {
+        "name": "encode",
+        "line": 1748,
+        "end": 1766,
+        "class": "AvbHashDescriptor"
+      },
+      {
+        "name": "verify",
+        "line": 1768,
+        "end": 1803,
+        "class": "AvbHashDescriptor"
+      },
+      {
+        "name": "__init__",
+        "line": 1825,
+        "end": 1854,
+        "class": "AvbKernelCmdlineDescriptor"
+      },
+      {
+        "name": "print_desc",
+        "line": 1856,
+        "end": 1864,
+        "class": "AvbKernelCmdlineDescriptor"
+      },
+      {
+        "name": "encode",
+        "line": 1866,
+        "end": 1879,
+        "class": "AvbKernelCmdlineDescriptor"
+      },
+      {
+        "name": "verify",
+        "line": 1881,
+        "end": 1898,
+        "class": "AvbKernelCmdlineDescriptor"
+      },
+      {
+        "name": "__init__",
+        "line": 1923,
+        "end": 1960,
+        "class": "AvbChainPartitionDescriptor"
+      },
+      {
+        "name": "print_desc",
+        "line": 1962,
+        "end": 1975,
+        "class": "AvbChainPartitionDescriptor"
+      },
+      {
+        "name": "encode",
+        "line": 1977,
+        "end": 1993,
+        "class": "AvbChainPartitionDescriptor"
+      },
+      {
+        "name": "verify",
+        "line": 1995,
+        "end": 2037,
+        "class": "AvbChainPartitionDescriptor"
+      },
+      {
+        "name": "__init__",
+        "line": 2095,
+        "end": 2119,
+        "class": "AvbFooter"
+      },
+      {
+        "name": "encode",
+        "line": 2121,
+        "end": 2129,
+        "class": "AvbFooter"
+      },
+      {
+        "name": "__init__",
+        "line": 2197,
+        "end": 2248,
+        "class": "AvbVBMetaHeader"
+      },
+      {
+        "name": "bump_required_libavb_version_minor",
+        "line": 2250,
+        "end": 2260,
+        "class": "AvbVBMetaHeader"
+      },
+      {
+        "name": "encode",
+        "line": 2262,
+        "end": 2279,
+        "class": "AvbVBMetaHeader"
+      },
+      {
+        "name": "generate_test_image",
+        "line": 2299,
+        "end": 2315,
+        "class": "Avb"
+      },
+      {
+        "name": "extract_vbmeta_image",
+        "line": 2317,
+        "end": 2340,
+        "class": "Avb"
+      },
+      {
+        "name": "erase_footer",
+        "line": 2342,
+        "end": 2379,
+        "class": "Avb"
+      },
+      {
+        "name": "zero_hashtree",
+        "line": 2381,
+        "end": 2434,
+        "class": "Avb"
+      },
+      {
+        "name": "resize_image",
+        "line": 2436,
+        "end": 2481,
+        "class": "Avb"
+      },
+      {
+        "name": "set_ab_metadata",
+        "line": 2483,
+        "end": 2515,
+        "class": "Avb"
+      },
+      {
+        "name": "info_image",
+        "line": 2517,
+        "end": 2642,
+        "class": "Avb"
+      },
+      {
+        "name": "verify_image",
+        "line": 2644,
+        "end": 2743,
+        "class": "Avb"
+      },
+      {
+        "name": "print_partition_digests",
+        "line": 2745,
+        "end": 2764,
+        "class": "Avb"
+      },
+      {
+        "name": "_print_partition_digests",
+        "line": 2766,
+        "end": 2804,
+        "class": "Avb"
+      },
+      {
+        "name": "calculate_vbmeta_digest",
+        "line": 2806,
+        "end": 2847,
+        "class": "Avb"
+      },
+      {
+        "name": "calculate_kernel_cmdline",
+        "line": 2849,
+        "end": 2891,
+        "class": "Avb"
+      },
+      {
+        "name": "_parse_image",
+        "line": 2893,
+        "end": 2933,
+        "class": "Avb"
+      },
+      {
+        "name": "_load_vbmeta_blob",
+        "line": 2935,
+        "end": 2966,
+        "class": "Avb"
+      },
+      {
+        "name": "_get_cmdline_descriptors_for_hashtree_descriptor",
+        "line": 2968,
+        "end": 3031,
+        "class": "Avb"
+      },
+      {
+        "name": "_get_cmdline_descriptors_for_dm_verity",
+        "line": 3033,
+        "end": 3059,
+        "class": "Avb"
+      },
+      {
+        "name": "make_vbmeta_image",
+        "line": 3061,
+        "end": 3141,
+        "class": "Avb"
+      },
+      {
+        "name": "_generate_vbmeta_blob",
+        "line": 3143,
+        "end": 3403,
+        "class": "Avb"
+      },
+      {
+        "name": "extract_public_key",
+        "line": 3405,
+        "end": 3415,
+        "class": "Avb"
+      },
+      {
+        "name": "append_vbmeta_image",
+        "line": 3417,
+        "end": 3497,
+        "class": "Avb"
+      },
+      {
+        "name": "add_hash_footer",
+        "line": 3499,
+        "end": 3719,
+        "class": "Avb"
+      },
+      {
+        "name": "add_hashtree_footer",
+        "line": 3721,
+        "end": 4008,
+        "class": "Avb"
+      },
+      {
+        "name": "make_certificate",
+        "line": 4010,
+        "end": 4057,
+        "class": "Avb"
+      },
+      {
+        "name": "make_cert_permanent_attributes",
+        "line": 4059,
+        "end": 4081,
+        "class": "Avb"
+      },
+      {
+        "name": "make_cert_metadata",
+        "line": 4083,
+        "end": 4110,
+        "class": "Avb"
+      },
+      {
+        "name": "make_cert_unlock_credential",
+        "line": 4112,
+        "end": 4161,
+        "class": "Avb"
+      },
+      {
+        "name": "__init__",
+        "line": 4344,
+        "end": 4346,
+        "class": "AvbTool"
+      },
+      {
+        "name": "_add_common_args",
+        "line": 4348,
+        "end": 4436,
+        "class": "AvbTool"
+      },
+      {
+        "name": "_add_common_footer_args",
+        "line": 4438,
+        "end": 4455,
+        "class": "AvbTool"
+      },
+      {
+        "name": "_fixup_common_args",
+        "line": 4457,
+        "end": 4468,
+        "class": "AvbTool"
+      },
+      {
+        "name": "run",
+        "line": 4470,
+        "end": 4945,
+        "class": "AvbTool"
+      },
+      {
+        "name": "version",
+        "line": 4948,
+        "end": 4950,
+        "class": "AvbTool"
+      },
+      {
+        "name": "generate_test_image",
+        "line": 4952,
+        "end": 4954,
+        "class": "AvbTool"
+      },
+      {
+        "name": "extract_public_key",
+        "line": 4956,
+        "end": 4958,
+        "class": "AvbTool"
+      },
+      {
+        "name": "make_vbmeta_image",
+        "line": 4960,
+        "end": 4977,
+        "class": "AvbTool"
+      },
+      {
+        "name": "append_vbmeta_image",
+        "line": 4979,
+        "end": 4982,
+        "class": "AvbTool"
+      },
+      {
+        "name": "add_hash_footer",
+        "line": 4984,
+        "end": 5008,
+        "class": "AvbTool"
+      },
+      {
+        "name": "add_hashtree_footer",
+        "line": 5010,
+        "end": 5047,
+        "class": "AvbTool"
+      },
+      {
+        "name": "erase_footer",
+        "line": 5049,
+        "end": 5051,
+        "class": "AvbTool"
+      },
+      {
+        "name": "zero_hashtree",
+        "line": 5053,
+        "end": 5055,
+        "class": "AvbTool"
+      },
+      {
+        "name": "extract_vbmeta_image",
+        "line": 5057,
+        "end": 5060,
+        "class": "AvbTool"
+      },
+      {
+        "name": "resize_image",
+        "line": 5062,
+        "end": 5064,
+        "class": "AvbTool"
+      },
+      {
+        "name": "set_ab_metadata",
+        "line": 5066,
+        "end": 5068,
+        "class": "AvbTool"
+      },
+      {
+        "name": "info_image",
+        "line": 5070,
+        "end": 5073,
+        "class": "AvbTool"
+      },
+      {
+        "name": "verify_image",
+        "line": 5075,
+        "end": 5080,
+        "class": "AvbTool"
+      },
+      {
+        "name": "print_partition_digests",
+        "line": 5082,
+        "end": 5084,
+        "class": "AvbTool"
+      },
+      {
+        "name": "calculate_vbmeta_digest",
+        "line": 5086,
+        "end": 5089,
+        "class": "AvbTool"
+      },
+      {
+        "name": "calculate_kernel_cmdline",
+        "line": 5091,
+        "end": 5094,
+        "class": "AvbTool"
+      },
+      {
+        "name": "make_certificate",
+        "line": 5096,
+        "end": 5108,
+        "class": "AvbTool"
+      },
+      {
+        "name": "make_cert_permanent_attributes",
+        "line": 5110,
+        "end": 5114,
+        "class": "AvbTool"
+      },
+      {
+        "name": "make_cert_metadata",
+        "line": 5116,
+        "end": 5120,
+        "class": "AvbTool"
+      },
+      {
+        "name": "make_cert_unlock_credential",
+        "line": 5122,
+        "end": 5131,
+        "class": "AvbTool"
+      }
+    ]
+  },
+  {
+    "file": "backup_manager.py",
+    "lines": 663,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 54,
+        "end": 56,
+        "class": "ListCtrl"
+      },
+      {
+        "name": "__init__",
+        "line": 63,
+        "end": 163,
+        "class": "BackupManager"
+      },
+      {
+        "name": "PopulateList",
+        "line": 168,
+        "end": 224,
+        "class": "BackupManager"
+      },
+      {
+        "name": "Check_UncheckAll",
+        "line": 229,
+        "end": 240,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnSearch",
+        "line": 245,
+        "end": 248,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnCancel",
+        "line": 253,
+        "end": 255,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnAllCheckbox",
+        "line": 260,
+        "end": 269,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnItemCheck",
+        "line": 274,
+        "end": 278,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnItemUncheck",
+        "line": 283,
+        "end": 287,
+        "class": "BackupManager"
+      },
+      {
+        "name": "Get_all_cb_clicked",
+        "line": 292,
+        "end": 293,
+        "class": "BackupManager"
+      },
+      {
+        "name": "Set_all_cb_clicked",
+        "line": 298,
+        "end": 299,
+        "class": "BackupManager"
+      },
+      {
+        "name": "Update_all_checkbox",
+        "line": 304,
+        "end": 319,
+        "class": "BackupManager"
+      },
+      {
+        "name": "EnableDisableButton",
+        "line": 324,
+        "end": 325,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnClose",
+        "line": 330,
+        "end": 332,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnDelete",
+        "line": 337,
+        "end": 345,
+        "class": "BackupManager"
+      },
+      {
+        "name": "DeleteBackup",
+        "line": 350,
+        "end": 357,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnAddBackup",
+        "line": 362,
+        "end": 402,
+        "class": "BackupManager"
+      },
+      {
+        "name": "ZipAndPush",
+        "line": 407,
+        "end": 425,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnAutoBackup",
+        "line": 430,
+        "end": 507,
+        "class": "BackupManager"
+      },
+      {
+        "name": "GetListCtrl",
+        "line": 513,
+        "end": 514,
+        "class": "BackupManager"
+      },
+      {
+        "name": "GetSortImages",
+        "line": 520,
+        "end": 521,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnRightDown",
+        "line": 526,
+        "end": 533,
+        "class": "BackupManager"
+      },
+      {
+        "name": "getColumnText",
+        "line": 538,
+        "end": 540,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnItemSelected",
+        "line": 545,
+        "end": 555,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnColClick",
+        "line": 560,
+        "end": 566,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnCheckAllBoxes",
+        "line": 571,
+        "end": 572,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnUnCheckAllBoxes",
+        "line": 577,
+        "end": 578,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnGetItemsChecked",
+        "line": 583,
+        "end": 586,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnRightClick",
+        "line": 591,
+        "end": 619,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnpopupDelete",
+        "line": 624,
+        "end": 625,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnPopupRefresh",
+        "line": 630,
+        "end": 631,
+        "class": "BackupManager"
+      },
+      {
+        "name": "OnCopyClipboard",
+        "line": 636,
+        "end": 638,
+        "class": "BackupManager"
+      },
+      {
+        "name": "Refresh",
+        "line": 643,
+        "end": 651,
+        "class": "BackupManager"
+      },
+      {
+        "name": "_on_spin",
+        "line": 656,
+        "end": 663,
+        "class": "BackupManager"
+      }
+    ]
+  },
+  {
+    "file": "check_translations.py",
+    "lines": 164,
+    "functions": [
+      {
+        "name": "entry_key",
+        "line": 49,
+        "end": 50,
+        "class": null
+      },
+      {
+        "name": "format_key",
+        "line": 56,
+        "end": 63,
+        "class": null
+      },
+      {
+        "name": "load_entries",
+        "line": 69,
+        "end": 74,
+        "class": null
+      },
+      {
+        "name": "analyze_catalogs",
+        "line": 80,
+        "end": 98,
+        "class": null
+      },
+      {
+        "name": "print_reports",
+        "line": 104,
+        "end": 123,
+        "class": null
+      },
+      {
+        "name": "parse_args",
+        "line": 129,
+        "end": 143,
+        "class": null
+      },
+      {
+        "name": "main",
+        "line": 149,
+        "end": 160,
+        "class": null
+      }
+    ]
+  },
+  {
+    "file": "compile_po.py",
+    "lines": 40,
+    "functions": []
+  },
+  {
+    "file": "config.py",
+    "lines": 564,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 48,
+        "end": 192,
+        "class": "Config"
+      },
+      {
+        "name": "load",
+        "line": 195,
+        "end": 472,
+        "class": "Config"
+      },
+      {
+        "name": "save",
+        "line": 474,
+        "end": 564,
+        "class": "Config"
+      }
+    ]
+  },
+  {
+    "file": "constants.py",
+    "lines": 147,
+    "functions": []
+  },
+  {
+    "file": "custom_controls.py",
+    "lines": 328,
+    "functions": [
+      {
+        "name": "open_device_image_download_link",
+        "line": 314,
+        "end": 328,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 52,
+        "end": 81,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "SetButtonLabel",
+        "line": 83,
+        "end": 84,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "SetButtonWidth",
+        "line": 86,
+        "end": 89,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "GetButtonWidth",
+        "line": 91,
+        "end": 92,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "GetPickerCtrl",
+        "line": 94,
+        "end": 96,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "on_browse",
+        "line": 98,
+        "end": 110,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "SetPath",
+        "line": 112,
+        "end": 122,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "on_combo_box_change",
+        "line": 124,
+        "end": 138,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "Bind",
+        "line": 140,
+        "end": 143,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "_on_combo_box_change",
+        "line": 145,
+        "end": 147,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "GetPath",
+        "line": 149,
+        "end": 150,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "SetToolTip",
+        "line": 152,
+        "end": 153,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "on_mousewheel",
+        "line": 155,
+        "end": 157,
+        "class": "FilePickerComboBox"
+      },
+      {
+        "name": "__init__",
+        "line": 164,
+        "end": 166,
+        "class": "NoScrollComboBox"
+      },
+      {
+        "name": "on_mousewheel",
+        "line": 168,
+        "end": 170,
+        "class": "NoScrollComboBox"
+      },
+      {
+        "name": "__init__",
+        "line": 177,
+        "end": 179,
+        "class": "NoScrollChoice"
+      },
+      {
+        "name": "on_mousewheel",
+        "line": 181,
+        "end": 183,
+        "class": "NoScrollChoice"
+      },
+      {
+        "name": "__init__",
+        "line": 190,
+        "end": 193,
+        "class": "DropDownLink"
+      },
+      {
+        "name": "OnButtonClick",
+        "line": 195,
+        "end": 196,
+        "class": "DropDownLink"
+      },
+      {
+        "name": "AddLink",
+        "line": 198,
+        "end": 202,
+        "class": "DropDownLink"
+      },
+      {
+        "name": "OnLinkSelected",
+        "line": 204,
+        "end": 207,
+        "class": "DropDownLink"
+      },
+      {
+        "name": "__init__",
+        "line": 216,
+        "end": 219,
+        "class": "DropDownButton"
+      },
+      {
+        "name": "SetBitmap",
+        "line": 221,
+        "end": 225,
+        "class": "DropDownButton"
+      },
+      {
+        "name": "OnButtonClick",
+        "line": 227,
+        "end": 228,
+        "class": "DropDownButton"
+      },
+      {
+        "name": "AddFunction",
+        "line": 230,
+        "end": 236,
+        "class": "DropDownButton"
+      },
+      {
+        "name": "OnFunctionSelected",
+        "line": 238,
+        "end": 240,
+        "class": "DropDownButton"
+      },
+      {
+        "name": "__init__",
+        "line": 248,
+        "end": 259,
+        "class": "ResizableButtonDirPickerCtrl"
+      },
+      {
+        "name": "SetButtonLabel",
+        "line": 261,
+        "end": 263,
+        "class": "ResizableButtonDirPickerCtrl"
+      },
+      {
+        "name": "SetButtonWidth",
+        "line": 265,
+        "end": 269,
+        "class": "ResizableButtonDirPickerCtrl"
+      },
+      {
+        "name": "GetButtonWidth",
+        "line": 271,
+        "end": 274,
+        "class": "ResizableButtonDirPickerCtrl"
+      },
+      {
+        "name": "__init__",
+        "line": 282,
+        "end": 293,
+        "class": "ResizableButtonFilePickerCtrl"
+      },
+      {
+        "name": "SetButtonLabel",
+        "line": 295,
+        "end": 297,
+        "class": "ResizableButtonFilePickerCtrl"
+      },
+      {
+        "name": "SetButtonWidth",
+        "line": 299,
+        "end": 303,
+        "class": "ResizableButtonFilePickerCtrl"
+      },
+      {
+        "name": "GetButtonWidth",
+        "line": 305,
+        "end": 308,
+        "class": "ResizableButtonFilePickerCtrl"
+      }
+    ]
+  },
+  {
+    "file": "device_selector.py",
+    "lines": 283,
+    "functions": [
+      {
+        "name": "show_device_selector",
+        "line": 256,
+        "end": 283,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 46,
+        "end": 48,
+        "class": "ListCtrl"
+      },
+      {
+        "name": "__init__",
+        "line": 59,
+        "end": 70,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "_create_ui",
+        "line": 75,
+        "end": 150,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "GetListCtrl",
+        "line": 156,
+        "end": 157,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "GetSortImages",
+        "line": 163,
+        "end": 164,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "_matches_select_device",
+        "line": 169,
+        "end": 206,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "_bind_events",
+        "line": 211,
+        "end": 213,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "_size_and_center",
+        "line": 218,
+        "end": 220,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "on_item_activated",
+        "line": 225,
+        "end": 227,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "on_ok",
+        "line": 232,
+        "end": 239,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "on_close",
+        "line": 244,
+        "end": 245,
+        "class": "DeviceSelectorDialog"
+      },
+      {
+        "name": "get_selected_device",
+        "line": 250,
+        "end": 251,
+        "class": "DeviceSelectorDialog"
+      }
+    ]
+  },
+  {
+    "file": "download_progress.py",
+    "lines": 117,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 43,
+        "end": 65,
+        "class": "DownloadProgressWindow"
+      },
+      {
+        "name": "add_download",
+        "line": 67,
+        "end": 105,
+        "class": "DownloadProgressWindow"
+      },
+      {
+        "name": "remove_download",
+        "line": 107,
+        "end": 117,
+        "class": "DownloadProgressWindow"
+      }
+    ]
+  },
+  {
+    "file": "encode-bitmaps.py",
+    "lines": 279,
+    "functions": []
+  },
+  {
+    "file": "factory_image_selector.py",
+    "lines": 149,
+    "functions": [
+      {
+        "name": "show_factory_image_dialog",
+        "line": 42,
+        "end": 149,
+        "class": null
+      }
+    ]
+  },
+  {
+    "file": "file_editor.py",
+    "lines": 191,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 48,
+        "end": 57,
+        "class": "FileEditor"
+      },
+      {
+        "name": "create_widgets",
+        "line": 59,
+        "end": 166,
+        "class": "FileEditor"
+      },
+      {
+        "name": "load_file",
+        "line": 168,
+        "end": 171,
+        "class": "FileEditor"
+      },
+      {
+        "name": "on_open_folder",
+        "line": 173,
+        "end": 174,
+        "class": "FileEditor"
+      },
+      {
+        "name": "on_open_shell",
+        "line": 176,
+        "end": 177,
+        "class": "FileEditor"
+      },
+      {
+        "name": "on_save",
+        "line": 179,
+        "end": 182,
+        "class": "FileEditor"
+      },
+      {
+        "name": "on_cancel",
+        "line": 184,
+        "end": 185,
+        "class": "FileEditor"
+      },
+      {
+        "name": "_on_resize",
+        "line": 187,
+        "end": 191,
+        "class": "FileEditor"
+      }
+    ]
+  },
+  {
+    "file": "i18n.py",
+    "lines": 489,
+    "functions": [
+      {
+        "name": "translate_text",
+        "line": 63,
+        "end": 105,
+        "class": null
+      },
+      {
+        "name": "get_locale_path",
+        "line": 116,
+        "end": 121,
+        "class": null
+      },
+      {
+        "name": "get_translation_for_language",
+        "line": 126,
+        "end": 150,
+        "class": null
+      },
+      {
+        "name": "get_text_in_language",
+        "line": 155,
+        "end": 170,
+        "class": null
+      },
+      {
+        "name": "get_system_language",
+        "line": 175,
+        "end": 187,
+        "class": null
+      },
+      {
+        "name": "find_locale_dir",
+        "line": 192,
+        "end": 213,
+        "class": null
+      },
+      {
+        "name": "setup_i18n",
+        "line": 218,
+        "end": 292,
+        "class": null
+      },
+      {
+        "name": "compile_translations",
+        "line": 297,
+        "end": 363,
+        "class": null
+      },
+      {
+        "name": "get_available_languages",
+        "line": 368,
+        "end": 371,
+        "class": null
+      },
+      {
+        "name": "get_language",
+        "line": 376,
+        "end": 394,
+        "class": null
+      },
+      {
+        "name": "set_language",
+        "line": 399,
+        "end": 476,
+        "class": null
+      },
+      {
+        "name": "initialize_translations",
+        "line": 481,
+        "end": 489,
+        "class": null
+      }
+    ]
+  },
+  {
+    "file": "images.py",
+    "lines": 7781,
+    "functions": []
+  },
+  {
+    "file": "ksu_asset_selector.py",
+    "lines": 255,
+    "functions": [
+      {
+        "name": "show_ksu_asset_selector",
+        "line": 246,
+        "end": 255,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 44,
+        "end": 53,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "init_ui",
+        "line": 55,
+        "end": 148,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "apply_filter",
+        "line": 150,
+        "end": 161,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "populate_list",
+        "line": 163,
+        "end": 209,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "on_filter_changed",
+        "line": 211,
+        "end": 215,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "on_filter_cleared",
+        "line": 217,
+        "end": 221,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "on_ok",
+        "line": 223,
+        "end": 230,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "on_item_activated",
+        "line": 232,
+        "end": 234,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "get_selected_asset",
+        "line": 236,
+        "end": 237,
+        "class": "KsuAssetSelectorDialog"
+      },
+      {
+        "name": "_on_close",
+        "line": 239,
+        "end": 240,
+        "class": "KsuAssetSelectorDialog"
+      }
+    ]
+  },
+  {
+    "file": "logcat.py",
+    "lines": 356,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 45,
+        "end": 63,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "_create_formatting_section",
+        "line": 68,
+        "end": 141,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "_create_filter_section",
+        "line": 146,
+        "end": 214,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "_create_buttons",
+        "line": 219,
+        "end": 243,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "on_format_checkbox",
+        "line": 248,
+        "end": 255,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "build_logcat_args",
+        "line": 260,
+        "end": 305,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "on_view_logcat",
+        "line": 310,
+        "end": 316,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "on_clear_logcat",
+        "line": 321,
+        "end": 326,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "on_cancel",
+        "line": 331,
+        "end": 333,
+        "class": "LogcatPanel"
+      },
+      {
+        "name": "__init__",
+        "line": 340,
+        "end": 352,
+        "class": "LogcatDialog"
+      },
+      {
+        "name": "_on_close",
+        "line": 354,
+        "end": 355,
+        "class": "LogcatDialog"
+      }
+    ]
+  },
+  {
+    "file": "magisk_downloads.py",
+    "lines": 428,
+    "functions": [
+      {
+        "name": "OnLinkClicked",
+        "line": 58,
+        "end": 59,
+        "class": "HtmlWindow"
+      },
+      {
+        "name": "__init__",
+        "line": 65,
+        "end": 67,
+        "class": "ListCtrl"
+      },
+      {
+        "name": "__init__",
+        "line": 73,
+        "end": 219,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_onItemSelected",
+        "line": 225,
+        "end": 229,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_onRightDown",
+        "line": 234,
+        "end": 241,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_onRightClick",
+        "line": 246,
+        "end": 268,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_OnCopyPackageId",
+        "line": 273,
+        "end": 275,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_OnCopyURL",
+        "line": 280,
+        "end": 282,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_OnDownloadMagisk",
+        "line": 287,
+        "end": 297,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "__del__",
+        "line": 302,
+        "end": 303,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_onCancel",
+        "line": 308,
+        "end": 310,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_on_apk_selected",
+        "line": 315,
+        "end": 353,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_onOk",
+        "line": 358,
+        "end": 416,
+        "class": "MagiskDownloads"
+      },
+      {
+        "name": "_on_spin",
+        "line": 421,
+        "end": 428,
+        "class": "MagiskDownloads"
+      }
+    ]
+  },
+  {
+    "file": "magisk_modules.py",
+    "lines": 1039,
+    "functions": [
+      {
+        "name": "OnLinkClicked",
+        "line": 55,
+        "end": 56,
+        "class": "HtmlWindow"
+      },
+      {
+        "name": "CopySelectedText",
+        "line": 58,
+        "end": 66,
+        "class": "HtmlWindow"
+      },
+      {
+        "name": "__init__",
+        "line": 72,
+        "end": 74,
+        "class": "ListCtrl"
+      },
+      {
+        "name": "__init__",
+        "line": 80,
+        "end": 307,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "PopulateList",
+        "line": 312,
+        "end": 419,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "add_magisk_details",
+        "line": 424,
+        "end": 433,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "__del__",
+        "line": 438,
+        "end": 439,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onModuleSelection",
+        "line": 444,
+        "end": 457,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onItemSelected",
+        "line": 462,
+        "end": 493,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "outputMessage",
+        "line": 498,
+        "end": 502,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onCancel",
+        "line": 507,
+        "end": 508,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onEnableZygisk",
+        "line": 513,
+        "end": 529,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onDisableZygisk",
+        "line": 534,
+        "end": 550,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onEnableDenylist",
+        "line": 555,
+        "end": 569,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onDisableDenylist",
+        "line": 574,
+        "end": 588,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onSuperuserAccess",
+        "line": 593,
+        "end": 643,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onRefresh",
+        "line": 648,
+        "end": 649,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onSystemlessHosts",
+        "line": 654,
+        "end": 669,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onInstallPif",
+        "line": 674,
+        "end": 753,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onInstallZygiskModule",
+        "line": 758,
+        "end": 822,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onRunModuleAction",
+        "line": 827,
+        "end": 841,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onUninstallModule",
+        "line": 846,
+        "end": 881,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onUpdateModule",
+        "line": 886,
+        "end": 909,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onInstallModule",
+        "line": 914,
+        "end": 938,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onContextMenu",
+        "line": 943,
+        "end": 951,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onCopy",
+        "line": 956,
+        "end": 957,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onSelectAll",
+        "line": 962,
+        "end": 963,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "onOk",
+        "line": 968,
+        "end": 1006,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "_on_spin",
+        "line": 1011,
+        "end": 1018,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "refresh_modules",
+        "line": 1023,
+        "end": 1026,
+        "class": "MagiskModules"
+      },
+      {
+        "name": "OnResize",
+        "line": 1032,
+        "end": 1038,
+        "class": "MagiskModules"
+      }
+    ]
+  },
+  {
+    "file": "Main.py",
+    "lines": 7372,
+    "functions": [
+      {
+        "name": "parse_arguments",
+        "line": 7328,
+        "end": 7335,
+        "class": null
+      },
+      {
+        "name": "ask",
+        "line": 7341,
+        "end": 7346,
+        "class": null
+      },
+      {
+        "name": "main",
+        "line": 7352,
+        "end": 7366,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 171,
+        "end": 177,
+        "class": "RedirectText"
+      },
+      {
+        "name": "write",
+        "line": 179,
+        "end": 191,
+        "class": "RedirectText"
+      },
+      {
+        "name": "flush",
+        "line": 198,
+        "end": 200,
+        "class": "RedirectText"
+      },
+      {
+        "name": "close",
+        "line": 202,
+        "end": 204,
+        "class": "RedirectText"
+      },
+      {
+        "name": "set_logfile",
+        "line": 206,
+        "end": 212,
+        "class": "RedirectText"
+      },
+      {
+        "name": "reset_logfile",
+        "line": 214,
+        "end": 222,
+        "class": "RedirectText"
+      },
+      {
+        "name": "__init__",
+        "line": 230,
+        "end": 236,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "generate_unique_id",
+        "line": 238,
+        "end": 244,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "reset_menu_id",
+        "line": 246,
+        "end": 247,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "bind_download_event",
+        "line": 249,
+        "end": 260,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "load_data",
+        "line": 262,
+        "end": 272,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "is_data_update_required",
+        "line": 274,
+        "end": 284,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "get_progress_window",
+        "line": 286,
+        "end": 287,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "download_with_progress",
+        "line": 289,
+        "end": 386,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "on_download",
+        "line": 388,
+        "end": 402,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "on_refresh_google_images",
+        "line": 404,
+        "end": 411,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "on_show_progress_window",
+        "line": 413,
+        "end": 417,
+        "class": "GoogleImagesBaseMenu"
+      },
+      {
+        "name": "__init__",
+        "line": 423,
+        "end": 567,
+        "class": "GoogleImagesMenu"
+      },
+      {
+        "name": "__init__",
+        "line": 573,
+        "end": 679,
+        "class": "GoogleImagesPopupMenu"
+      },
+      {
+        "name": "__init__",
+        "line": 686,
+        "end": 739,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "get_progress_window",
+        "line": 741,
+        "end": 745,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "initialize",
+        "line": 751,
+        "end": 1042,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "change_logfile",
+        "line": 1047,
+        "end": 1049,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "reset_logfile",
+        "line": 1054,
+        "end": 1056,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "get_language_name",
+        "line": 1061,
+        "end": 1063,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "on_language_change",
+        "line": 1068,
+        "end": 1090,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "enable_disable_radio_button",
+        "line": 1095,
+        "end": 1104,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "set_ui_fonts",
+        "line": 1109,
+        "end": 1142,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_set_icons",
+        "line": 1147,
+        "end": 1148,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_build_status_bar",
+        "line": 1153,
+        "end": 1157,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_build_toolbar",
+        "line": 1162,
+        "end": 1367,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "disable_all_toolbar_tools",
+        "line": 1373,
+        "end": 1377,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "OnToolClick",
+        "line": 1382,
+        "end": 1438,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "OnToolRClick",
+        "line": 1443,
+        "end": 1445,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_device_info",
+        "line": 1450,
+        "end": 1463,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_pif_info",
+        "line": 1468,
+        "end": 1481,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_props_as_json",
+        "line": 1486,
+        "end": 1499,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_build_links_menu",
+        "line": 1528,
+        "end": 1551,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_build_menu_bar",
+        "line": 1556,
+        "end": 1979,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "get_toolbar_config",
+        "line": 1984,
+        "end": 2016,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_button_menu",
+        "line": 2021,
+        "end": 2079,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_tb_update",
+        "line": 2084,
+        "end": 2111,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_build_devices_menu",
+        "line": 2116,
+        "end": 2177,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_scan_all_devices",
+        "line": 2182,
+        "end": 2183,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_scan_enabled_devices",
+        "line": 2188,
+        "end": 2189,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_device_toggle",
+        "line": 2194,
+        "end": 2202,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_manage_devices",
+        "line": 2207,
+        "end": 2221,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_help_about",
+        "line": 2226,
+        "end": 2230,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_advanced_config",
+        "line": 2235,
+        "end": 2255,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_package_manager",
+        "line": 2261,
+        "end": 2291,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_install_apk",
+        "line": 2296,
+        "end": 2399,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_move_end",
+        "line": 2404,
+        "end": 2409,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_close",
+        "line": 2414,
+        "end": 2422,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_resize",
+        "line": 2427,
+        "end": 2433,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_link_clicked",
+        "line": 2438,
+        "end": 2470,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_open_config_folder",
+        "line": 2475,
+        "end": 2483,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_open_pf_home",
+        "line": 2488,
+        "end": 2496,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_support_zip",
+        "line": 2501,
+        "end": 2526,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_exit_app",
+        "line": 2531,
+        "end": 2533,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "OnColClick",
+        "line": 2538,
+        "end": 2553,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "toast",
+        "line": 2558,
+        "end": 2562,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_xml_view",
+        "line": 2567,
+        "end": 2590,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_cancel_ota",
+        "line": 2595,
+        "end": 2619,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_check_otacerts",
+        "line": 2624,
+        "end": 2644,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "Test",
+        "line": 2649,
+        "end": 2663,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_open_url_on_device",
+        "line": 2668,
+        "end": 2692,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_pi_analysis_report",
+        "line": 2697,
+        "end": 3128,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_advanced_options_hide",
+        "line": 3133,
+        "end": 3238,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_spin",
+        "line": 3243,
+        "end": 3258,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_refresh_ui",
+        "line": 3263,
+        "end": 3274,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_print_device_details",
+        "line": 3279,
+        "end": 3468,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "get_vbmeta",
+        "line": 3473,
+        "end": 3508,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_check_for_bad_kernel",
+        "line": 3513,
+        "end": 3522,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_check_for_bad_magisk",
+        "line": 3527,
+        "end": 3551,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_update_custom_flash_options",
+        "line": 3556,
+        "end": 3597,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_select_configured_device",
+        "line": 3602,
+        "end": 3642,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "refresh_device",
+        "line": 3647,
+        "end": 3676,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "clear_device_selection",
+        "line": 3681,
+        "end": 3702,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_reflect_slots",
+        "line": 3707,
+        "end": 3732,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "evaluate_condition",
+        "line": 3738,
+        "end": 3921,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "update_widget_states",
+        "line": 3926,
+        "end": 4065,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_select_device",
+        "line": 4070,
+        "end": 4094,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_perform_scan",
+        "line": 4099,
+        "end": 4164,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_scan",
+        "line": 4169,
+        "end": 4170,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_select_platform_tools",
+        "line": 4175,
+        "end": 4199,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "update_firmware_selection",
+        "line": 4204,
+        "end": 4222,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_select_firmware",
+        "line": 4227,
+        "end": 4238,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_process_firmware",
+        "line": 4243,
+        "end": 4257,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_process_rom",
+        "line": 4262,
+        "end": 4274,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_image_choice",
+        "line": 4279,
+        "end": 4290,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_image_select",
+        "line": 4295,
+        "end": 4312,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_select_custom_rom",
+        "line": 4317,
+        "end": 4347,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_mode_changed",
+        "line": 4352,
+        "end": 4366,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_flash_both_slots",
+        "line": 4371,
+        "end": 4380,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_flash_to_inactive_slot",
+        "line": 4385,
+        "end": 4394,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_disable_verity",
+        "line": 4399,
+        "end": 4408,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_disable_verification",
+        "line": 4413,
+        "end": 4422,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "vbmeta_alert",
+        "line": 4427,
+        "end": 4465,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "switch_slot_alert",
+        "line": 4470,
+        "end": 4481,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_fastboot_force",
+        "line": 4486,
+        "end": 4492,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_fastboot_verbose",
+        "line": 4497,
+        "end": 4503,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_temporary_root",
+        "line": 4508,
+        "end": 4514,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_no_reboot",
+        "line": 4519,
+        "end": 4525,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_wipe",
+        "line": 4530,
+        "end": 4536,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_no_wipe_downgrade",
+        "line": 4541,
+        "end": 4629,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_verbose",
+        "line": 4634,
+        "end": 4641,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_reboot_recovery",
+        "line": 4646,
+        "end": 4664,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_reboot_recovery_interactive",
+        "line": 4669,
+        "end": 4686,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_reboot_download",
+        "line": 4691,
+        "end": 4708,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_reboot_sideload",
+        "line": 4713,
+        "end": 4730,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_reboot_safemode",
+        "line": 4735,
+        "end": 4752,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "select_file_and_push",
+        "line": 4757,
+        "end": 4790,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_push_to_tmp",
+        "line": 4795,
+        "end": 4799,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_push_to_download",
+        "line": 4804,
+        "end": 4808,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_reboot_system",
+        "line": 4813,
+        "end": 4830,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_reboot_bootloader",
+        "line": 4835,
+        "end": 4855,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_reboot_fastbootd",
+        "line": 4860,
+        "end": 4877,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_lock_bootloader",
+        "line": 4882,
+        "end": 5005,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_unlock_bootloader",
+        "line": 5010,
+        "end": 5085,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_sos",
+        "line": 5090,
+        "end": 5153,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_adb_shell",
+        "line": 5158,
+        "end": 5175,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_scrcpy",
+        "line": 5180,
+        "end": 5194,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_magisk",
+        "line": 5199,
+        "end": 5226,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_pif_manager",
+        "line": 5231,
+        "end": 5253,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_rooting_app",
+        "line": 5258,
+        "end": 5284,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_backup_manager",
+        "line": 5289,
+        "end": 5318,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_data_adb_backup",
+        "line": 5323,
+        "end": 5344,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_data_adb_restore",
+        "line": 5349,
+        "end": 5370,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_data_adb_clear",
+        "line": 5375,
+        "end": 5429,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_start_shizuku",
+        "line": 5434,
+        "end": 5457,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_partition_manager",
+        "line": 5462,
+        "end": 5488,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_logcat",
+        "line": 5493,
+        "end": 5517,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_update_engine_logcat",
+        "line": 5522,
+        "end": 5539,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_get_bootloader_versions",
+        "line": 5544,
+        "end": 5557,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_switch_slot",
+        "line": 5562,
+        "end": 5596,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_open_sdk_link",
+        "line": 5601,
+        "end": 5610,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_wifi_manager",
+        "line": 5615,
+        "end": 5636,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_adb_kill_server",
+        "line": 5641,
+        "end": 5658,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_custom_rom",
+        "line": 5663,
+        "end": 5674,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_decode_binary_xml",
+        "line": 5679,
+        "end": 5696,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_check_keybox",
+        "line": 5701,
+        "end": 5826,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_customize_my_tools",
+        "line": 5831,
+        "end": 5846,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "build_my_tools_menu",
+        "line": 5851,
+        "end": 5884,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_get_image_info",
+        "line": 5889,
+        "end": 5905,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_prep_downgrade_patch",
+        "line": 5910,
+        "end": 5921,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_show_all_boot",
+        "line": 5926,
+        "end": 5932,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_boot_selected",
+        "line": 5937,
+        "end": 6146,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_get_boot_info",
+        "line": 6151,
+        "end": 6161,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_add_boot",
+        "line": 6166,
+        "end": 6168,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_delete_boot",
+        "line": 6173,
+        "end": 6206,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_boot_folder",
+        "line": 6211,
+        "end": 6220,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_firmware_folder",
+        "line": 6225,
+        "end": 6236,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_live_boot",
+        "line": 6241,
+        "end": 6252,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_flash_boot",
+        "line": 6257,
+        "end": 6268,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_paste_selection",
+        "line": 6273,
+        "end": 6341,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_magisk_patch_boot",
+        "line": 6346,
+        "end": 6357,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_kernelsu_patch_boot",
+        "line": 6362,
+        "end": 6373,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_kernelsu_legacy_patch_boot",
+        "line": 6378,
+        "end": 6389,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_sukisu_patch_boot",
+        "line": 6394,
+        "end": 6405,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_wild_ksu_patch_boot",
+        "line": 6410,
+        "end": 6421,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_kernelsu_lkm_patch_boot",
+        "line": 6426,
+        "end": 6437,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_sukisu_lkm_patch_boot",
+        "line": 6442,
+        "end": 6453,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_wild_ksu_lkm_patch_boot",
+        "line": 6458,
+        "end": 6469,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_kernelsu_next_patch_boot",
+        "line": 6474,
+        "end": 6485,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_kernelsu_next_lkm_patch_boot",
+        "line": 6490,
+        "end": 6501,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_apatch_patch_boot",
+        "line": 6506,
+        "end": 6517,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_apatch_manual_patch_boot",
+        "line": 6522,
+        "end": 6533,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_patch_custom_boot",
+        "line": 6538,
+        "end": 6549,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_flash",
+        "line": 6554,
+        "end": 6579,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_clear",
+        "line": 6584,
+        "end": 6586,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "update_slot_image",
+        "line": 6591,
+        "end": 6616,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "update_rooted_with_image",
+        "line": 6621,
+        "end": 6664,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "update_rooted_image",
+        "line": 6669,
+        "end": 6691,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_on_show_device_download",
+        "line": 6696,
+        "end": 6701,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "_init_ui",
+        "line": 6706,
+        "end": 7200,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "update_google_images_menu",
+        "line": 7206,
+        "end": 7239,
+        "class": "PixelFlasher"
+      },
+      {
+        "name": "__init__",
+        "line": 7246,
+        "end": 7249,
+        "class": "MySplashScreen"
+      },
+      {
+        "name": "_on_close",
+        "line": 7251,
+        "end": 7261,
+        "class": "MySplashScreen"
+      },
+      {
+        "name": "_show_main",
+        "line": 7263,
+        "end": 7269,
+        "class": "MySplashScreen"
+      },
+      {
+        "name": "__init__",
+        "line": 7276,
+        "end": 7278,
+        "class": "App"
+      },
+      {
+        "name": "OnInit",
+        "line": 7280,
+        "end": 7315,
+        "class": "App"
+      }
+    ]
+  },
+  {
+    "file": "manage_devices.py",
+    "lines": 332,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 51,
+        "end": 57,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "load_devices",
+        "line": 62,
+        "end": 63,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "save_devices",
+        "line": 68,
+        "end": 69,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "init_ui",
+        "line": 74,
+        "end": 155,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "refresh_list",
+        "line": 160,
+        "end": 192,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "get_selected_device_id",
+        "line": 197,
+        "end": 201,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "on_item_selected",
+        "line": 206,
+        "end": 221,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "on_item_deselected",
+        "line": 226,
+        "end": 230,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "on_update_label",
+        "line": 235,
+        "end": 256,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "on_toggle_enabled",
+        "line": 261,
+        "end": 294,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "on_delete",
+        "line": 299,
+        "end": 326,
+        "class": "ManageDevicesDialog"
+      },
+      {
+        "name": "on_close",
+        "line": 331,
+        "end": 332,
+        "class": "ManageDevicesDialog"
+      }
+    ]
+  },
+  {
+    "file": "message_box_ex.py",
+    "lines": 293,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 47,
+        "end": 250,
+        "class": "MessageBoxEx"
+      },
+      {
+        "name": "_setDefaultButton",
+        "line": 252,
+        "end": 254,
+        "class": "MessageBoxEx"
+      },
+      {
+        "name": "_onButtonClick",
+        "line": 256,
+        "end": 257,
+        "class": "MessageBoxEx"
+      },
+      {
+        "name": "_onLinkClicked",
+        "line": 259,
+        "end": 262,
+        "class": "MessageBoxEx"
+      },
+      {
+        "name": "_emit_modal_result",
+        "line": 264,
+        "end": 282,
+        "class": "MessageBoxEx"
+      },
+      {
+        "name": "_onDialogClose",
+        "line": 284,
+        "end": 293,
+        "class": "MessageBoxEx"
+      }
+    ]
+  },
+  {
+    "file": "my_tools.py",
+    "lines": 506,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 50,
+        "end": 180,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "PopulateList",
+        "line": 185,
+        "end": 215,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "on_command_change",
+        "line": 220,
+        "end": 229,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "on_args_change",
+        "line": 234,
+        "end": 235,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "on_directory_change",
+        "line": 240,
+        "end": 241,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "load_mytools",
+        "line": 246,
+        "end": 258,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "save_mytools",
+        "line": 263,
+        "end": 269,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnClose",
+        "line": 274,
+        "end": 276,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnAdd",
+        "line": 281,
+        "end": 291,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnAddSeparator",
+        "line": 296,
+        "end": 306,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnRemove",
+        "line": 311,
+        "end": 326,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnUpdate",
+        "line": 331,
+        "end": 338,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnMoveUp",
+        "line": 343,
+        "end": 355,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnMoveDown",
+        "line": 360,
+        "end": 371,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnItemDeSelected",
+        "line": 376,
+        "end": 386,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnItemSelected",
+        "line": 391,
+        "end": 423,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "add_to_mytools",
+        "line": 428,
+        "end": 465,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "Refresh",
+        "line": 470,
+        "end": 474,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "RefreshList",
+        "line": 479,
+        "end": 485,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "OnResize",
+        "line": 490,
+        "end": 493,
+        "class": "MyToolsDialog"
+      },
+      {
+        "name": "_on_spin",
+        "line": 499,
+        "end": 506,
+        "class": "MyToolsDialog"
+      }
+    ]
+  },
+  {
+    "file": "package_manager.py",
+    "lines": 1504,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 61,
+        "end": 63,
+        "class": "ListCtrl"
+      },
+      {
+        "name": "__init__",
+        "line": 70,
+        "end": 124,
+        "class": "SuPermissionDialog"
+      },
+      {
+        "name": "OnAllow",
+        "line": 126,
+        "end": 135,
+        "class": "SuPermissionDialog"
+      },
+      {
+        "name": "OnDeny",
+        "line": 137,
+        "end": 146,
+        "class": "SuPermissionDialog"
+      },
+      {
+        "name": "OnRevoke",
+        "line": 148,
+        "end": 155,
+        "class": "SuPermissionDialog"
+      },
+      {
+        "name": "OnCancel",
+        "line": 157,
+        "end": 159,
+        "class": "SuPermissionDialog"
+      },
+      {
+        "name": "ComputeEpoch",
+        "line": 161,
+        "end": 179,
+        "class": "SuPermissionDialog"
+      },
+      {
+        "name": "__init__",
+        "line": 186,
+        "end": 412,
+        "class": "PackageManager"
+      },
+      {
+        "name": "PopulateList",
+        "line": 417,
+        "end": 512,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnColClick",
+        "line": 517,
+        "end": 523,
+        "class": "PackageManager"
+      },
+      {
+        "name": "GetPackageDetails",
+        "line": 528,
+        "end": 555,
+        "class": "PackageManager"
+      },
+      {
+        "name": "Check_UncheckAll",
+        "line": 560,
+        "end": 571,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnSearch",
+        "line": 576,
+        "end": 579,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnCancel",
+        "line": 584,
+        "end": 586,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnAllCheckbox",
+        "line": 591,
+        "end": 600,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnSystemAppsCheckbox",
+        "line": 605,
+        "end": 608,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnUserAppsCheckbox",
+        "line": 613,
+        "end": 616,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnItemCheck",
+        "line": 621,
+        "end": 625,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnItemUncheck",
+        "line": 630,
+        "end": 634,
+        "class": "PackageManager"
+      },
+      {
+        "name": "Get_all_cb_clicked",
+        "line": 639,
+        "end": 640,
+        "class": "PackageManager"
+      },
+      {
+        "name": "Set_all_cb_clicked",
+        "line": 645,
+        "end": 646,
+        "class": "PackageManager"
+      },
+      {
+        "name": "Update_all_checkbox",
+        "line": 651,
+        "end": 666,
+        "class": "PackageManager"
+      },
+      {
+        "name": "GetItemsCheckedCount",
+        "line": 671,
+        "end": 676,
+        "class": "PackageManager"
+      },
+      {
+        "name": "EnableDisableButton",
+        "line": 681,
+        "end": 687,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnClose",
+        "line": 692,
+        "end": 709,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnDisable",
+        "line": 714,
+        "end": 719,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnEnable",
+        "line": 724,
+        "end": 729,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnUninstall",
+        "line": 734,
+        "end": 739,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnAddToDeny",
+        "line": 744,
+        "end": 749,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnRmFromDeny",
+        "line": 754,
+        "end": 759,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnInstallApk",
+        "line": 764,
+        "end": 766,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnGetAppNames",
+        "line": 771,
+        "end": 842,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnExportList",
+        "line": 847,
+        "end": 883,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnDownloadApk",
+        "line": 888,
+        "end": 892,
+        "class": "PackageManager"
+      },
+      {
+        "name": "DownloadApk",
+        "line": 897,
+        "end": 935,
+        "class": "PackageManager"
+      },
+      {
+        "name": "GetListCtrl",
+        "line": 941,
+        "end": 942,
+        "class": "PackageManager"
+      },
+      {
+        "name": "GetSortImages",
+        "line": 948,
+        "end": 949,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnRightDown",
+        "line": 954,
+        "end": 961,
+        "class": "PackageManager"
+      },
+      {
+        "name": "getColumnText",
+        "line": 966,
+        "end": 968,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnItemSelected",
+        "line": 973,
+        "end": 989,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnCheckAllBoxes",
+        "line": 994,
+        "end": 995,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnUnCheckAllBoxes",
+        "line": 1000,
+        "end": 1001,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnRightClick",
+        "line": 1006,
+        "end": 1089,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupDisable",
+        "line": 1094,
+        "end": 1098,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupEnable",
+        "line": 1103,
+        "end": 1107,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupUninstall",
+        "line": 1112,
+        "end": 1116,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupAddToDeny",
+        "line": 1121,
+        "end": 1125,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnSuPermission",
+        "line": 1130,
+        "end": 1145,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupRmFromDeny",
+        "line": 1150,
+        "end": 1154,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupDownload",
+        "line": 1159,
+        "end": 1162,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupLaunch",
+        "line": 1167,
+        "end": 1170,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupPermissions",
+        "line": 1175,
+        "end": 1178,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupKill",
+        "line": 1183,
+        "end": 1186,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupClearData",
+        "line": 1191,
+        "end": 1194,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupCompileForSpeed",
+        "line": 1199,
+        "end": 1202,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnPopupRefresh",
+        "line": 1207,
+        "end": 1210,
+        "class": "PackageManager"
+      },
+      {
+        "name": "RefreshPackages",
+        "line": 1215,
+        "end": 1224,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnCopyClipboard",
+        "line": 1229,
+        "end": 1231,
+        "class": "PackageManager"
+      },
+      {
+        "name": "Refresh",
+        "line": 1236,
+        "end": 1245,
+        "class": "PackageManager"
+      },
+      {
+        "name": "ApplySingleAction",
+        "line": 1250,
+        "end": 1296,
+        "class": "PackageManager"
+      },
+      {
+        "name": "ApplyMultiAction",
+        "line": 1302,
+        "end": 1318,
+        "class": "PackageManager"
+      },
+      {
+        "name": "_on_spin",
+        "line": 1323,
+        "end": 1330,
+        "class": "PackageManager"
+      },
+      {
+        "name": "OnItemActivated",
+        "line": 1335,
+        "end": 1339,
+        "class": "PackageManager"
+      },
+      {
+        "name": "GetSelectedPackage",
+        "line": 1344,
+        "end": 1347,
+        "class": "PackageManager"
+      },
+      {
+        "name": "add_missing_packages_for_simplified_mode",
+        "line": 1352,
+        "end": 1422,
+        "class": "PackageManager"
+      },
+      {
+        "name": "_get_running_packages",
+        "line": 1427,
+        "end": 1454,
+        "class": "PackageManager"
+      },
+      {
+        "name": "_is_valid_package_name",
+        "line": 1459,
+        "end": 1482,
+        "class": "PackageManager"
+      },
+      {
+        "name": "push_aapt2_if_needed",
+        "line": 1487,
+        "end": 1504,
+        "class": "PackageManager"
+      }
+    ]
+  },
+  {
+    "file": "partition_manager.py",
+    "lines": 561,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 53,
+        "end": 55,
+        "class": "ListCtrl"
+      },
+      {
+        "name": "__init__",
+        "line": 62,
+        "end": 173,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "PopulateList",
+        "line": 178,
+        "end": 214,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "Check_UncheckAll",
+        "line": 219,
+        "end": 230,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnCancel",
+        "line": 235,
+        "end": 236,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnAllCheckbox",
+        "line": 241,
+        "end": 250,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnItemCheck",
+        "line": 255,
+        "end": 259,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnItemUncheck",
+        "line": 264,
+        "end": 268,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "Get_all_cb_clicked",
+        "line": 273,
+        "end": 274,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "Set_all_cb_clicked",
+        "line": 279,
+        "end": 280,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "Update_all_checkbox",
+        "line": 285,
+        "end": 302,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "EnableDisableButton",
+        "line": 307,
+        "end": 309,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnClose",
+        "line": 314,
+        "end": 316,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnErase",
+        "line": 321,
+        "end": 323,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "Erase",
+        "line": 328,
+        "end": 337,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnDump",
+        "line": 342,
+        "end": 344,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "Dump",
+        "line": 349,
+        "end": 394,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "GetListCtrl",
+        "line": 401,
+        "end": 402,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnRightDown",
+        "line": 407,
+        "end": 414,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "getColumnText",
+        "line": 419,
+        "end": 421,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnItemSelected",
+        "line": 426,
+        "end": 438,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnCheckAllBoxes",
+        "line": 443,
+        "end": 444,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnUnCheckAllBoxes",
+        "line": 449,
+        "end": 450,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnGetItemsChecked",
+        "line": 455,
+        "end": 458,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnRightClick",
+        "line": 463,
+        "end": 491,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnpopupErase",
+        "line": 496,
+        "end": 498,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnPopupDump",
+        "line": 503,
+        "end": 505,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "OnCopyClipboard",
+        "line": 510,
+        "end": 512,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "GetItemsCheckedCount",
+        "line": 517,
+        "end": 522,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "ApplySingleAction",
+        "line": 527,
+        "end": 539,
+        "class": "PartitionManager"
+      },
+      {
+        "name": "ApplyMultiAction",
+        "line": 544,
+        "end": 560,
+        "class": "PartitionManager"
+      }
+    ]
+  },
+  {
+    "file": "pf_modules.py",
+    "lines": 7724,
+    "functions": [
+      {
+        "name": "check_platform_tools",
+        "line": 98,
+        "end": 144,
+        "class": null
+      },
+      {
+        "name": "set_android_product_out",
+        "line": 150,
+        "end": 154,
+        "class": null
+      },
+      {
+        "name": "populate_boot_list",
+        "line": 160,
+        "end": 362,
+        "class": null
+      },
+      {
+        "name": "auto_resize_boot_list",
+        "line": 368,
+        "end": 389,
+        "class": null
+      },
+      {
+        "name": "identify_sdk_version",
+        "line": 395,
+        "end": 472,
+        "class": null
+      },
+      {
+        "name": "get_flash_settings",
+        "line": 478,
+        "end": 536,
+        "class": null
+      },
+      {
+        "name": "adb_kill_server",
+        "line": 542,
+        "end": 569,
+        "class": null
+      },
+      {
+        "name": "set_flash_button_state",
+        "line": 575,
+        "end": 592,
+        "class": null
+      },
+      {
+        "name": "select_firmware",
+        "line": 598,
+        "end": 664,
+        "class": null
+      },
+      {
+        "name": "process_file",
+        "line": 670,
+        "end": 1266,
+        "class": null
+      },
+      {
+        "name": "process_flash_all_file",
+        "line": 1272,
+        "end": 1386,
+        "class": null
+      },
+      {
+        "name": "setup_for_downgrade",
+        "line": 1392,
+        "end": 1728,
+        "class": null
+      },
+      {
+        "name": "avbtool_get_info",
+        "line": 1734,
+        "end": 1737,
+        "class": null
+      },
+      {
+        "name": "kb_stats_ui",
+        "line": 1743,
+        "end": 1801,
+        "class": null
+      },
+      {
+        "name": "drive_magisk",
+        "line": 1807,
+        "end": 1809,
+        "class": null
+      },
+      {
+        "name": "manual_magisk",
+        "line": 2155,
+        "end": 2276,
+        "class": null
+      },
+      {
+        "name": "is_device_unlocked",
+        "line": 2281,
+        "end": 2310,
+        "class": null
+      },
+      {
+        "name": "message_after_flashing",
+        "line": 2315,
+        "end": 2327,
+        "class": null
+      },
+      {
+        "name": "get_all_dialog_values",
+        "line": 2332,
+        "end": 2345,
+        "class": null
+      },
+      {
+        "name": "kernel_flavors",
+        "line": 2350,
+        "end": 2435,
+        "class": null
+      },
+      {
+        "name": "patch_boot_img",
+        "line": 2440,
+        "end": 5233,
+        "class": null
+      },
+      {
+        "name": "live_flash_boot_phone",
+        "line": 5238,
+        "end": 6156,
+        "class": null
+      },
+      {
+        "name": "flash_phone",
+        "line": 6162,
+        "end": 7724,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 68,
+        "end": 76,
+        "class": "FlashFile"
+      },
+      {
+        "name": "full_line",
+        "line": 79,
+        "end": 81,
+        "class": "FlashFile"
+      },
+      {
+        "name": "sync_line",
+        "line": 84,
+        "end": 92,
+        "class": "FlashFile"
+      }
+    ]
+  },
+  {
+    "file": "phone.py",
+    "lines": 5749,
+    "functions": [
+      {
+        "name": "update_phones",
+        "line": 5488,
+        "end": 5570,
+        "class": null
+      },
+      {
+        "name": "_init_device_parallel",
+        "line": 5578,
+        "end": 5599,
+        "class": null
+      },
+      {
+        "name": "get_connected_devices",
+        "line": 5604,
+        "end": 5749,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 59,
+        "end": 71,
+        "class": "Package"
+      },
+      {
+        "name": "__init__",
+        "line": 78,
+        "end": 81,
+        "class": "Backup"
+      },
+      {
+        "name": "__init__",
+        "line": 88,
+        "end": 89,
+        "class": "Vbmeta"
+      },
+      {
+        "name": "clear",
+        "line": 91,
+        "end": 96,
+        "class": "Vbmeta"
+      },
+      {
+        "name": "__init__",
+        "line": 102,
+        "end": 115,
+        "class": "Magisk"
+      },
+      {
+        "name": "__init__",
+        "line": 122,
+        "end": 123,
+        "class": "DeviceProps"
+      },
+      {
+        "name": "get",
+        "line": 125,
+        "end": 126,
+        "class": "DeviceProps"
+      },
+      {
+        "name": "upsert",
+        "line": 128,
+        "end": 129,
+        "class": "DeviceProps"
+      },
+      {
+        "name": "__init__",
+        "line": 139,
+        "end": 205,
+        "class": "Device"
+      },
+      {
+        "name": "vbmeta",
+        "line": 211,
+        "end": 214,
+        "class": "Device"
+      },
+      {
+        "name": "vbmeta",
+        "line": 217,
+        "end": 218,
+        "class": "Device"
+      },
+      {
+        "name": "adb_device_info",
+        "line": 224,
+        "end": 230,
+        "class": "Device"
+      },
+      {
+        "name": "get_unlock_ability",
+        "line": 235,
+        "end": 253,
+        "class": "Device"
+      },
+      {
+        "name": "unlock_ability",
+        "line": 259,
+        "end": 265,
+        "class": "Device"
+      },
+      {
+        "name": "get_package_details",
+        "line": 270,
+        "end": 285,
+        "class": "Device"
+      },
+      {
+        "name": "get_battery_details",
+        "line": 290,
+        "end": 304,
+        "class": "Device"
+      },
+      {
+        "name": "get_bootloader_versions",
+        "line": 309,
+        "end": 339,
+        "class": "Device"
+      },
+      {
+        "name": "get_page_size",
+        "line": 344,
+        "end": 358,
+        "class": "Device"
+      },
+      {
+        "name": "get_path_from_details",
+        "line": 363,
+        "end": 374,
+        "class": "Device"
+      },
+      {
+        "name": "fastboot_device_info",
+        "line": 380,
+        "end": 386,
+        "class": "Device"
+      },
+      {
+        "name": "device_info",
+        "line": 392,
+        "end": 439,
+        "class": "Device"
+      },
+      {
+        "name": "init",
+        "line": 444,
+        "end": 480,
+        "class": "Device"
+      },
+      {
+        "name": "get_prop",
+        "line": 485,
+        "end": 515,
+        "class": "Device"
+      },
+      {
+        "name": "dump_props",
+        "line": 520,
+        "end": 525,
+        "class": "Device"
+      },
+      {
+        "name": "has_init_boot",
+        "line": 531,
+        "end": 535,
+        "class": "Device"
+      },
+      {
+        "name": "active_slot",
+        "line": 541,
+        "end": 547,
+        "class": "Device"
+      },
+      {
+        "name": "inactive_slot",
+        "line": 553,
+        "end": 559,
+        "class": "Device"
+      },
+      {
+        "name": "build",
+        "line": 565,
+        "end": 576,
+        "class": "Device"
+      },
+      {
+        "name": "firmware_date",
+        "line": 582,
+        "end": 587,
+        "class": "Device"
+      },
+      {
+        "name": "api_level",
+        "line": 593,
+        "end": 594,
+        "class": "Device"
+      },
+      {
+        "name": "hardware",
+        "line": 600,
+        "end": 605,
+        "class": "Device"
+      },
+      {
+        "name": "architecture",
+        "line": 611,
+        "end": 612,
+        "class": "Device"
+      },
+      {
+        "name": "ro_build_fingerprint",
+        "line": 618,
+        "end": 621,
+        "class": "Device"
+      },
+      {
+        "name": "ro_boot_flash_locked",
+        "line": 627,
+        "end": 631,
+        "class": "Device"
+      },
+      {
+        "name": "ro_boot_vbmeta_device_state",
+        "line": 637,
+        "end": 641,
+        "class": "Device"
+      },
+      {
+        "name": "ro_boot_verifiedbootstate",
+        "line": 647,
+        "end": 651,
+        "class": "Device"
+      },
+      {
+        "name": "unlocked",
+        "line": 657,
+        "end": 662,
+        "class": "Device"
+      },
+      {
+        "name": "root_symbol",
+        "line": 668,
+        "end": 675,
+        "class": "Device"
+      },
+      {
+        "name": "kernel",
+        "line": 681,
+        "end": 701,
+        "class": "Device"
+      },
+      {
+        "name": "kmi",
+        "line": 707,
+        "end": 715,
+        "class": "Device"
+      },
+      {
+        "name": "kmi_guessed",
+        "line": 721,
+        "end": 779,
+        "class": "Device"
+      },
+      {
+        "name": "is_gki",
+        "line": 785,
+        "end": 793,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_path",
+        "line": 799,
+        "end": 813,
+        "class": "Device"
+      },
+      {
+        "name": "root_version",
+        "line": 819,
+        "end": 830,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_path",
+        "line": 836,
+        "end": 850,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_next_path",
+        "line": 856,
+        "end": 870,
+        "class": "Device"
+      },
+      {
+        "name": "sukisu_path",
+        "line": 876,
+        "end": 890,
+        "class": "Device"
+      },
+      {
+        "name": "wild_ksu_path",
+        "line": 896,
+        "end": 910,
+        "class": "Device"
+      },
+      {
+        "name": "apatch_path",
+        "line": 916,
+        "end": 930,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_version",
+        "line": 936,
+        "end": 966,
+        "class": "Device"
+      },
+      {
+        "name": "_get_root_solution_version",
+        "line": 971,
+        "end": 1035,
+        "class": "Device"
+      },
+      {
+        "name": "apatch_version",
+        "line": 1041,
+        "end": 1044,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_version",
+        "line": 1050,
+        "end": 1053,
+        "class": "Device"
+      },
+      {
+        "name": "sukisu_version",
+        "line": 1059,
+        "end": 1062,
+        "class": "Device"
+      },
+      {
+        "name": "wild_ksu_version",
+        "line": 1068,
+        "end": 1071,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_version_code",
+        "line": 1077,
+        "end": 1081,
+        "class": "Device"
+      },
+      {
+        "name": "apatch_version_code",
+        "line": 1087,
+        "end": 1091,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_version_code",
+        "line": 1097,
+        "end": 1101,
+        "class": "Device"
+      },
+      {
+        "name": "sukisu_version_code",
+        "line": 1107,
+        "end": 1111,
+        "class": "Device"
+      },
+      {
+        "name": "wild_ksu_version_code",
+        "line": 1117,
+        "end": 1121,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_config_path",
+        "line": 1127,
+        "end": 1141,
+        "class": "Device"
+      },
+      {
+        "name": "current_device_print",
+        "line": 1147,
+        "end": 1148,
+        "class": "Device"
+      },
+      {
+        "name": "current_device_props_as_json",
+        "line": 1154,
+        "end": 1155,
+        "class": "Device"
+      },
+      {
+        "name": "get_partitions",
+        "line": 1160,
+        "end": 1217,
+        "class": "Device"
+      },
+      {
+        "name": "get_bl_status",
+        "line": 1222,
+        "end": 1234,
+        "class": "Device"
+      },
+      {
+        "name": "get_verity_verification",
+        "line": 1239,
+        "end": 1265,
+        "class": "Device"
+      },
+      {
+        "name": "reset_ota_update",
+        "line": 1270,
+        "end": 1315,
+        "class": "Device"
+      },
+      {
+        "name": "get_vbmeta_details",
+        "line": 1320,
+        "end": 1401,
+        "class": "Device"
+      },
+      {
+        "name": "get_magisk_backups",
+        "line": 1406,
+        "end": 1441,
+        "class": "Device"
+      },
+      {
+        "name": "get_firmware_from_boot",
+        "line": 1446,
+        "end": 1461,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_backups",
+        "line": 1467,
+        "end": 1485,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_sha1",
+        "line": 1491,
+        "end": 1509,
+        "class": "Device"
+      },
+      {
+        "name": "exec_magisk_settings",
+        "line": 1514,
+        "end": 1591,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_add_systemless_hosts",
+        "line": 1597,
+        "end": 1637,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_enable_zygisk",
+        "line": 1643,
+        "end": 1663,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_modify_root_access",
+        "line": 1669,
+        "end": 1694,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_enable_denylist",
+        "line": 1700,
+        "end": 1724,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_update_su",
+        "line": 1730,
+        "end": 1759,
+        "class": "Device"
+      },
+      {
+        "name": "run_magisk_migration",
+        "line": 1765,
+        "end": 1805,
+        "class": "Device"
+      },
+      {
+        "name": "data_adb_backup",
+        "line": 1810,
+        "end": 1854,
+        "class": "Device"
+      },
+      {
+        "name": "data_adb_restore",
+        "line": 1859,
+        "end": 1899,
+        "class": "Device"
+      },
+      {
+        "name": "data_adb_clear",
+        "line": 1904,
+        "end": 1927,
+        "class": "Device"
+      },
+      {
+        "name": "create_magisk_backup",
+        "line": 1932,
+        "end": 1998,
+        "class": "Device"
+      },
+      {
+        "name": "update_magisk_config",
+        "line": 2003,
+        "end": 2035,
+        "class": "Device"
+      },
+      {
+        "name": "delete",
+        "line": 2040,
+        "end": 2082,
+        "class": "Device"
+      },
+      {
+        "name": "dump_partition",
+        "line": 2087,
+        "end": 2134,
+        "class": "Device"
+      },
+      {
+        "name": "su_cp_on_device",
+        "line": 2139,
+        "end": 2172,
+        "class": "Device"
+      },
+      {
+        "name": "check_file",
+        "line": 2177,
+        "end": 2238,
+        "class": "Device"
+      },
+      {
+        "name": "create_dir",
+        "line": 2243,
+        "end": 2281,
+        "class": "Device"
+      },
+      {
+        "name": "get_logcat",
+        "line": 2286,
+        "end": 2311,
+        "class": "Device"
+      },
+      {
+        "name": "file_content",
+        "line": 2316,
+        "end": 2357,
+        "class": "Device"
+      },
+      {
+        "name": "push_file",
+        "line": 2362,
+        "end": 2426,
+        "class": "Device"
+      },
+      {
+        "name": "pull_file",
+        "line": 2431,
+        "end": 2491,
+        "class": "Device"
+      },
+      {
+        "name": "set_file_permissions",
+        "line": 2496,
+        "end": 2535,
+        "class": "Device"
+      },
+      {
+        "name": "push_aapt2",
+        "line": 2540,
+        "end": 2567,
+        "class": "Device"
+      },
+      {
+        "name": "push_avbctl",
+        "line": 2572,
+        "end": 2603,
+        "class": "Device"
+      },
+      {
+        "name": "push_update_engine_client",
+        "line": 2608,
+        "end": 2630,
+        "class": "Device"
+      },
+      {
+        "name": "get_package_path",
+        "line": 2635,
+        "end": 2672,
+        "class": "Device"
+      },
+      {
+        "name": "get_package_label",
+        "line": 2677,
+        "end": 2733,
+        "class": "Device"
+      },
+      {
+        "name": "get_package_permissions",
+        "line": 2738,
+        "end": 2774,
+        "class": "Device"
+      },
+      {
+        "name": "uiautomator_dump",
+        "line": 2779,
+        "end": 2795,
+        "class": "Device"
+      },
+      {
+        "name": "click",
+        "line": 2800,
+        "end": 2819,
+        "class": "Device"
+      },
+      {
+        "name": "swipe",
+        "line": 2824,
+        "end": 2845,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_app_version",
+        "line": 2851,
+        "end": 2854,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_app_version",
+        "line": 2860,
+        "end": 2863,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_next_app_version",
+        "line": 2869,
+        "end": 2872,
+        "class": "Device"
+      },
+      {
+        "name": "sukisu_app_version",
+        "line": 2878,
+        "end": 2881,
+        "class": "Device"
+      },
+      {
+        "name": "wild_ksu_app_version",
+        "line": 2887,
+        "end": 2890,
+        "class": "Device"
+      },
+      {
+        "name": "apatch_app_version",
+        "line": 2896,
+        "end": 2899,
+        "class": "Device"
+      },
+      {
+        "name": "apatch_next_app_version",
+        "line": 2905,
+        "end": 2908,
+        "class": "Device"
+      },
+      {
+        "name": "config_kallsyms",
+        "line": 2914,
+        "end": 2917,
+        "class": "Device"
+      },
+      {
+        "name": "get_config_kallsyms",
+        "line": 2922,
+        "end": 2940,
+        "class": "Device"
+      },
+      {
+        "name": "config_kallsyms_all",
+        "line": 2946,
+        "end": 2949,
+        "class": "Device"
+      },
+      {
+        "name": "get_config_kallsyms_all",
+        "line": 2954,
+        "end": 2972,
+        "class": "Device"
+      },
+      {
+        "name": "get_app_version",
+        "line": 2977,
+        "end": 2999,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_app_version_code",
+        "line": 3005,
+        "end": 3009,
+        "class": "Device"
+      },
+      {
+        "name": "apatch_app_version_code",
+        "line": 3015,
+        "end": 3019,
+        "class": "Device"
+      },
+      {
+        "name": "apatch_next_app_version_code",
+        "line": 3025,
+        "end": 3029,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_app_version_code",
+        "line": 3035,
+        "end": 3039,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_next_app_version_code",
+        "line": 3045,
+        "end": 3049,
+        "class": "Device"
+      },
+      {
+        "name": "sukisu_app_version_code",
+        "line": 3055,
+        "end": 3059,
+        "class": "Device"
+      },
+      {
+        "name": "wild_ksu_app_version_code",
+        "line": 3065,
+        "end": 3069,
+        "class": "Device"
+      },
+      {
+        "name": "get_uncached_magisk_app_version",
+        "line": 3074,
+        "end": 3076,
+        "class": "Device"
+      },
+      {
+        "name": "get_uncached_ksu_app_version",
+        "line": 3081,
+        "end": 3083,
+        "class": "Device"
+      },
+      {
+        "name": "get_uncached_ksu_next_app_version",
+        "line": 3088,
+        "end": 3090,
+        "class": "Device"
+      },
+      {
+        "name": "get_uncached_sukisu_app_version",
+        "line": 3095,
+        "end": 3097,
+        "class": "Device"
+      },
+      {
+        "name": "get_uncached_wild_ksu_app_version",
+        "line": 3102,
+        "end": 3104,
+        "class": "Device"
+      },
+      {
+        "name": "get_uncached_apatch_app_version",
+        "line": 3109,
+        "end": 3111,
+        "class": "Device"
+      },
+      {
+        "name": "get_uncached_apatch_next_app_version",
+        "line": 3116,
+        "end": 3118,
+        "class": "Device"
+      },
+      {
+        "name": "is_display_unlocked",
+        "line": 3123,
+        "end": 3154,
+        "class": "Device"
+      },
+      {
+        "name": "stop_magisk",
+        "line": 3159,
+        "end": 3166,
+        "class": "Device"
+      },
+      {
+        "name": "_get_json_modules_common",
+        "line": 3171,
+        "end": 3259,
+        "class": "Device"
+      },
+      {
+        "name": "get_apatch_detailed_modules",
+        "line": 3264,
+        "end": 3267,
+        "class": "Device"
+      },
+      {
+        "name": "get_ksu_detailed_modules",
+        "line": 3272,
+        "end": 3275,
+        "class": "Device"
+      },
+      {
+        "name": "get_sukisu_detailed_modules",
+        "line": 3280,
+        "end": 3283,
+        "class": "Device"
+      },
+      {
+        "name": "get_wild_ksu_detailed_modules",
+        "line": 3288,
+        "end": 3291,
+        "class": "Device"
+      },
+      {
+        "name": "get_magisk_detailed_modules",
+        "line": 3296,
+        "end": 3424,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_modules_summary",
+        "line": 3430,
+        "end": 3443,
+        "class": "Device"
+      },
+      {
+        "name": "apatch_modules_summary",
+        "line": 3449,
+        "end": 3462,
+        "class": "Device"
+      },
+      {
+        "name": "ksu_modules_summary",
+        "line": 3468,
+        "end": 3481,
+        "class": "Device"
+      },
+      {
+        "name": "sukisu_modules_summary",
+        "line": 3487,
+        "end": 3500,
+        "class": "Device"
+      },
+      {
+        "name": "wild_ksu_modules_summary",
+        "line": 3506,
+        "end": 3519,
+        "class": "Device"
+      },
+      {
+        "name": "get_lsposed_modules",
+        "line": 3524,
+        "end": 3527,
+        "class": "Device"
+      },
+      {
+        "name": "_fetch_lsposed_modules",
+        "line": 3532,
+        "end": 3675,
+        "class": "Device"
+      },
+      {
+        "name": "lsposed_modules_summary",
+        "line": 3681,
+        "end": 3693,
+        "class": "Device"
+      },
+      {
+        "name": "su_version",
+        "line": 3699,
+        "end": 3700,
+        "class": "Device"
+      },
+      {
+        "name": "rooted",
+        "line": 3706,
+        "end": 3728,
+        "class": "Device"
+      },
+      {
+        "name": "tmp_readable",
+        "line": 3734,
+        "end": 3748,
+        "class": "Device"
+      },
+      {
+        "name": "selinux_load_timestamp",
+        "line": 3753,
+        "end": 3760,
+        "class": "Device"
+      },
+      {
+        "name": "mount_count",
+        "line": 3765,
+        "end": 3779,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_denylist_enforced",
+        "line": 3785,
+        "end": 3804,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_zygisk_enabled",
+        "line": 3810,
+        "end": 3829,
+        "class": "Device"
+      },
+      {
+        "name": "get_device_details",
+        "line": 3834,
+        "end": 3848,
+        "class": "Device"
+      },
+      {
+        "name": "reboot_system",
+        "line": 3853,
+        "end": 3909,
+        "class": "Device"
+      },
+      {
+        "name": "reboot_recovery",
+        "line": 3914,
+        "end": 3980,
+        "class": "Device"
+      },
+      {
+        "name": "reboot_recovery_interactive",
+        "line": 3985,
+        "end": 4011,
+        "class": "Device"
+      },
+      {
+        "name": "reboot_download",
+        "line": 4016,
+        "end": 4055,
+        "class": "Device"
+      },
+      {
+        "name": "reboot_safemode",
+        "line": 4060,
+        "end": 4089,
+        "class": "Device"
+      },
+      {
+        "name": "clear_device_selection",
+        "line": 4094,
+        "end": 4096,
+        "class": "Device"
+      },
+      {
+        "name": "reboot_bootloader",
+        "line": 4101,
+        "end": 4156,
+        "class": "Device"
+      },
+      {
+        "name": "reboot_fastboot",
+        "line": 4161,
+        "end": 4218,
+        "class": "Device"
+      },
+      {
+        "name": "reboot_sideload",
+        "line": 4223,
+        "end": 4300,
+        "class": "Device"
+      },
+      {
+        "name": "get_device_state",
+        "line": 4305,
+        "end": 4371,
+        "class": "Device"
+      },
+      {
+        "name": "is_connected",
+        "line": 4376,
+        "end": 4408,
+        "class": "Device"
+      },
+      {
+        "name": "adb_wait_for",
+        "line": 4413,
+        "end": 4443,
+        "class": "Device"
+      },
+      {
+        "name": "fastboot_wait_for_bootloader",
+        "line": 4448,
+        "end": 4483,
+        "class": "Device"
+      },
+      {
+        "name": "get_magisk_denylist",
+        "line": 4488,
+        "end": 4522,
+        "class": "Device"
+      },
+      {
+        "name": "install_apk",
+        "line": 4527,
+        "end": 4570,
+        "class": "Device"
+      },
+      {
+        "name": "get_current_slot",
+        "line": 4575,
+        "end": 4604,
+        "class": "Device"
+      },
+      {
+        "name": "get_wm_size",
+        "line": 4609,
+        "end": 4635,
+        "class": "Device"
+      },
+      {
+        "name": "swipe_up",
+        "line": 4640,
+        "end": 4660,
+        "class": "Device"
+      },
+      {
+        "name": "set_active_slot",
+        "line": 4665,
+        "end": 4684,
+        "class": "Device"
+      },
+      {
+        "name": "switch_slot",
+        "line": 4689,
+        "end": 4724,
+        "class": "Device"
+      },
+      {
+        "name": "erase_partition",
+        "line": 4729,
+        "end": 4749,
+        "class": "Device"
+      },
+      {
+        "name": "lock_bootloader",
+        "line": 4754,
+        "end": 4782,
+        "class": "Device"
+      },
+      {
+        "name": "unlock_bootloader",
+        "line": 4787,
+        "end": 4814,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_install_module",
+        "line": 4819,
+        "end": 4863,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_run_module_action",
+        "line": 4868,
+        "end": 4896,
+        "class": "Device"
+      },
+      {
+        "name": "enable_magisk_module",
+        "line": 4903,
+        "end": 4921,
+        "class": "Device"
+      },
+      {
+        "name": "restore_magisk_module",
+        "line": 4926,
+        "end": 4944,
+        "class": "Device"
+      },
+      {
+        "name": "open_shell",
+        "line": 4949,
+        "end": 4978,
+        "class": "Device"
+      },
+      {
+        "name": "open_update_engine_logcat",
+        "line": 4983,
+        "end": 4990,
+        "class": "Device"
+      },
+      {
+        "name": "logcat",
+        "line": 4995,
+        "end": 5025,
+        "class": "Device"
+      },
+      {
+        "name": "scrcpy",
+        "line": 5030,
+        "end": 5072,
+        "class": "Device"
+      },
+      {
+        "name": "magisk_uninstall_module",
+        "line": 5077,
+        "end": 5104,
+        "class": "Device"
+      },
+      {
+        "name": "disable_magisk_module",
+        "line": 5109,
+        "end": 5127,
+        "class": "Device"
+      },
+      {
+        "name": "disable_magisk_modules",
+        "line": 5132,
+        "end": 5151,
+        "class": "Device"
+      },
+      {
+        "name": "refresh_phone_mode",
+        "line": 5156,
+        "end": 5172,
+        "class": "Device"
+      },
+      {
+        "name": "ui_action",
+        "line": 5177,
+        "end": 5229,
+        "class": "Device"
+      },
+      {
+        "name": "exec_cmd",
+        "line": 5234,
+        "end": 5259,
+        "class": "Device"
+      },
+      {
+        "name": "perform_package_action",
+        "line": 5264,
+        "end": 5318,
+        "class": "Device"
+      },
+      {
+        "name": "get_package_info",
+        "line": 5324,
+        "end": 5354,
+        "class": "Device"
+      },
+      {
+        "name": "get_package_list",
+        "line": 5360,
+        "end": 5398,
+        "class": "Device"
+      },
+      {
+        "name": "get_detailed_packages",
+        "line": 5404,
+        "end": 5482,
+        "class": "Device"
+      }
+    ]
+  },
+  {
+    "file": "pif_manager.py",
+    "lines": 4139,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 60,
+        "end": 67,
+        "class": "PifModule"
+      },
+      {
+        "name": "__init__",
+        "line": 73,
+        "end": 582,
+        "class": "PifManager"
+      },
+      {
+        "name": "setup_syntax_highlighting",
+        "line": 587,
+        "end": 633,
+        "class": "PifManager"
+      },
+      {
+        "name": "update_syntax_highlighting",
+        "line": 638,
+        "end": 649,
+        "class": "PifManager"
+      },
+      {
+        "name": "onShow",
+        "line": 654,
+        "end": 661,
+        "class": "PifManager"
+      },
+      {
+        "name": "init",
+        "line": 666,
+        "end": 850,
+        "class": "PifManager"
+      },
+      {
+        "name": "check_pif_json",
+        "line": 855,
+        "end": 879,
+        "class": "PifManager"
+      },
+      {
+        "name": "onFavoritesComboBox",
+        "line": 884,
+        "end": 897,
+        "class": "PifManager"
+      },
+      {
+        "name": "onPifSelectionComboBox",
+        "line": 902,
+        "end": 983,
+        "class": "PifManager"
+      },
+      {
+        "name": "load_tf_targets",
+        "line": 989,
+        "end": 1057,
+        "class": "PifManager"
+      },
+      {
+        "name": "populate_tf_targets",
+        "line": 1062,
+        "end": 1111,
+        "class": "PifManager"
+      },
+      {
+        "name": "onTFTargetSelectionComboBox",
+        "line": 1116,
+        "end": 1161,
+        "class": "PifManager"
+      },
+      {
+        "name": "onTestPIAppOptionSelect",
+        "line": 1166,
+        "end": 1168,
+        "class": "PifManager"
+      },
+      {
+        "name": "pi_selection",
+        "line": 1173,
+        "end": 1211,
+        "class": "PifManager"
+      },
+      {
+        "name": "__del__",
+        "line": 1216,
+        "end": 1217,
+        "class": "PifManager"
+      },
+      {
+        "name": "onClose",
+        "line": 1222,
+        "end": 1251,
+        "class": "PifManager"
+      },
+      {
+        "name": "onReloadPrint",
+        "line": 1256,
+        "end": 1258,
+        "class": "PifManager"
+      },
+      {
+        "name": "LoadPif",
+        "line": 1263,
+        "end": 1296,
+        "class": "PifManager"
+      },
+      {
+        "name": "onUpdatePrint",
+        "line": 1301,
+        "end": 1302,
+        "class": "PifManager"
+      },
+      {
+        "name": "onPushPrint",
+        "line": 1307,
+        "end": 1308,
+        "class": "PifManager"
+      },
+      {
+        "name": "onAddTFTarget",
+        "line": 1313,
+        "end": 1379,
+        "class": "PifManager"
+      },
+      {
+        "name": "add_target_to_device",
+        "line": 1384,
+        "end": 1426,
+        "class": "PifManager"
+      },
+      {
+        "name": "onDeleteTFTarget",
+        "line": 1431,
+        "end": 1494,
+        "class": "PifManager"
+      },
+      {
+        "name": "onPushTFProp",
+        "line": 1499,
+        "end": 1517,
+        "class": "PifManager"
+      },
+      {
+        "name": "onCleanupDG",
+        "line": 1522,
+        "end": 1528,
+        "class": "PifManager"
+      },
+      {
+        "name": "UpdatePifJson",
+        "line": 1533,
+        "end": 1534,
+        "class": "PifManager"
+      },
+      {
+        "name": "create_update_pif",
+        "line": 1539,
+        "end": 1629,
+        "class": "PifManager"
+      },
+      {
+        "name": "get_pi_app_coords",
+        "line": 1634,
+        "end": 1679,
+        "class": "PifManager"
+      },
+      {
+        "name": "onGetCanaryPif",
+        "line": 1684,
+        "end": 1770,
+        "class": "PifManager"
+      },
+      {
+        "name": "onGetFreemanPif",
+        "line": 1775,
+        "end": 1796,
+        "class": "PifManager"
+      },
+      {
+        "name": "onBetaRadioSelect",
+        "line": 1801,
+        "end": 1821,
+        "class": "PifManager"
+      },
+      {
+        "name": "onBetaVersionChange",
+        "line": 1826,
+        "end": 1841,
+        "class": "PifManager"
+      },
+      {
+        "name": "onGetPixelBetaPif",
+        "line": 1846,
+        "end": 1956,
+        "class": "PifManager"
+      },
+      {
+        "name": "select_t_image",
+        "line": 1962,
+        "end": 2011,
+        "class": "PifManager"
+      },
+      {
+        "name": "select_catalog_image",
+        "line": 2016,
+        "end": 2132,
+        "class": "PifManager"
+      },
+      {
+        "name": "process_factory_image_selection",
+        "line": 2137,
+        "end": 2208,
+        "class": "PifManager"
+      },
+      {
+        "name": "onPlayIntegrityCheck",
+        "line": 2213,
+        "end": 2448,
+        "class": "PifManager"
+      },
+      {
+        "name": "sort_prop",
+        "line": 2453,
+        "end": 2470,
+        "class": "PifManager"
+      },
+      {
+        "name": "onProcessBuildProps",
+        "line": 2475,
+        "end": 2498,
+        "class": "PifManager"
+      },
+      {
+        "name": "_get_prop_processing_state",
+        "line": 2503,
+        "end": 2512,
+        "class": "PifManager"
+      },
+      {
+        "name": "_apply_processed_props_result",
+        "line": 2517,
+        "end": 2561,
+        "class": "PifManager"
+      },
+      {
+        "name": "process_props",
+        "line": 2566,
+        "end": 2612,
+        "class": "PifManager"
+      },
+      {
+        "name": "_log_image_process_duration",
+        "line": 2617,
+        "end": 2619,
+        "class": "PifManager"
+      },
+      {
+        "name": "_process_image_worker",
+        "line": 2624,
+        "end": 2653,
+        "class": "PifManager"
+      },
+      {
+        "name": "_process_factory_image_option1",
+        "line": 2658,
+        "end": 2715,
+        "class": "PifManager"
+      },
+      {
+        "name": "_process_factory_image_option2",
+        "line": 2720,
+        "end": 2853,
+        "class": "PifManager"
+      },
+      {
+        "name": "is_pixel_factory_image",
+        "line": 2858,
+        "end": 2872,
+        "class": "PifManager"
+      },
+      {
+        "name": "onProcessImage",
+        "line": 2877,
+        "end": 2923,
+        "class": "PifManager"
+      },
+      {
+        "name": "onProcessBulkProps",
+        "line": 2928,
+        "end": 2984,
+        "class": "PifManager"
+      },
+      {
+        "name": "ConsoleStcChange",
+        "line": 2989,
+        "end": 3020,
+        "class": "PifManager"
+      },
+      {
+        "name": "ActivePifStcChange",
+        "line": 3025,
+        "end": 3035,
+        "class": "PifManager"
+      },
+      {
+        "name": "process_active_pif_updated_value",
+        "line": 3040,
+        "end": 3128,
+        "class": "PifManager"
+      },
+      {
+        "name": "update_combo_box",
+        "line": 3133,
+        "end": 3155,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSmartPasteUp",
+        "line": 3160,
+        "end": 3222,
+        "class": "PifManager"
+      },
+      {
+        "name": "onPasteUp",
+        "line": 3227,
+        "end": 3229,
+        "class": "PifManager"
+      },
+      {
+        "name": "onPasteDown",
+        "line": 3234,
+        "end": 3236,
+        "class": "PifManager"
+      },
+      {
+        "name": "onAddMissingKeysFromDevice",
+        "line": 3241,
+        "end": 3246,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSortKeys",
+        "line": 3251,
+        "end": 3256,
+        "class": "PifManager"
+      },
+      {
+        "name": "onKeepAllKeys",
+        "line": 3261,
+        "end": 3266,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSpoofBuild",
+        "line": 3271,
+        "end": 3276,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSpoofProps",
+        "line": 3281,
+        "end": 3286,
+        "class": "PifManager"
+      },
+      {
+        "name": "onApiValueChange",
+        "line": 3291,
+        "end": 3299,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSpoofProvider",
+        "line": 3304,
+        "end": 3309,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSpoofSignature",
+        "line": 3314,
+        "end": 3319,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSpoofVendingSdk",
+        "line": 3324,
+        "end": 3329,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSpoofVendingFinger",
+        "line": 3334,
+        "end": 3339,
+        "class": "PifManager"
+      },
+      {
+        "name": "onForceFirstAPI",
+        "line": 3344,
+        "end": 3353,
+        "class": "PifManager"
+      },
+      {
+        "name": "onAutoUpdatePrint",
+        "line": 3358,
+        "end": 3363,
+        "class": "PifManager"
+      },
+      {
+        "name": "onAutoCheckPlayIntegrity",
+        "line": 3368,
+        "end": 3373,
+        "class": "PifManager"
+      },
+      {
+        "name": "onAutoRunMigrate",
+        "line": 3378,
+        "end": 3383,
+        "class": "PifManager"
+      },
+      {
+        "name": "runMigrate",
+        "line": 3388,
+        "end": 3407,
+        "class": "PifManager"
+      },
+      {
+        "name": "onE2J",
+        "line": 3412,
+        "end": 3420,
+        "class": "PifManager"
+      },
+      {
+        "name": "onJ2E",
+        "line": 3425,
+        "end": 3433,
+        "class": "PifManager"
+      },
+      {
+        "name": "P2J",
+        "line": 3438,
+        "end": 3467,
+        "class": "PifManager"
+      },
+      {
+        "name": "J2P",
+        "line": 3472,
+        "end": 3495,
+        "class": "PifManager"
+      },
+      {
+        "name": "onEditTFTargets",
+        "line": 3500,
+        "end": 3518,
+        "class": "PifManager"
+      },
+      {
+        "name": "onEditTSTarget",
+        "line": 3523,
+        "end": 3528,
+        "class": "PifManager"
+      },
+      {
+        "name": "onEditTSSP",
+        "line": 3533,
+        "end": 3538,
+        "class": "PifManager"
+      },
+      {
+        "name": "edit_local_file",
+        "line": 3543,
+        "end": 3578,
+        "class": "PifManager"
+      },
+      {
+        "name": "edit_file",
+        "line": 3583,
+        "end": 3634,
+        "class": "PifManager"
+      },
+      {
+        "name": "onPushKeybox",
+        "line": 3639,
+        "end": 3662,
+        "class": "PifManager"
+      },
+      {
+        "name": "onDisableUIAutomator",
+        "line": 3667,
+        "end": 3672,
+        "class": "PifManager"
+      },
+      {
+        "name": "load_json_with_rules",
+        "line": 3677,
+        "end": 3724,
+        "class": "PifManager"
+      },
+      {
+        "name": "onReProcess",
+        "line": 3729,
+        "end": 3747,
+        "class": "PifManager"
+      },
+      {
+        "name": "onReProcessJsonFiles",
+        "line": 3752,
+        "end": 3788,
+        "class": "PifManager"
+      },
+      {
+        "name": "onGetFrameworkPatcherCode",
+        "line": 3793,
+        "end": 3841,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSavePif",
+        "line": 3846,
+        "end": 3885,
+        "class": "PifManager"
+      },
+      {
+        "name": "onSaveToFavorites",
+        "line": 3890,
+        "end": 3950,
+        "class": "PifManager"
+      },
+      {
+        "name": "onImportFavorites",
+        "line": 3955,
+        "end": 4008,
+        "class": "PifManager"
+      },
+      {
+        "name": "_on_spin",
+        "line": 4013,
+        "end": 4023,
+        "class": "PifManager"
+      },
+      {
+        "name": "onResize",
+        "line": 4028,
+        "end": 4039,
+        "class": "PifManager"
+      },
+      {
+        "name": "toast",
+        "line": 4044,
+        "end": 4049,
+        "class": "PifManager"
+      },
+      {
+        "name": "calculate_combo_width",
+        "line": 4054,
+        "end": 4080,
+        "class": "PifManager"
+      },
+      {
+        "name": "update_combo_size",
+        "line": 4085,
+        "end": 4096,
+        "class": "PifManager"
+      },
+      {
+        "name": "update_tf_button_states",
+        "line": 4101,
+        "end": 4139,
+        "class": "PifManager"
+      }
+    ]
+  },
+  {
+    "file": "PixelFlasher.py",
+    "lines": 40,
+    "functions": []
+  },
+  {
+    "file": "runtime.py",
+    "lines": 12093,
+    "functions": [
+      {
+        "name": "get_app_language",
+        "line": 291,
+        "end": 293,
+        "class": null
+      },
+      {
+        "name": "set_app_language",
+        "line": 299,
+        "end": 303,
+        "class": null
+      },
+      {
+        "name": "get_config",
+        "line": 308,
+        "end": 310,
+        "class": null
+      },
+      {
+        "name": "set_config",
+        "line": 316,
+        "end": 318,
+        "class": null
+      },
+      {
+        "name": "get_window_shown",
+        "line": 324,
+        "end": 326,
+        "class": null
+      },
+      {
+        "name": "set_window_shown",
+        "line": 332,
+        "end": 334,
+        "class": null
+      },
+      {
+        "name": "check_for_unlocked",
+        "line": 340,
+        "end": 345,
+        "class": null
+      },
+      {
+        "name": "add_unlocked_device",
+        "line": 351,
+        "end": 354,
+        "class": null
+      },
+      {
+        "name": "remove_unlocked_device",
+        "line": 360,
+        "end": 363,
+        "class": null
+      },
+      {
+        "name": "get_unlocked_device",
+        "line": 369,
+        "end": 371,
+        "class": null
+      },
+      {
+        "name": "set_console_widget",
+        "line": 377,
+        "end": 379,
+        "class": null
+      },
+      {
+        "name": "flush_output",
+        "line": 385,
+        "end": 401,
+        "class": null
+      },
+      {
+        "name": "get_boot",
+        "line": 407,
+        "end": 409,
+        "class": null
+      },
+      {
+        "name": "set_boot",
+        "line": 415,
+        "end": 417,
+        "class": null
+      },
+      {
+        "name": "get_labels",
+        "line": 423,
+        "end": 425,
+        "class": null
+      },
+      {
+        "name": "set_labels",
+        "line": 431,
+        "end": 433,
+        "class": null
+      },
+      {
+        "name": "get_xiaomi",
+        "line": 439,
+        "end": 441,
+        "class": null
+      },
+      {
+        "name": "set_xiaomi",
+        "line": 447,
+        "end": 449,
+        "class": null
+      },
+      {
+        "name": "get_favorite_pifs",
+        "line": 455,
+        "end": 457,
+        "class": null
+      },
+      {
+        "name": "set_favorite_pifs",
+        "line": 463,
+        "end": 465,
+        "class": null
+      },
+      {
+        "name": "get_low_memory",
+        "line": 471,
+        "end": 473,
+        "class": null
+      },
+      {
+        "name": "set_low_memory",
+        "line": 479,
+        "end": 481,
+        "class": null
+      },
+      {
+        "name": "get_android_versions",
+        "line": 487,
+        "end": 489,
+        "class": null
+      },
+      {
+        "name": "set_android_versions",
+        "line": 495,
+        "end": 497,
+        "class": null
+      },
+      {
+        "name": "get_android_devices",
+        "line": 503,
+        "end": 505,
+        "class": null
+      },
+      {
+        "name": "set_android_devices",
+        "line": 511,
+        "end": 513,
+        "class": null
+      },
+      {
+        "name": "get_env_variables",
+        "line": 519,
+        "end": 521,
+        "class": null
+      },
+      {
+        "name": "set_env_variables",
+        "line": 527,
+        "end": 529,
+        "class": null
+      },
+      {
+        "name": "get_patched_with",
+        "line": 535,
+        "end": 537,
+        "class": null
+      },
+      {
+        "name": "set_patched_with",
+        "line": 543,
+        "end": 545,
+        "class": null
+      },
+      {
+        "name": "get_db",
+        "line": 551,
+        "end": 553,
+        "class": null
+      },
+      {
+        "name": "set_db",
+        "line": 559,
+        "end": 561,
+        "class": null
+      },
+      {
+        "name": "get_boot_images_dir",
+        "line": 567,
+        "end": 572,
+        "class": null
+      },
+      {
+        "name": "get_factory_images_dir",
+        "line": 578,
+        "end": 583,
+        "class": null
+      },
+      {
+        "name": "get_pf_db",
+        "line": 589,
+        "end": 596,
+        "class": null
+      },
+      {
+        "name": "get_verbose",
+        "line": 602,
+        "end": 604,
+        "class": null
+      },
+      {
+        "name": "set_verbose",
+        "line": 610,
+        "end": 612,
+        "class": null
+      },
+      {
+        "name": "get_a_only",
+        "line": 618,
+        "end": 620,
+        "class": null
+      },
+      {
+        "name": "set_a_only",
+        "line": 626,
+        "end": 628,
+        "class": null
+      },
+      {
+        "name": "get_selected_boot_partition",
+        "line": 634,
+        "end": 636,
+        "class": null
+      },
+      {
+        "name": "set_selected_boot_partition",
+        "line": 642,
+        "end": 644,
+        "class": null
+      },
+      {
+        "name": "get_adb",
+        "line": 650,
+        "end": 652,
+        "class": null
+      },
+      {
+        "name": "set_adb",
+        "line": 658,
+        "end": 660,
+        "class": null
+      },
+      {
+        "name": "get_puml_state",
+        "line": 666,
+        "end": 668,
+        "class": null
+      },
+      {
+        "name": "set_puml_state",
+        "line": 674,
+        "end": 676,
+        "class": null
+      },
+      {
+        "name": "get_fastboot",
+        "line": 682,
+        "end": 684,
+        "class": null
+      },
+      {
+        "name": "set_fastboot",
+        "line": 690,
+        "end": 692,
+        "class": null
+      },
+      {
+        "name": "get_adb_sha256",
+        "line": 698,
+        "end": 700,
+        "class": null
+      },
+      {
+        "name": "set_adb_sha256",
+        "line": 706,
+        "end": 708,
+        "class": null
+      },
+      {
+        "name": "get_fastboot_sha256",
+        "line": 714,
+        "end": 716,
+        "class": null
+      },
+      {
+        "name": "set_fastboot_sha256",
+        "line": 722,
+        "end": 724,
+        "class": null
+      },
+      {
+        "name": "get_phones",
+        "line": 730,
+        "end": 732,
+        "class": null
+      },
+      {
+        "name": "set_phones",
+        "line": 738,
+        "end": 740,
+        "class": null
+      },
+      {
+        "name": "get_device_list",
+        "line": 746,
+        "end": 748,
+        "class": null
+      },
+      {
+        "name": "set_device_list",
+        "line": 754,
+        "end": 756,
+        "class": null
+      },
+      {
+        "name": "get_phone_id",
+        "line": 762,
+        "end": 764,
+        "class": null
+      },
+      {
+        "name": "set_phone_id",
+        "line": 770,
+        "end": 772,
+        "class": null
+      },
+      {
+        "name": "get_phone",
+        "line": 778,
+        "end": 787,
+        "class": null
+      },
+      {
+        "name": "get_system_codepage",
+        "line": 793,
+        "end": 795,
+        "class": null
+      },
+      {
+        "name": "set_system_codepage",
+        "line": 801,
+        "end": 803,
+        "class": null
+      },
+      {
+        "name": "get_magisk_package",
+        "line": 809,
+        "end": 811,
+        "class": null
+      },
+      {
+        "name": "set_magisk_package",
+        "line": 817,
+        "end": 819,
+        "class": null
+      },
+      {
+        "name": "get_linux_shell",
+        "line": 825,
+        "end": 827,
+        "class": null
+      },
+      {
+        "name": "set_linux_shell",
+        "line": 833,
+        "end": 835,
+        "class": null
+      },
+      {
+        "name": "get_ota",
+        "line": 841,
+        "end": 843,
+        "class": null
+      },
+      {
+        "name": "set_ota",
+        "line": 849,
+        "end": 858,
+        "class": null
+      },
+      {
+        "name": "get_sdk_state",
+        "line": 864,
+        "end": 866,
+        "class": null
+      },
+      {
+        "name": "set_sdk_state",
+        "line": 872,
+        "end": 874,
+        "class": null
+      },
+      {
+        "name": "get_firmware_hash_validity",
+        "line": 880,
+        "end": 882,
+        "class": null
+      },
+      {
+        "name": "set_firmware_hash_validity",
+        "line": 888,
+        "end": 890,
+        "class": null
+      },
+      {
+        "name": "get_firmware_has_init_boot",
+        "line": 896,
+        "end": 898,
+        "class": null
+      },
+      {
+        "name": "set_firmware_has_init_boot",
+        "line": 904,
+        "end": 906,
+        "class": null
+      },
+      {
+        "name": "get_rom_has_init_boot",
+        "line": 912,
+        "end": 914,
+        "class": null
+      },
+      {
+        "name": "set_rom_has_init_boot",
+        "line": 920,
+        "end": 922,
+        "class": null
+      },
+      {
+        "name": "get_dlg_checkbox_values",
+        "line": 928,
+        "end": 930,
+        "class": null
+      },
+      {
+        "name": "set_dlg_checkbox_values",
+        "line": 936,
+        "end": 938,
+        "class": null
+      },
+      {
+        "name": "get_firmware_model",
+        "line": 944,
+        "end": 946,
+        "class": null
+      },
+      {
+        "name": "set_firmware_model",
+        "line": 952,
+        "end": 954,
+        "class": null
+      },
+      {
+        "name": "get_firmware_id",
+        "line": 960,
+        "end": 962,
+        "class": null
+      },
+      {
+        "name": "set_firmware_id",
+        "line": 968,
+        "end": 970,
+        "class": null
+      },
+      {
+        "name": "get_custom_rom_id",
+        "line": 976,
+        "end": 978,
+        "class": null
+      },
+      {
+        "name": "set_custom_rom_id",
+        "line": 984,
+        "end": 986,
+        "class": null
+      },
+      {
+        "name": "get_logfile",
+        "line": 992,
+        "end": 994,
+        "class": null
+      },
+      {
+        "name": "set_logfile",
+        "line": 1000,
+        "end": 1002,
+        "class": null
+      },
+      {
+        "name": "get_pumlfile",
+        "line": 1008,
+        "end": 1010,
+        "class": null
+      },
+      {
+        "name": "set_pumlfile",
+        "line": 1016,
+        "end": 1018,
+        "class": null
+      },
+      {
+        "name": "get_sdk_version",
+        "line": 1024,
+        "end": 1026,
+        "class": null
+      },
+      {
+        "name": "set_sdk_version",
+        "line": 1032,
+        "end": 1034,
+        "class": null
+      },
+      {
+        "name": "get_image_mode",
+        "line": 1040,
+        "end": 1042,
+        "class": null
+      },
+      {
+        "name": "set_image_mode",
+        "line": 1048,
+        "end": 1050,
+        "class": null
+      },
+      {
+        "name": "get_image_path",
+        "line": 1056,
+        "end": 1058,
+        "class": null
+      },
+      {
+        "name": "set_image_path",
+        "line": 1064,
+        "end": 1066,
+        "class": null
+      },
+      {
+        "name": "get_custom_rom_file",
+        "line": 1072,
+        "end": 1074,
+        "class": null
+      },
+      {
+        "name": "set_custom_rom_file",
+        "line": 1080,
+        "end": 1082,
+        "class": null
+      },
+      {
+        "name": "get_message_box_title",
+        "line": 1088,
+        "end": 1090,
+        "class": null
+      },
+      {
+        "name": "set_message_box_title",
+        "line": 1096,
+        "end": 1098,
+        "class": null
+      },
+      {
+        "name": "get_message_box_message",
+        "line": 1104,
+        "end": 1106,
+        "class": null
+      },
+      {
+        "name": "set_message_box_message",
+        "line": 1112,
+        "end": 1114,
+        "class": null
+      },
+      {
+        "name": "get_downgrade_boot_path",
+        "line": 1120,
+        "end": 1134,
+        "class": null
+      },
+      {
+        "name": "has_init_boot",
+        "line": 1140,
+        "end": 1147,
+        "class": null
+      },
+      {
+        "name": "is_pixel_watch",
+        "line": 1153,
+        "end": 1160,
+        "class": null
+      },
+      {
+        "name": "puml",
+        "line": 1166,
+        "end": 1198,
+        "class": null
+      },
+      {
+        "name": "init_config_path",
+        "line": 1204,
+        "end": 1228,
+        "class": null
+      },
+      {
+        "name": "init_db",
+        "line": 1234,
+        "end": 1313,
+        "class": null
+      },
+      {
+        "name": "get_config_file_path",
+        "line": 1319,
+        "end": 1322,
+        "class": null
+      },
+      {
+        "name": "set_config_file_path",
+        "line": 1328,
+        "end": 1330,
+        "class": null
+      },
+      {
+        "name": "get_sys_config_path",
+        "line": 1336,
+        "end": 1337,
+        "class": null
+      },
+      {
+        "name": "get_config_path",
+        "line": 1343,
+        "end": 1345,
+        "class": null
+      },
+      {
+        "name": "set_config_path",
+        "line": 1351,
+        "end": 1353,
+        "class": null
+      },
+      {
+        "name": "get_labels_file_path",
+        "line": 1359,
+        "end": 1360,
+        "class": null
+      },
+      {
+        "name": "get_xiaomi_file_path",
+        "line": 1366,
+        "end": 1367,
+        "class": null
+      },
+      {
+        "name": "get_favorite_pifs_file_path",
+        "line": 1373,
+        "end": 1374,
+        "class": null
+      },
+      {
+        "name": "get_device_images_history_file_path",
+        "line": 1380,
+        "end": 1381,
+        "class": null
+      },
+      {
+        "name": "get_coords_file_path",
+        "line": 1387,
+        "end": 1388,
+        "class": null
+      },
+      {
+        "name": "get_skip_urls_file_path",
+        "line": 1394,
+        "end": 1395,
+        "class": null
+      },
+      {
+        "name": "get_wifi_history_file_path",
+        "line": 1401,
+        "end": 1402,
+        "class": null
+      },
+      {
+        "name": "get_mytools_file_path",
+        "line": 1408,
+        "end": 1409,
+        "class": null
+      },
+      {
+        "name": "get_devices_file_path",
+        "line": 1415,
+        "end": 1416,
+        "class": null
+      },
+      {
+        "name": "load_devices_json",
+        "line": 1427,
+        "end": 1460,
+        "class": null
+      },
+      {
+        "name": "invalidate_devices_json_cache",
+        "line": 1466,
+        "end": 1471,
+        "class": null
+      },
+      {
+        "name": "save_devices_json",
+        "line": 1477,
+        "end": 1492,
+        "class": null
+      },
+      {
+        "name": "add_or_update_device",
+        "line": 1498,
+        "end": 1528,
+        "class": null
+      },
+      {
+        "name": "is_device_enabled",
+        "line": 1534,
+        "end": 1543,
+        "class": null
+      },
+      {
+        "name": "toggle_device_enabled",
+        "line": 1549,
+        "end": 1560,
+        "class": null
+      },
+      {
+        "name": "get_device_display_name",
+        "line": 1566,
+        "end": 1592,
+        "class": null
+      },
+      {
+        "name": "update_device_custom_label",
+        "line": 1598,
+        "end": 1608,
+        "class": null
+      },
+      {
+        "name": "delete_device",
+        "line": 1614,
+        "end": 1624,
+        "class": null
+      },
+      {
+        "name": "update_all_devices_connection_status",
+        "line": 1630,
+        "end": 1637,
+        "class": null
+      },
+      {
+        "name": "get_path_to_7z",
+        "line": 1643,
+        "end": 1654,
+        "class": null
+      },
+      {
+        "name": "delete_bundled_library",
+        "line": 1662,
+        "end": 1678,
+        "class": null
+      },
+      {
+        "name": "get_bundle_dir",
+        "line": 1686,
+        "end": 1693,
+        "class": null
+      },
+      {
+        "name": "check_latest_version",
+        "line": 1699,
+        "end": 1718,
+        "class": null
+      },
+      {
+        "name": "enabled_disabled",
+        "line": 1724,
+        "end": 1728,
+        "class": null
+      },
+      {
+        "name": "grow_column",
+        "line": 1734,
+        "end": 1736,
+        "class": null
+      },
+      {
+        "name": "open_folder",
+        "line": 1742,
+        "end": 1814,
+        "class": null
+      },
+      {
+        "name": "open_terminal",
+        "line": 1820,
+        "end": 1868,
+        "class": null
+      },
+      {
+        "name": "get_compression_method",
+        "line": 1874,
+        "end": 1892,
+        "class": null
+      },
+      {
+        "name": "extract_from_nested_tgz",
+        "line": 1898,
+        "end": 1987,
+        "class": null
+      },
+      {
+        "name": "replace_file_in_zip_with_7zip",
+        "line": 1993,
+        "end": 2016,
+        "class": null
+      },
+      {
+        "name": "_normalize_archive_file_requests",
+        "line": 2022,
+        "end": 2043,
+        "class": null
+      },
+      {
+        "name": "check_archive_contains_file",
+        "line": 2049,
+        "end": 2068,
+        "class": null
+      },
+      {
+        "name": "check_archive_contains_files",
+        "line": 2074,
+        "end": 2104,
+        "class": null
+      },
+      {
+        "name": "check_zip_contains_file",
+        "line": 2110,
+        "end": 2113,
+        "class": null
+      },
+      {
+        "name": "check_zip_contains_files",
+        "line": 2119,
+        "end": 2131,
+        "class": null
+      },
+      {
+        "name": "check_zip_contains_files_fast_inner",
+        "line": 2137,
+        "end": 2250,
+        "class": null
+      },
+      {
+        "name": "check_zip_contains_files_fast",
+        "line": 2256,
+        "end": 2316,
+        "class": null
+      },
+      {
+        "name": "check_zip_contains_files_lowmem",
+        "line": 2322,
+        "end": 2363,
+        "class": null
+      },
+      {
+        "name": "check_zip_contains_file_fast_inner",
+        "line": 2369,
+        "end": 2470,
+        "class": null
+      },
+      {
+        "name": "check_zip_contains_file_fast",
+        "line": 2476,
+        "end": 2540,
+        "class": null
+      },
+      {
+        "name": "check_file_pattern_in_zip_file",
+        "line": 2546,
+        "end": 2566,
+        "class": null
+      },
+      {
+        "name": "get_erofs_extractor_path",
+        "line": 2572,
+        "end": 2623,
+        "class": null
+      },
+      {
+        "name": "get_pluck_path",
+        "line": 2629,
+        "end": 2680,
+        "class": null
+      },
+      {
+        "name": "is_erofs_image",
+        "line": 2686,
+        "end": 2697,
+        "class": null
+      },
+      {
+        "name": "check_erofs_contains_file",
+        "line": 2703,
+        "end": 2741,
+        "class": null
+      },
+      {
+        "name": "extract_file_from_archive",
+        "line": 2747,
+        "end": 2775,
+        "class": null
+      },
+      {
+        "name": "check_img_contains_file",
+        "line": 2781,
+        "end": 2811,
+        "class": null
+      },
+      {
+        "name": "check_zip_contains_file_lowmem",
+        "line": 2817,
+        "end": 2873,
+        "class": null
+      },
+      {
+        "name": "check_tar_contains_file",
+        "line": 2879,
+        "end": 2938,
+        "class": null
+      },
+      {
+        "name": "get_zip_file_list",
+        "line": 2944,
+        "end": 2951,
+        "class": null
+      },
+      {
+        "name": "get_filenames_in_dir",
+        "line": 2957,
+        "end": 2969,
+        "class": null
+      },
+      {
+        "name": "find_file_by_prefix",
+        "line": 2975,
+        "end": 2979,
+        "class": null
+      },
+      {
+        "name": "get_ui_cooridnates",
+        "line": 2985,
+        "end": 2996,
+        "class": null
+      },
+      {
+        "name": "get_playstore_user_coords",
+        "line": 3002,
+        "end": 3031,
+        "class": null
+      },
+      {
+        "name": "extract_sha1",
+        "line": 3037,
+        "end": 3058,
+        "class": null
+      },
+      {
+        "name": "compare_sha1",
+        "line": 3064,
+        "end": 3098,
+        "class": null
+      },
+      {
+        "name": "extract_fingerprint",
+        "line": 3104,
+        "end": 3128,
+        "class": null
+      },
+      {
+        "name": "debug",
+        "line": 3134,
+        "end": 3136,
+        "class": null
+      },
+      {
+        "name": "print_user_interaction_message",
+        "line": 3142,
+        "end": 3156,
+        "class": null
+      },
+      {
+        "name": "md5",
+        "line": 3162,
+        "end": 3172,
+        "class": null
+      },
+      {
+        "name": "json_hexdigest",
+        "line": 3178,
+        "end": 3192,
+        "class": null
+      },
+      {
+        "name": "sha1",
+        "line": 3198,
+        "end": 3211,
+        "class": null
+      },
+      {
+        "name": "sha256",
+        "line": 3217,
+        "end": 3228,
+        "class": null
+      },
+      {
+        "name": "unpack_lz4",
+        "line": 3234,
+        "end": 3243,
+        "class": null
+      },
+      {
+        "name": "create_boot_tar",
+        "line": 3249,
+        "end": 3259,
+        "class": null
+      },
+      {
+        "name": "get_code_page",
+        "line": 3265,
+        "end": 3294,
+        "class": null
+      },
+      {
+        "name": "which",
+        "line": 3300,
+        "end": 3314,
+        "class": null
+      },
+      {
+        "name": "remove_quotes",
+        "line": 3320,
+        "end": 3324,
+        "class": null
+      },
+      {
+        "name": "create_support_zip",
+        "line": 3330,
+        "end": 3469,
+        "class": null
+      },
+      {
+        "name": "sanitize_filename",
+        "line": 3475,
+        "end": 3502,
+        "class": null
+      },
+      {
+        "name": "sanitize_file",
+        "line": 3508,
+        "end": 3537,
+        "class": null
+      },
+      {
+        "name": "sanitize_db",
+        "line": 3543,
+        "end": 3576,
+        "class": null
+      },
+      {
+        "name": "encrypt_sk",
+        "line": 3582,
+        "end": 3611,
+        "class": null
+      },
+      {
+        "name": "purge",
+        "line": 3618,
+        "end": 3621,
+        "class": null
+      },
+      {
+        "name": "delete_all",
+        "line": 3628,
+        "end": 3638,
+        "class": null
+      },
+      {
+        "name": "get_size_from_url",
+        "line": 3644,
+        "end": 3656,
+        "class": null
+      },
+      {
+        "name": "check_module_update",
+        "line": 3662,
+        "end": 3707,
+        "class": null
+      },
+      {
+        "name": "get_free_space",
+        "line": 3713,
+        "end": 3726,
+        "class": null
+      },
+      {
+        "name": "get_free_memory",
+        "line": 3732,
+        "end": 3736,
+        "class": null
+      },
+      {
+        "name": "format_memory_size",
+        "line": 3742,
+        "end": 3747,
+        "class": null
+      },
+      {
+        "name": "parse_device_list_html",
+        "line": 3753,
+        "end": 3863,
+        "class": null
+      },
+      {
+        "name": "get_gsi_data",
+        "line": 3869,
+        "end": 4038,
+        "class": null
+      },
+      {
+        "name": "get_beta_links",
+        "line": 4044,
+        "end": 4072,
+        "class": null
+      },
+      {
+        "name": "get_telegram_factory_images",
+        "line": 4078,
+        "end": 4295,
+        "class": null
+      },
+      {
+        "name": "get_api_level",
+        "line": 4301,
+        "end": 4313,
+        "class": null
+      },
+      {
+        "name": "get_beta_factory_object",
+        "line": 4319,
+        "end": 4410,
+        "class": null
+      },
+      {
+        "name": "find_canary_url",
+        "line": 4416,
+        "end": 4427,
+        "class": null
+      },
+      {
+        "name": "get_canary_miner",
+        "line": 4433,
+        "end": 4619,
+        "class": null
+      },
+      {
+        "name": "select_pif_device",
+        "line": 4625,
+        "end": 4645,
+        "class": null
+      },
+      {
+        "name": "get_beta_pif",
+        "line": 4651,
+        "end": 5172,
+        "class": null
+      },
+      {
+        "name": "get_beta_data",
+        "line": 5178,
+        "end": 5353,
+        "class": null
+      },
+      {
+        "name": "get_latest_android_version",
+        "line": 5359,
+        "end": 5478,
+        "class": null
+      },
+      {
+        "name": "resolve_url_redirects",
+        "line": 5484,
+        "end": 5520,
+        "class": null
+      },
+      {
+        "name": "get_fp_sp_from_ota_http_range",
+        "line": 5526,
+        "end": 5620,
+        "class": null
+      },
+      {
+        "name": "parse_fp_sp_from_plucked_factory_output",
+        "line": 5626,
+        "end": 5687,
+        "class": null
+      },
+      {
+        "name": "pluck_fp_sp_from_factory",
+        "line": 5693,
+        "end": 5737,
+        "class": null
+      },
+      {
+        "name": "url2fpsp",
+        "line": 5747,
+        "end": 5814,
+        "class": null
+      },
+      {
+        "name": "get_fp_sp_from_incremental_remote_file",
+        "line": 5820,
+        "end": 6039,
+        "class": null
+      },
+      {
+        "name": "extract_builds_from_metadata",
+        "line": 6045,
+        "end": 6087,
+        "class": null
+      },
+      {
+        "name": "build_matches_filename",
+        "line": 6093,
+        "end": 6101,
+        "class": null
+      },
+      {
+        "name": "normalize_security_patch_level",
+        "line": 6107,
+        "end": 6136,
+        "class": null
+      },
+      {
+        "name": "beta_data_is_usable",
+        "line": 6142,
+        "end": 6143,
+        "class": null
+      },
+      {
+        "name": "download_thread",
+        "line": 6149,
+        "end": 6218,
+        "class": null
+      },
+      {
+        "name": "partial_extract",
+        "line": 6224,
+        "end": 6238,
+        "class": null
+      },
+      {
+        "name": "get_printable_memory",
+        "line": 6244,
+        "end": 6252,
+        "class": null
+      },
+      {
+        "name": "device_has_update",
+        "line": 6258,
+        "end": 6274,
+        "class": null
+      },
+      {
+        "name": "fetch_canary_miner_catalog",
+        "line": 6280,
+        "end": 6306,
+        "class": null
+      },
+      {
+        "name": "get_google_images",
+        "line": 6312,
+        "end": 6670,
+        "class": null
+      },
+      {
+        "name": "extract_date_from_google_version",
+        "line": 6676,
+        "end": 6690,
+        "class": null
+      },
+      {
+        "name": "download_file",
+        "line": 6696,
+        "end": 6727,
+        "class": null
+      },
+      {
+        "name": "get_first_match",
+        "line": 6733,
+        "end": 6746,
+        "class": null
+      },
+      {
+        "name": "delete_keys_from_dict",
+        "line": 6752,
+        "end": 6760,
+        "class": null
+      },
+      {
+        "name": "is_valid_json",
+        "line": 6766,
+        "end": 6775,
+        "class": null
+      },
+      {
+        "name": "process_dict",
+        "line": 6781,
+        "end": 7084,
+        "class": null
+      },
+      {
+        "name": "detect_encoding",
+        "line": 7090,
+        "end": 7098,
+        "class": null
+      },
+      {
+        "name": "process_pi_xml_piac",
+        "line": 7104,
+        "end": 7139,
+        "class": null
+      },
+      {
+        "name": "process_pi_xml_spic",
+        "line": 7145,
+        "end": 7191,
+        "class": null
+      },
+      {
+        "name": "process_pi_xml_aic",
+        "line": 7197,
+        "end": 7248,
+        "class": null
+      },
+      {
+        "name": "process_pi_xml_tb",
+        "line": 7254,
+        "end": 7322,
+        "class": null
+      },
+      {
+        "name": "process_pi_xml_ps",
+        "line": 7328,
+        "end": 7351,
+        "class": null
+      },
+      {
+        "name": "process_pi_xml_yasnac",
+        "line": 7357,
+        "end": 7425,
+        "class": null
+      },
+      {
+        "name": "get_xiaomi_apk",
+        "line": 7431,
+        "end": 7458,
+        "class": null
+      },
+      {
+        "name": "extract_from_zip",
+        "line": 7464,
+        "end": 7476,
+        "class": null
+      },
+      {
+        "name": "axml2xml",
+        "line": 7482,
+        "end": 7510,
+        "class": null
+      },
+      {
+        "name": "xiaomi_xml_to_json",
+        "line": 7516,
+        "end": 7553,
+        "class": null
+      },
+      {
+        "name": "get_xiaomi_pif",
+        "line": 7559,
+        "end": 7612,
+        "class": null
+      },
+      {
+        "name": "get_freeman_pif",
+        "line": 7618,
+        "end": 7670,
+        "class": null
+      },
+      {
+        "name": "extract_payload",
+        "line": 7676,
+        "end": 7744,
+        "class": null
+      },
+      {
+        "name": "get_pif_from_image",
+        "line": 7750,
+        "end": 8038,
+        "class": null
+      },
+      {
+        "name": "extract_motorola_image",
+        "line": 8044,
+        "end": 8072,
+        "class": null
+      },
+      {
+        "name": "get_file_list_from_directory",
+        "line": 8078,
+        "end": 8087,
+        "class": null
+      },
+      {
+        "name": "patch_binary_file",
+        "line": 8093,
+        "end": 8109,
+        "class": null
+      },
+      {
+        "name": "bootloader_issue_message",
+        "line": 8115,
+        "end": 8119,
+        "class": null
+      },
+      {
+        "name": "download_ksu_latest_release_asset",
+        "line": 8125,
+        "end": 8458,
+        "class": null
+      },
+      {
+        "name": "download_gh_pre_release_asset_regex",
+        "line": 8464,
+        "end": 8480,
+        "class": null
+      },
+      {
+        "name": "download_gh_latest_release_asset_regex",
+        "line": 8486,
+        "end": 8502,
+        "class": null
+      },
+      {
+        "name": "download_gh_latest_any_asset_regex",
+        "line": 8508,
+        "end": 8524,
+        "class": null
+      },
+      {
+        "name": "get_gh_pre_release_asset_regex",
+        "line": 8530,
+        "end": 8546,
+        "class": null
+      },
+      {
+        "name": "get_gh_latest_release_asset_regex",
+        "line": 8552,
+        "end": 8568,
+        "class": null
+      },
+      {
+        "name": "gh_asset_utility",
+        "line": 8574,
+        "end": 8604,
+        "class": null
+      },
+      {
+        "name": "get_gh_latest_release_notes",
+        "line": 8610,
+        "end": 8622,
+        "class": null
+      },
+      {
+        "name": "get_gh_latest_release_version",
+        "line": 8628,
+        "end": 8654,
+        "class": null
+      },
+      {
+        "name": "get_gh_release_object",
+        "line": 8660,
+        "end": 8696,
+        "class": null
+      },
+      {
+        "name": "extract_magiskboot",
+        "line": 8702,
+        "end": 8731,
+        "class": null
+      },
+      {
+        "name": "request_with_fallback",
+        "line": 8737,
+        "end": 8771,
+        "class": null
+      },
+      {
+        "name": "check_internet",
+        "line": 8777,
+        "end": 8786,
+        "class": null
+      },
+      {
+        "name": "load_kb_index",
+        "line": 8792,
+        "end": 8801,
+        "class": null
+      },
+      {
+        "name": "save_kb_index",
+        "line": 8807,
+        "end": 8813,
+        "class": null
+      },
+      {
+        "name": "check_kb",
+        "line": 8821,
+        "end": 9467,
+        "class": null
+      },
+      {
+        "name": "clean_pem_key",
+        "line": 9473,
+        "end": 9490,
+        "class": null
+      },
+      {
+        "name": "parse_cert",
+        "line": 9496,
+        "end": 9573,
+        "class": null
+      },
+      {
+        "name": "format_dn",
+        "line": 9579,
+        "end": 9602,
+        "class": null
+      },
+      {
+        "name": "analyze_kb_file",
+        "line": 9608,
+        "end": 9814,
+        "class": null
+      },
+      {
+        "name": "kb_add_missing_files",
+        "line": 9820,
+        "end": 9938,
+        "class": null
+      },
+      {
+        "name": "kb_stats",
+        "line": 9944,
+        "end": 10457,
+        "class": null
+      },
+      {
+        "name": "update_kb_index_with_crl",
+        "line": 10463,
+        "end": 10624,
+        "class": null
+      },
+      {
+        "name": "get_boot_image_info",
+        "line": 10630,
+        "end": 10643,
+        "class": null
+      },
+      {
+        "name": "add_hash_footer",
+        "line": 10649,
+        "end": 10680,
+        "class": null
+      },
+      {
+        "name": "run_tool",
+        "line": 10686,
+        "end": 10738,
+        "class": null
+      },
+      {
+        "name": "get_db_con",
+        "line": 10744,
+        "end": 10756,
+        "class": null
+      },
+      {
+        "name": "find_package_ids_with_same_package_boot_hash",
+        "line": 10762,
+        "end": 10781,
+        "class": null
+      },
+      {
+        "name": "get_package_sig",
+        "line": 10787,
+        "end": 10809,
+        "class": null
+      },
+      {
+        "name": "get_boot_id_by_file_path",
+        "line": 10815,
+        "end": 10837,
+        "class": null
+      },
+      {
+        "name": "delete_package_boot_record",
+        "line": 10843,
+        "end": 10861,
+        "class": null
+      },
+      {
+        "name": "delete_boot_record",
+        "line": 10867,
+        "end": 10898,
+        "class": null
+      },
+      {
+        "name": "delete_last_boot_record",
+        "line": 10904,
+        "end": 10923,
+        "class": null
+      },
+      {
+        "name": "delete_last_package_record",
+        "line": 10931,
+        "end": 10978,
+        "class": null
+      },
+      {
+        "name": "insert_boot_record",
+        "line": 10984,
+        "end": 11013,
+        "class": null
+      },
+      {
+        "name": "insert_package_boot_record",
+        "line": 11019,
+        "end": 11048,
+        "class": null
+      },
+      {
+        "name": "get_rooting_app_apks",
+        "line": 11054,
+        "end": 11088,
+        "class": null
+      },
+      {
+        "name": "get_rooting_app_details",
+        "line": 11094,
+        "end": 11530,
+        "class": null
+      },
+      {
+        "name": "parse_bootloader_version",
+        "line": 11536,
+        "end": 11546,
+        "class": null
+      },
+      {
+        "name": "is_bootloader_version_older",
+        "line": 11552,
+        "end": 11562,
+        "class": null
+      },
+      {
+        "name": "get_bootloader_versions",
+        "line": 11568,
+        "end": 11737,
+        "class": null
+      },
+      {
+        "name": "extract_strings",
+        "line": 11743,
+        "end": 11746,
+        "class": null
+      },
+      {
+        "name": "extract_kernel_info",
+        "line": 11752,
+        "end": 11785,
+        "class": null
+      },
+      {
+        "name": "check_pixel_spl_compatibility",
+        "line": 11791,
+        "end": 11856,
+        "class": null
+      },
+      {
+        "name": "remove_xml_comments",
+        "line": 11862,
+        "end": 11910,
+        "class": null
+      },
+      {
+        "name": "run_shell",
+        "line": 11919,
+        "end": 11944,
+        "class": null
+      },
+      {
+        "name": "run_shell2",
+        "line": 11952,
+        "end": 12012,
+        "class": null
+      },
+      {
+        "name": "run_shell3",
+        "line": 12020,
+        "end": 12073,
+        "class": null
+      },
+      {
+        "name": "__init__",
+        "line": 164,
+        "end": 184,
+        "class": "Boot"
+      },
+      {
+        "name": "__init__",
+        "line": 191,
+        "end": 203,
+        "class": "BetaData"
+      },
+      {
+        "name": "__init__",
+        "line": 210,
+        "end": 212,
+        "class": "Coords"
+      },
+      {
+        "name": "load_data",
+        "line": 214,
+        "end": 219,
+        "class": "Coords"
+      },
+      {
+        "name": "save_data",
+        "line": 221,
+        "end": 223,
+        "class": "Coords"
+      },
+      {
+        "name": "query_entry",
+        "line": 225,
+        "end": 228,
+        "class": "Coords"
+      },
+      {
+        "name": "query_nested_entry",
+        "line": 230,
+        "end": 233,
+        "class": "Coords"
+      },
+      {
+        "name": "update_entry",
+        "line": 235,
+        "end": 239,
+        "class": "Coords"
+      },
+      {
+        "name": "update_nested_entry",
+        "line": 241,
+        "end": 247,
+        "class": "Coords"
+      },
+      {
+        "name": "__init__",
+        "line": 254,
+        "end": 259,
+        "class": "ModuleUpdate"
+      },
+      {
+        "name": "__init__",
+        "line": 266,
+        "end": 271,
+        "class": "MagiskApk"
+      },
+      {
+        "name": "__init__",
+        "line": 278,
+        "end": 285,
+        "class": "DownloadState"
+      }
+    ]
+  },
+  {
+    "file": "set_version.py",
+    "lines": 127,
+    "functions": [
+      {
+        "name": "get_values",
+        "line": 67,
+        "end": 95,
+        "class": null
+      },
+      {
+        "name": "set_values",
+        "line": 101,
+        "end": 112,
+        "class": null
+      }
+    ]
+  },
+  {
+    "file": "update_metadata_pb2.py",
+    "lines": 669,
+    "functions": []
+  },
+  {
+    "file": "wifi.py",
+    "lines": 527,
+    "functions": [
+      {
+        "name": "__init__",
+        "line": 56,
+        "end": 58,
+        "class": "ListCtrl"
+      },
+      {
+        "name": "__init__",
+        "line": 65,
+        "end": 164,
+        "class": "Wireless"
+      },
+      {
+        "name": "PopulateList",
+        "line": 169,
+        "end": 259,
+        "class": "Wireless"
+      },
+      {
+        "name": "on_ip_change",
+        "line": 264,
+        "end": 271,
+        "class": "Wireless"
+      },
+      {
+        "name": "on_pairing_change",
+        "line": 276,
+        "end": 281,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnSearch",
+        "line": 286,
+        "end": 289,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnCancel",
+        "line": 294,
+        "end": 296,
+        "class": "Wireless"
+      },
+      {
+        "name": "load_history",
+        "line": 301,
+        "end": 305,
+        "class": "Wireless"
+      },
+      {
+        "name": "save_history",
+        "line": 310,
+        "end": 312,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnClose",
+        "line": 317,
+        "end": 319,
+        "class": "Wireless"
+      },
+      {
+        "name": "wifi_adb_action",
+        "line": 324,
+        "end": 354,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnConnect",
+        "line": 359,
+        "end": 380,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnDisconnect",
+        "line": 385,
+        "end": 400,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnPair",
+        "line": 405,
+        "end": 419,
+        "class": "Wireless"
+      },
+      {
+        "name": "GetListCtrl",
+        "line": 425,
+        "end": 426,
+        "class": "Wireless"
+      },
+      {
+        "name": "GetSortImages",
+        "line": 432,
+        "end": 433,
+        "class": "Wireless"
+      },
+      {
+        "name": "getColumnText",
+        "line": 439,
+        "end": 441,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnItemDeSelected",
+        "line": 446,
+        "end": 450,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnItemSelected",
+        "line": 455,
+        "end": 461,
+        "class": "Wireless"
+      },
+      {
+        "name": "OnColClick",
+        "line": 466,
+        "end": 472,
+        "class": "Wireless"
+      },
+      {
+        "name": "simulate_column_click",
+        "line": 477,
+        "end": 481,
+        "class": "Wireless"
+      },
+      {
+        "name": "add_to_history",
+        "line": 486,
+        "end": 501,
+        "class": "Wireless"
+      },
+      {
+        "name": "Refresh",
+        "line": 506,
+        "end": 515,
+        "class": "Wireless"
+      },
+      {
+        "name": "_on_spin",
+        "line": 520,
+        "end": 527,
+        "class": "Wireless"
+      }
+    ]
+  }
+]
