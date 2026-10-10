@@ -34,4 +34,3 @@ debug = 0
 [profile.release]
 lto = "thin"
 strip = true
-

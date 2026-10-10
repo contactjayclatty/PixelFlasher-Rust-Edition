@@ -18,4 +18,3 @@ discrepancy with its maintainers before making redistribution assumptions.
 Rust dependencies retain their own licenses; Cargo.lock records the exact
 dependency set. The application is an independent development port, not a Google
 product or a claim of upstream-maintainer endorsement. Pixel is a Google trademark.
-

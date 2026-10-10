@@ -28,7 +28,7 @@ for package in packages:
         lines.append(f"Source: {package['repository']}")
     for path in sorted(set(files)):
         if path.is_file() and path.stat().st_size < 1024 * 1024:
-            content = path.read_text(encoding='utf-8', errors='replace')
+            content = '\n'.join(line.rstrip() for line in path.read_text(encoding='utf-8', errors='replace').splitlines())
             lines.extend(['', f"### {path.relative_to(directory).as_posix()}", '', '~~~~text', content.rstrip(), '~~~~'])
 (root / 'THIRD_PARTY_NOTICES.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 print(json.dumps({'locked_dependencies': len(packages), 'output': 'THIRD_PARTY_NOTICES.md'}))

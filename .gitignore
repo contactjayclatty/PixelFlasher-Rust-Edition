@@ -18,3 +18,6 @@ __pycache__/
 *.p12
 *.key
 *.dmp
+*.db
+*.sqlite
+*.sqlite3

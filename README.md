@@ -124,4 +124,3 @@ Native UI capture: set `EFRAME_SCREENSHOT_TO` to a PNG path. Optionally set
 `wireless`, `utilities` or `settings`. Capturing launches the real application,
 renders its current state, saves the screenshot and exits. It does not seed
 fictional devices or perform a scan.
-
