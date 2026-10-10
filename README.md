@@ -1,126 +1,152 @@
 # PixelFlasher Rust Edition
 
-A native Rust desktop port of [badabing2005/PixelFlasher](https://github.com/badabing2005/PixelFlasher),
-with a redesigned device dashboard, firmware/image library, reviewed operation
-plans and background device commands. Source revision:
-`081286d6baf8ac969df29e8b0ab3a5b6ae4cfb54` (upstream version 10.1.1.1).
+<div align="center">
 
-**Development port: full upstream feature parity is not complete.** The implemented
-workflows have parser/planner tests and native UI captures. Real phone flashing,
-root patch execution and wireless/device workflows have not been validated on
-hardware. Read [the parity matrix](docs/PARITY.md) before using this build.
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL_3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![CI](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/actions/workflows/ci.yml/badge.svg)](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/github/v/release/contactjayclatty/PixelFlasher-Rust-Edition?include_prereleases&label=version)](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases)
+[![Rust](https://img.shields.io/badge/Rust-2024-orange.svg)](https://www.rust-lang.org/)
+[![Stars](https://img.shields.io/github/stars/contactjayclatty/PixelFlasher-Rust-Edition?style=social)](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/stargazers)
+
+**A fast, native Rust desktop application for flashing, rooting, and managing Google Pixel phones.**
+
+Modern egui interface • Reviewed operation plans • Shared Rust core • Windows-first
+
+</div>
+
+---
+
+> **⚠️ Development Preview (v0.3.2)**
+>
+> This is an active port of [badabing2005/PixelFlasher](https://github.com/badabing2005/PixelFlasher) (reference revision `081286d6…`, upstream v10.1.1.1).  
+> Full feature parity is **not** complete. Device flashing, rooting, and wireless workflows have **not** been validated on real hardware.  
+> Parser, planner, and UI tests exist; real-device execution does not.  
+> **Read [docs/PARITY.md](docs/PARITY.md) before use.** Use at your own risk.
+
+---
+
+## Why Rust Edition?
+
+| | Original PixelFlasher | Rust Edition |
+|---|---|---|
+| Language | Python + wxPython | Rust + egui / eframe |
+| Startup | Python runtime | Native binary |
+| UI | Classic desktop | Modern, themed, responsive |
+| Safety model | Direct commands | Frozen reviewed plans + journals |
+| Core | Monolithic | Shared `pixelflasher-core` + desktop facade |
+| MCP | — | Optional local stdio MCP (review-only) |
+
+The goal is a clean, performant, safety-focused native rewrite that preserves the proven workflows while improving the experience.
+
+## Features (current)
+
+- **Device dashboard** with multi-device support, labels, readiness checks, and background scans
+- **Firmware & Images** — factory ZIP processing, OTA payload extraction, image library with SHA-256 provenance
+- **Guided Studios** — Root Studio (Magisk, KernelSU/Next, SukiSU, Wild_KSU, APatch) and Update Studio
+- **Reviewed operation plans** — every mutation is frozen, hashed, and requires explicit confirmation
+- **Durable journals** and SQLite migrations with automatic backups
+- **Multi-partition backup/restore planning** with content verification
+- **Google catalog** (factory + full OTA) with explicit terms acknowledgement
+- **Light / dark themes** with mint accents and compact density
+- **CLI tools** for inspect, process, library, and legacy import
+- **Optional local MCP** that can only queue intents for desktop review (never executes changes)
+
+See the full status matrix in [docs/PARITY.md](docs/PARITY.md) and the approved 1.0 plan in [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md).
 
 ## Download
 
-Get the Windows portable ZIP from [GitHub Releases](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases).
-Extract it and run `PixelFlasher.exe`. Windows x64 is the validated build target;
-Android platform-tools and scrcpy are not bundled. Verify assets with the release's
-`checksums.sha256`. Current releases are development prereleases.
+Windows x64 portable ZIP (development prerelease):
 
-## Version 0.3.2 — Rust Edition release
+**→ [GitHub Releases](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases)**
 
-Uses the PixelFlasher Rust Edition name, a conventional shared-core workspace,
-Windows CI and versioned portable/source packages. Executable name, CLI commands
-and the existing user-data directory are unchanged. See [CHANGELOG.md](CHANGELOG.md).
+1. Download the ZIP and `checksums.sha256`
+2. Verify the hash
+3. Extract and run `PixelFlasher.exe`
 
-## Version 0.3.1 — Google catalog repair
+Android platform-tools (`adb` + `fastboot`) and scrcpy are **not** bundled. Point the app at your own copy in Settings.
 
-Google's download tables require a Devsite acknowledgement cookie. In Firmware &
-Images, read the linked factory/OTA terms, tick the acknowledgement checkbox, then
-Load Google catalog. The preference starts unchecked and is saved locally.
-The application requests the corresponding table and keeps row-associated hashes.
-For read-only CLI inspection: `--catalog factory|ota --acknowledge-google-terms`.
-This fetches catalog metadata only; it does not download or flash firmware.
-
-## Version 0.3 — Guided Studio foundation
-
-Adds a GUI-independent Rust core, immutable reviewed plans, durable operation
-journals and backed-up SQLite migrations. Root Studio has six pinned provider
-adapters, APK package/version validation, explicit classic/V2 method restrictions,
-manager handoff and separate patch/module/permission/recovery tabs. Update Studio
-separates firmware updates from image operations. Dark and light themes have
-readable mint accents and compact density.
-
-Multi-partition backup sets compare retrieved images against device-side hashes;
-restore plans require matching device, build, slot and unchanged contents.
-Patched image lineage records provider version, method and stock SHA-256.
-Downloads resume only when the server supplies a matching strong ETag and range.
-Optional MCP queues intents for desktop review and cannot execute device changes.
-This is a staged implementation, **not the completed 1.0 plan**. Remaining work
-and release gates are tracked in [IMPLEMENTATION.md](docs/IMPLEMENTATION.md).
-
-## Run
-
-Open `dist/PixelFlasher.exe`, or build from source:
+## Quick Start
 
 ```powershell
+# From source (Windows)
 git clone https://github.com/contactjayclatty/PixelFlasher-Rust-Edition.git
-Set-Location PixelFlasher-Rust-Edition
+cd PixelFlasher-Rust-Edition
 cargo run -j 2
 ```
 
-Select a folder containing both `adb` and `fastboot` in Settings, check their
-versions, connect a device, then Scan and Inspect. The app does not contact or
-change devices at startup. Every reviewed device operation binds to a selected
-serial; flashing additionally checks product and bootloader unlock state.
+1. In **Settings**, select the folder containing both `adb.exe` and `fastboot.exe`.
+2. Connect a device (USB or wireless).
+3. Use **Scan** to discover devices — nothing is contacted at startup.
+4. Explore Firmware & Images, Root Studio, or Applications.
+5. Any operation that changes the device produces a **reviewed plan**. Confirm the exact phrase before it runs.
 
-Firmware processing and image inspection work without a phone. Patch operations
-use assets from the chosen root manager APK and the device's detected ABI. Patching
-creates a local image; flashing that image is a separate reviewed operation.
-KernelSU-Next is the initial root-manager selection; other supported families
-are selectable. A root runtime detected at `/data/adb/ksud` is labeled
-KernelSU-family because that path alone does not identify the exact fork.
+**Data directory:** `%LOCALAPPDATA%\PixelFlasherRust`  
+Override with `PIXELFLASHER_DATA_DIR` for testing.
 
-No Python runtime, wxPython, webview or original PixelFlasher process is invoked.
-ADB/fastboot, scrcpy and root-manager binaries are external tools where applicable.
-No drivers or Android platform tools are bundled in the Windows package.
-
-## Local CLI tools
+## CLI
 
 ```powershell
-.\target\debug\pixelflasher-rust.exe --inspect C:\path\init_boot.img
-.\target\debug\pixelflasher-rust.exe --process C:\path\firmware.zip
-.\target\debug\pixelflasher-rust.exe --library
-.\target\debug\pixelflasher-rust.exe --import-legacy C:\path\PixelFlasher4.db
+pixelflasher-rust.exe --inspect path\to\init_boot.img
+pixelflasher-rust.exe --process path\to\firmware.zip
+pixelflasher-rust.exe --library
+pixelflasher-rust.exe --import-legacy path\to\PixelFlasher4.db
+pixelflasher-rust.exe --catalog factory --acknowledge-google-terms
 ```
 
-Legacy import opens the original SQLite database read-only and imports only
-existing files whose SHA-1 matches its record. It does not import every legacy
-preference or preserve all old database relationships. Missing or changed files
-are reported and left untouched.
+Legacy import is read-only and only copies files whose SHA-1 still matches.
 
-Default app data: `%LOCALAPPDATA%\PixelFlasherRust` on Windows. Override with
-`PIXELFLASHER_DATA_DIR` for isolated fixtures and development. Settings, SQLite
-image records, extracted firmware and patch-work directories live there. Keep
-that directory private. New APatch scripts read the superkey from stdin; saved
-plans omit the secret and require fresh human input after deserialization. Older
-v0.1/v0.2 patch folders can contain plaintext keys and are preserved, not rewritten.
-Patch scripts are excluded from support exports. Inspect retained temporary
-patch files before manually cleaning them up.
-
-## Development and evidence
+## Development
 
 ```powershell
 cargo fmt --check
 cargo test --workspace -j 2
-cargo clippy --workspace -j 2 --all-targets -- -D warnings
+cargo clippy --workspace --all-targets -j 2 -- -D warnings
 cargo build --workspace --release -j 2
 ```
 
-- [Approved 1.0 plan and milestone status](docs/IMPLEMENTATION.md)
-- [Local MCP setup](docs/MCP.md)
-- [Contributor instructions](CONTRIBUTING.md)
-- [Release process](docs/RELEASING.md)
-- [Implemented and remaining workflows](docs/PARITY.md)
-- [Architecture and safety boundaries](docs/ARCHITECTURE.md)
-- [Build, test and native UI evidence](docs/VALIDATION.md)
-- [Decisions and pending work](docs/DECISIONS.md)
-- [Upstream function inventory](docs/source-inventory.json)
-- [Port validation procedure](.agents/skills/port-validation/SKILL.md)
-- [Attribution and license provenance](NOTICE.md)
+Windows CI runs the same checks on every push/PR.
 
-Native UI capture: set `EFRAME_SCREENSHOT_TO` to a PNG path. Optionally set
-`PIXELFLASHER_CAPTURE_PAGE` to `firmware`, `flash`, `apps`, `root`, `backups`,
-`wireless`, `utilities` or `settings`. Capturing launches the real application,
-renders its current state, saves the screenshot and exits. It does not seed
-fictional devices or perform a scan.
+**Useful docs**
+
+- [Architecture & safety boundaries](docs/ARCHITECTURE.md)
+- [Feature parity matrix](docs/PARITY.md)
+- [1.0 implementation plan](docs/IMPLEMENTATION.md)
+- [MCP contract](docs/MCP.md)
+- [Validation evidence](docs/VALIDATION.md)
+- [Contributing](CONTRIBUTING.md)
+- [Releasing](docs/RELEASING.md)
+- [Changelog](CHANGELOG.md)
+- [Attribution & licenses](NOTICE.md)
+
+### Screenshot capture
+
+```powershell
+$env:EFRAME_SCREENSHOT_TO = "screenshot.png"
+$env:PIXELFLASHER_CAPTURE_PAGE = "root"   # or firmware, flash, apps, …
+cargo run --release
+```
+
+## Attribution
+
+This is an independent development port of **PixelFlasher** by [badabing2005](https://github.com/badabing2005/PixelFlasher) and contributors.  
+Upstream reference: `081286d6baf8ac969df29e8b0ab3a5b6ae4cfb54` (v10.1.1.1).  
+The Rust implementation does not embed or invoke the original Python application.  
+See [NOTICE.md](NOTICE.md) for full license provenance.
+
+**Pixel** is a trademark of Google. This project is not affiliated with Google.
+
+## Disclaimer
+
+Flashing, rooting, and bootloader operations can permanently brick or wipe your device.  
+This software is provided **as-is** with no warranty. You are solely responsible for any outcome.  
+Always have a way to recover before experimenting. Hardware validation of this port is still pending.
+
+---
+
+<div align="center">
+
+Made with Rust • Port of a community classic
+
+[Report an issue](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues) • [Releases](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases)
+
+</div>
