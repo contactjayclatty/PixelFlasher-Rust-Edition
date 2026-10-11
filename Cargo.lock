@@ -2676,7 +2676,7 @@ dependencies = [
 
 [[package]]
 name = "pixelflasher-core"
-version = "0.3.3"
+version = "0.3.4"
 dependencies = [
  "anyhow",
  "base64 0.22.1",
@@ -2704,7 +2704,7 @@ dependencies = [
 
 [[package]]
 name = "pixelflasher-mcp"
-version = "0.3.3"
+version = "0.3.4"
 dependencies = [
  "pixelflasher-core",
  "serde_json",
@@ -2712,7 +2712,7 @@ dependencies = [
 
 [[package]]
 name = "pixelflasher-rust"
-version = "0.3.3"
+version = "0.3.4"
 dependencies = [
  "anyhow",
  "chrono",
