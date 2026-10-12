@@ -16,7 +16,7 @@
   "source_layout": "crates/core/src; src desktop; crates/mcp",
   "hardware_verified": false,
   "full_parity": false,
-  "github_ci": "not yet run",
+  "github_ci": "pass: Windows validation run 38290231402 at commit 9a2927623c49",
   "public_secret_scan": "no private key or token findings",
   "portable_archive_integrity": "pass",
   "source_archive_integrity": "pass",
