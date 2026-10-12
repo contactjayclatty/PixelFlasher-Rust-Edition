@@ -1,6 +1,6 @@
 {
   "product": "PixelFlasher Rust Edition",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "tests": 77,
   "fmt": "pass",
   "strict_clippy": "pass",

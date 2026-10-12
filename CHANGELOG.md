@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.4 — Release packaging and validation sync
+
+- Align the public release metadata with the current package version and release notes.
+- Keep the Windows release process and validation record in sync with the published prerelease.
+- Restate the development preview limits: full upstream parity and hardware validation remain pending.
+
 ## 0.3.3 — Familiar shell and catalog tables
 
 - Keep the nine destinations and put the device, Scan, and Inspect in one top bar.
