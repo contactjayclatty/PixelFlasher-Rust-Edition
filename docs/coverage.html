@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coverage · PixelFlasher Rust Edition</title>
+  <meta name="description" content="What PixelFlasher Rust Edition 0.3.4 implements, what is partial, and what is not in this release.">
+  <meta name="theme-color" content="#070b10">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="sub">
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="bar">
+    <a class="brand" href="index.html">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M8 1 3.2 10.2H8L6.4 17 15 7.2H9.6L11.4 1Z" fill="#5ecea8"/></svg>
+      <span><b>PIXELFLASHER</b><small>RUST EDITION</small></span>
+    </a>
+    <nav class="nav" aria-label="Site">
+      <a href="index.html">Home</a>
+<a href="product.html">Product</a>
+<a href="install.html">Install</a>
+<a href="coverage.html" aria-current="page">Coverage</a>
+<a href="safety.html">Safety</a>
+<a href="reference.html">Reference</a>
+    </nav>
+    <a class="btn" href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases">Download</a>
+  </header>
+  <div class="ribbon">Development preview 0.3.4 <span>·</span> Windows x64 <span>·</span> Not hardware-validated</div>
+  <main id="content">
+    
+<div class="wrap page">
+  <p class="kicker">Coverage · 0.3.4</p>
+  <h1>In the app is not proven on a phone.</h1>
+  <p class="lede">Every device-mutation path below is hardware-unverified. Tests cover parsers, planners, and selected workflows.</p>
+  <div class="pills">
+    <span class="pill in">In the app</span>
+    <span class="pill part">Partial</span>
+    <span class="pill">Planned or manual</span>
+    <span class="pill no">Not in this release</span>
+  </div>
+</div>
+<section class="wrap section" style="padding-top:0">
+  <div class="rows">
+    <article class="row"><strong>Device discovery, labels, properties, slots</strong><span class="badge in">In the app</span><p>Development did not include a live-device scan.</p></article><article class="row"><strong>Platform-tools check</strong><span class="badge in">In the app</span><p>Still warns on platform-tools 34.0.0 through 34.0.4.</p></article><article class="row"><strong>Boot-image library and checksums</strong><span class="badge in">In the app</span><p>Legacy database import is read-only, and only when the recorded SHA-1 still matches the file.</p></article><article class="row"><strong>Factory ZIP and Full OTA payload</strong><span class="badge in">In the app</span><p>Incremental OTAs are rejected. Samsung Odin/AP handling is not equivalent to upstream.</p></article><article class="row"><strong>Factory flash, image flash, OTA sideload, live boot</strong><span class="badge plan">Planned in the app</span><p>Live boot accepts boot images only. Nothing here has been flashed on hardware.</p></article><article class="row"><strong>Root providers and modules</strong><span class="badge part">Partial</span><p>Six adapters check APK identity and version. Scripts are unverified. Unpinned or canary builds are rejected.</p></article><article class="row"><strong>GKI kernel replacement</strong><span class="badge plan">Manual plan only</span><p>You pick the kernel. There is no automatic KMI-compatible download.</p></article><article class="row"><strong>Packages, logcat, scrcpy, Shizuku</strong><span class="badge in">In the app</span><p>Command plans only. They were not run against a phone.</p></article><article class="row"><strong>Partition backup and restore planning</strong><span class="badge in">In the app</span><p>A match checks device, build, slot, and content. That does not prove the restore will boot.</p></article><article class="row"><strong>Google Factory and Full OTA catalogs</strong><span class="badge in">Stable only</span><p>Requires an explicit acknowledgement of Google's terms. Beta, canary, and watch are absent.</p></article><article class="row"><strong>Local MCP</strong><span class="badge in">Off by default</span><p>Reads saved metadata and can queue a desktop review. It cannot run a device operation, a shell, or read secrets.</p></article>
+  </div>
+  <h2 style="margin-top:36px">Not in this release</h2>
+  <div class="grid-3">
+    <article class="card"><h3>Other desktops</h3><p>No macOS or Linux packages. The UI is English only. Upstream ships 23 translation catalogs.</p></article>
+    <article class="card"><h3>Downgrade and AVB</h3><p>No AVB downgrade preparation and no no-wipe downgrade workflow.</p></article>
+    <article class="card"><h3>Root edges</h3><p>No automated integrity checker, no APatch alternate patch path, and no legacy special Magisk recovery builds.</p></article>
+  </div>
+  <p class="intro" style="margin-top:18px">Line-by-line matrix: <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/PARITY.md">docs/PARITY.md</a>. Roadmap: <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/IMPLEMENTATION.md">docs/IMPLEMENTATION.md</a>. This is not 1.0.</p>
+</section>
+
+  </main>
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div>
+        <strong>PixelFlasher Rust Edition</strong>
+        <p>Native Windows preview. AGPL-3.0-or-later. Not affiliated with Google.</p>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="install.html">Install</a>
+        <a href="coverage.html">Coverage</a>
+        <a href="safety.html">Safety</a>
+        <a href="reference.html">Reference</a>
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition">Source</a>
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues">Issues</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

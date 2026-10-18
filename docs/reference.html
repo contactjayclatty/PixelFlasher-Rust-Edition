@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reference · PixelFlasher Rust Edition</title>
+  <meta name="description" content="Command-line flags, build steps, and fixes for PixelFlasher Rust Edition. These commands do not flash.">
+  <meta name="theme-color" content="#070b10">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="sub">
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="bar">
+    <a class="brand" href="index.html">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M8 1 3.2 10.2H8L6.4 17 15 7.2H9.6L11.4 1Z" fill="#5ecea8"/></svg>
+      <span><b>PIXELFLASHER</b><small>RUST EDITION</small></span>
+    </a>
+    <nav class="nav" aria-label="Site">
+      <a href="index.html">Home</a>
+<a href="product.html">Product</a>
+<a href="install.html">Install</a>
+<a href="coverage.html">Coverage</a>
+<a href="safety.html">Safety</a>
+<a href="reference.html" aria-current="page">Reference</a>
+    </nav>
+    <a class="btn" href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases">Download</a>
+  </header>
+  <div class="ribbon">Development preview 0.3.4 <span>·</span> Windows x64 <span>·</span> Not hardware-validated</div>
+  <main id="content">
+    
+<div class="wrap page">
+  <p class="kicker">Reference</p>
+  <h1>Commands that inspect. They do not flash.</h1>
+  <p class="lede">Device writes stay in the desktop review flow. These flags read files and catalogs.</p>
+</div>
+<section class="wrap section">
+  <pre><span class="label">PowerShell</span>.\PixelFlasher.exe --inspect .\images\init_boot.img
+.\PixelFlasher.exe --process .\firmware\factory-image.zip
+.\PixelFlasher.exe --library
+.\PixelFlasher.exe --import-legacy .\PixelFlasher4.db
+.\PixelFlasher.exe --catalog factory --acknowledge-google-terms
+.\PixelFlasher.exe --catalog ota --acknowledge-google-terms</pre>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Flag</th><th>It does</th><th>It does not</th></tr></thead>
+      <tbody>
+        <tr><td><code>--inspect</code></td><td>Read image metadata</td><td>Flash the image</td></tr>
+        <tr><td><code>--process</code></td><td>Process a supported firmware archive</td><td>Accept an incremental OTA</td></tr>
+        <tr><td><code>--library</code></td><td>Show the local library</td><td>Talk to a device</td></tr>
+        <tr><td><code>--import-legacy</code></td><td>Import a legacy BOOT database, read-only</td><td>Modify that database</td></tr>
+        <tr><td><code>--catalog</code></td><td>Fetch stable Factory or Full OTA metadata after you acknowledge Google's terms</td><td>Download firmware, or contact a device</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Optional local MCP is off unless you enable it in Settings. It cannot run a device operation, a shell, or read secrets. <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/MCP.md">MCP contract</a>.</p>
+  <h2>Build from source</h2>
+  <pre><span class="label">Run</span>git clone https://github.com/contactjayclatty/PixelFlasher-Rust-Edition.git
+cd PixelFlasher-Rust-Edition
+cargo run -j 2</pre>
+  <pre><span class="label">Checks</span>cargo fmt --all --check
+cargo test --locked --workspace -j 2
+cargo clippy --locked --workspace --all-targets -j 2 -- -D warnings
+cargo build --locked --workspace --release -j 2</pre>
+  <p class="intro">Windows CI is not device evidence. Packaging rules: <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/RELEASING.md">docs/RELEASING.md</a>.</p>
+  <h2>When something looks wrong</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>What you see</th><th>What to check</th></tr></thead>
+      <tbody>
+        <tr><td>Scan finds nothing</td><td>Settings points at a folder with both adb.exe and fastboot.exe. The app does not scan at startup. The phone has to already be in the mode that task needs.</td></tr>
+        <tr><td>The catalog stays empty</td><td>You have not acknowledged Google's terms, or you expected a beta, canary, or watch catalog.</td></tr>
+        <tr><td>A file or root package is refused</td><td>Incremental OTAs are rejected. Live boot accepts boot images only. Root adapters reject versions they do not pin.</td></tr>
+        <tr><td>Settings or images vanished</td><td>Data is per directory. Another PIXELFLASHER_DATA_DIR is another library.</td></tr>
+        <tr><td>You expected the Python app</td><td>This build never starts it. See <a href="coverage.html">coverage</a>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Source layout: <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/tree/main/crates/core">crates/core</a>, <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/tree/main/src">src</a>, <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/tree/main/crates/mcp">crates/mcp</a>. License notes: <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/NOTICE.md">NOTICE.md</a>. Pixel is a trademark of Google.</p>
+</section>
+
+  </main>
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div>
+        <strong>PixelFlasher Rust Edition</strong>
+        <p>Native Windows preview. AGPL-3.0-or-later. Not affiliated with Google.</p>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="install.html">Install</a>
+        <a href="coverage.html">Coverage</a>
+        <a href="safety.html">Safety</a>
+        <a href="reference.html">Reference</a>
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition">Source</a>
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues">Issues</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product · PixelFlasher Rust Edition</title>
+  <meta name="description" content="Nine workspaces in PixelFlasher Rust Edition 0.3.4: Overview, firmware, update, root, apps, backups, diagnostics, wireless, and settings.">
+  <meta name="theme-color" content="#070b10">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="sub">
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="bar">
+    <a class="brand" href="index.html">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M8 1 3.2 10.2H8L6.4 17 15 7.2H9.6L11.4 1Z" fill="#5ecea8"/></svg>
+      <span><b>PIXELFLASHER</b><small>RUST EDITION</small></span>
+    </a>
+    <nav class="nav" aria-label="Site">
+      <a href="index.html">Home</a>
+<a href="product.html" aria-current="page">Product</a>
+<a href="install.html">Install</a>
+<a href="coverage.html">Coverage</a>
+<a href="safety.html">Safety</a>
+<a href="reference.html">Reference</a>
+    </nav>
+    <a class="btn" href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases">Download</a>
+  </header>
+  <div class="ribbon">Development preview 0.3.4 <span>·</span> Windows x64 <span>·</span> Not hardware-validated</div>
+  <main id="content">
+    
+<div class="wrap page">
+  <p class="kicker">Product</p>
+  <h1>Nine workspaces. One device bar.</h1>
+  <p class="lede">Scan and Inspect stay at the top. The rest of the app is where you prepare work. None of these screens talk to a phone until you ask.</p>
+</div>
+<section class="wrap section" style="padding-top:10px">
+  <div class="bento">
+    <article class="ws feature">
+      <span class="tag">HOME</span>
+      <h3>Overview</h3>
+      <p>Readiness, plus status for the device, the image library, and platform-tools. Recent operations show up here. Interrupted ones are not replayed.</p>
+    </article>
+    <article class="ws"><span class="tag">FIRMWARE</span><h3>Firmware & Images</h3><p>Local files, the boot-image library, and the Google Factory and Full OTA catalogs.</p></article>
+    <article class="ws"><span class="tag">UPDATE</span><h3>Update Studio</h3><p>Factory, Full OTA, standalone-image, and live-boot plans. Live boot is boot images only.</p></article>
+    <article class="ws"><span class="tag">ROOT</span><h3>Root Studio</h3><p>Magisk, KernelSU, KernelSU-Next, SukiSU, Wild_KSU, and APatch. Partial. Unpinned builds are rejected.</p></article>
+    <article class="ws"><span class="tag">APPS</span><h3>Applications</h3><p>Package lists and supported package actions. Plans only. Not run against a phone in development.</p></article>
+    <article class="ws"><span class="tag">RECOVERY</span><h3>Backups & Recovery</h3><p>Partition backups and checksum-bound restore plans. A match is not proof the phone will boot.</p></article>
+    <article class="ws"><span class="tag">DIAGNOSTICS</span><h3>Diagnostics</h3><p>Properties, slots, log snapshots, and a subset of integrity checks.</p></article>
+    <article class="ws"><span class="tag">WIRELESS</span><h3>Wireless</h3><p>Pair, connect, and disconnect wireless debugging.</p></article>
+    <article class="ws"><span class="tag">SETTINGS</span><h3>Settings</h3><p>Platform-tools folder, data location, and optional local MCP. MCP is off unless you turn it on.</p></article>
+  </div>
+</section>
+<section class="wrap section" style="padding-top:0">
+  <p class="kicker">Order of operations</p>
+  <h2>The path every device write takes.</h2>
+  <div class="flow">
+    <div><b>01</b><span>Scan</span></div>
+    <div><b>02</b><span>Select the device</span></div>
+    <div><b>03</b><span>Prepare a frozen plan</span></div>
+    <div><b>04</b><span>Review target, files, and commands</span></div>
+    <div><b>05</b><span>Type the device confirmation</span></div>
+    <div><b>06</b><span>Run</span></div>
+  </div>
+  <p class="intro" style="margin-top:18px">A command that returned is not proof the phone will boot. <a href="safety.html">Read the limits</a>.</p>
+</section>
+
+  </main>
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div>
+        <strong>PixelFlasher Rust Edition</strong>
+        <p>Native Windows preview. AGPL-3.0-or-later. Not affiliated with Google.</p>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="install.html">Install</a>
+        <a href="coverage.html">Coverage</a>
+        <a href="safety.html">Safety</a>
+        <a href="reference.html">Reference</a>
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition">Source</a>
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues">Issues</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
