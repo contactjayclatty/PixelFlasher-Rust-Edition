@@ -7,98 +7,130 @@
 [![Latest release](https://img.shields.io/github/v/release/contactjayclatty/PixelFlasher-Rust-Edition?include_prereleases&label=version)](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases)
 [![Rust](https://img.shields.io/badge/Rust-2024-orange.svg)](https://www.rust-lang.org/)
 
-**A native Rust desktop companion for Pixel firmware and device workflows.**
+**A native Windows app for reviewing Pixel firmware and device operations before anything is written.**
 
-Review the operation. Confirm the target. Only then make a change.
+Version **0.3.4** · development preview · not a drop-in replacement for upstream PixelFlasher
 
-[Download the latest release](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases) ·
-[Feature parity](docs/PARITY.md) ·
+[Download](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases) ·
+[What this build covers](#what-034-actually-covers) ·
+[Parity](docs/PARITY.md) ·
 [Changelog](CHANGELOG.md) ·
-[Report a problem](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues)
+[Issues](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues)
 
-<img src="docs/screenshots/overview.png" alt="Overview with device controls, Scan, Inspect, and status rows" width="920">
+<img src="docs/screenshots/overview.png" alt="Overview with the device bar, Scan, Inspect, and status rows" width="920">
 
 </div>
 
 > [!WARNING]
-> **Development preview — not hardware-validated.** This is an independent Rust port of [PixelFlasher](https://github.com/badabing2005/PixelFlasher), based on upstream revision `081286d6baf8ac969df29e8b0ab3a5b6ae4cfb54` (10.1.1.1). It is not a drop-in replacement and does not yet implement every upstream feature. Automated tests cover parsers, planners, and selected workflows; they do not prove that flashing, rooting, recovery, or other device operations work on real hardware. Read [the feature-parity matrix](docs/PARITY.md) and [validation record](docs/VALIDATION.md) before using a device.
+> **Not hardware-validated.** This is an independent Rust port of [PixelFlasher](https://github.com/badabing2005/PixelFlasher), pinned to upstream `081286d6baf8ac969df29e8b0ab3a5b6ae4cfb54` (10.1.1.1). Automated tests cover parsers, planners, and selected workflows. They do not prove that flashing, rooting, unlocking, wiping, or restore works on a real phone. Read [parity](docs/PARITY.md) and [validation](docs/VALIDATION.md) before you use a device.
 
-## What is PixelFlasher Rust Edition?
+## Start here
 
-PixelFlasher Rust Edition is a native desktop application for organizing Pixel firmware and images, inspecting device state, and preparing device operations for review. It uses Rust, egui, and Android platform-tools. The Rust app does **not** launch or embed the upstream Python application.
-
-The interface is organized around a persistent device bar and nine workspaces: Overview, Update Studio, Root Studio, Firmware & Images, Applications, Backups & Recovery, Diagnostics, Settings, and Wireless. Background jobs keep the interface responsive; device discovery starts only when you request a scan.
-
-## Highlights
-
-| Area | What you can do |
+| You want | Use |
 |---|---|
-| **Firmware & images** | Organize boot-related images, inspect image metadata, and work with Factory and Full OTA firmware catalogs. Rows show build information and SHA-256 values where available. |
-| **Update and flash planning** | Prepare factory, OTA, standalone-image, and live-boot operations. Review the frozen commands, target, and relevant choices before confirming. Live boot is restricted to boot images. |
-| **Root Studio** | Prepare workflows for Magisk, KernelSU, KernelSU-Next, SukiSU, Wild_KSU, and APatch; manage supported module and manager actions. Provider and version limitations apply. |
-| **Applications and utilities** | Browse packages, prepare supported package actions, pair wireless debugging, inspect logs, and launch integrations such as scrcpy and Shizuku. These workflows have not been validated on a connected phone. |
-| **Backups and recovery** | Create supported partition backups and checksum-bound manifests. Restore planning checks the device, build, slot, and content; matching does not prove that restored data will boot. |
-| **Local library** | Keep image files, checksums, and provenance in the Rust Edition library. Legacy BOOT database import is read-only and only imports files whose recorded SHA-1 still matches. |
-| **Optional local MCP** | Let a local agent inspect saved metadata and queue a limited request for desktop review. MCP is off by default and cannot execute device operations, run a shell, or access secrets. |
+| The maintained, full application | [Upstream PixelFlasher](https://github.com/badabing2005/PixelFlasher) |
+| This native Rust preview, knowing every device write is still unproven | This repository, **Windows x64** |
+| macOS, Linux, translations, or complete upstream behavior | Not this release |
 
-This is a snapshot of implemented paths, **not a promise of complete upstream parity**. Some features are partial, some are pending, and implemented device operations remain unverified on hardware. See the [full parity matrix](docs/PARITY.md) for exact limits.
+Rust Edition does not launch or embed the Python app. It does not scan or talk to a phone until you press **Scan**. A device-changing action stays a frozen plan until you review the target, files, and commands, then type that device's confirmation.
+
+## Workspaces
+
+One device bar (selected device, **Scan**, **Inspect**) and nine workspaces.
+
+| Workspace | What you do there |
+|---|---|
+| **Overview** | Readiness, plus status for the device, images, and platform-tools |
+| **Update Studio** | Prepare factory, Full OTA, standalone-image, and live-boot plans |
+| **Root Studio** | Prepare Magisk, KernelSU, KernelSU-Next, SukiSU, Wild_KSU, and APatch workflows |
+| **Firmware & Images** | Library, Google Factory catalog, Google Full OTA catalog |
+| **Applications** | Browse packages and prepare supported package actions |
+| **Backups & Recovery** | Partition backups and checksum-bound restore plans |
+| **Diagnostics** | Properties, slots, log snapshots, and a subset of integrity checks |
+| **Settings** | Platform-tools folder, data location, optional local MCP |
+| **Wireless** | Pair, connect, and disconnect wireless debugging |
+
+```mermaid
+flowchart LR
+  A[Scan] --> B[Select the device]
+  B --> C[Prepare a frozen plan]
+  C --> D[Review target, files, and commands]
+  D --> E[Type the device confirmation]
+  E --> F[Run]
+```
+
+Stopping the run cannot undo a write that already finished. A command that returned is not proof the phone will boot.
+
+## What 0.3.4 actually covers
+
+**In the app** means the Rust path exists and is wired up. It does not mean a phone was used. Every device-mutation row below is hardware-unverified.
+
+| Area | 0.3.4 | The limit that matters |
+|---|---|---|
+| Device discovery, labels, properties, slots | In the app | Development did not include a live-device scan |
+| Platform-tools check | In the app | Still warns on platform-tools 34.0.0 through 34.0.4 |
+| Boot-image library and checksums | In the app | Legacy database import is read-only, and only when the recorded SHA-1 still matches the file |
+| Factory ZIP and Full OTA payload | In the app | Incremental OTAs are rejected. Samsung Odin/AP handling is not equivalent to upstream |
+| Factory flash, image flash, OTA sideload, live boot | Planned in the app | Live boot accepts boot images only. Nothing here has been flashed on hardware |
+| Root providers and modules | Partial | Six adapters check APK identity and version. Their scripts are unverified. Unpinned or canary builds are rejected |
+| GKI kernel replacement | Manual plan only | You pick the kernel. There is no automatic KMI-compatible download |
+| Packages, logcat snapshot, scrcpy, Shizuku | In the app | Command plans only. They were not run against a phone |
+| Partition backup and restore planning | In the app | A match checks device, build, slot, and content. That does not prove the restore will boot |
+| Google Factory and Full OTA catalogs | Stable only | Requires an explicit acknowledgement of Google's terms. Beta, canary, and watch catalogs are absent |
+| Local MCP | Optional, off by default | Reads saved metadata and can queue a desktop review. It cannot run a device operation, a shell, or read secrets |
+
+Not in this release: macOS and Linux packages, upstream's 23 translations, AVB downgrade and no-wipe downgrade, the automated integrity checker, APatch's alternate patch path, and legacy special Magisk recovery builds.
+
+The line-by-line matrix is [docs/PARITY.md](docs/PARITY.md). This release is not 1.0. The roadmap is [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md).
 
 ### A look around
 
 | Firmware & Images | Root Studio |
 |---|---|
-| <img src="docs/screenshots/firmware.png" alt="Firmware catalog with Factory and Full OTA choices, a model selector, and build rows" width="440"> | <img src="docs/screenshots/root.png" alt="Root Studio showing provider selection and manager assets" width="440"> |
-| Choose a catalog, select a model, review a build row, then choose an action. | Select a provider and prepare its supported workflow for review. |
+| <img src="docs/screenshots/firmware.png" alt="Factory and Full OTA catalog with a model selector and build rows" width="440"> | <img src="docs/screenshots/root.png" alt="Root Studio with provider selection and manager assets" width="440"> |
+| Pick a catalog and a model, select one build row, then Download. | Pick a provider and prepare only the workflow that provider supports. |
 
-## Download and install
+## Install
 
-The published portable application currently targets **Windows x64**. macOS and Linux are not built or packaged, and have not been validated.
+Published builds are **Windows x64** only.
 
-1. Open [Releases](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases) and download the latest Windows x64 ZIP and `checksums.sha256`.
-2. Verify the ZIP's SHA-256 against the matching entry in `checksums.sha256`.
+1. From [Releases](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases), download the latest Windows ZIP and `checksums.sha256`.
+2. Check the ZIP's SHA-256 against the matching line in `checksums.sha256`.
 3. Extract the ZIP and launch `PixelFlasher.exe`.
-4. Install or locate Android [platform-tools](https://developer.android.com/tools/releases/platform-tools) separately. In **Settings**, select the folder containing both `adb.exe` and `fastboot.exe`.
+4. Install Android [platform-tools](https://developer.android.com/tools/releases/platform-tools). In **Settings**, select the folder that contains both `adb.exe` and `fastboot.exe`.
 
-Platform-tools and scrcpy are **not** included in the application ZIP. The app also does not bundle the original Python application.
+The ZIP does not include platform-tools, scrcpy, or the original Python application.
 
-By default, settings and the image library are stored in:
+Settings and the image library default to:
 
 ```text
 %LOCALAPPDATA%\PixelFlasherRust
 ```
 
-Set `PIXELFLASHER_DATA_DIR` before launching the app to use a separate data directory. Keep backups of data you care about; changing this location selects a different workspace.
+Set `PIXELFLASHER_DATA_DIR` before launch to use another directory. That selects a different workspace. It does not copy the old one.
 
 ## First session
 
-1. Start the application. It does not scan for or communicate with a device automatically.
-2. Open **Settings** and select the platform-tools folder. The app checks for both ADB and fastboot.
-3. Connect your phone in the state required for the task, then select **Scan**. Select the intended device before inspecting or preparing an operation.
-4. In **Firmware & Images**, add a supported firmware or image file, or choose a Google Factory/Full OTA catalog. Catalog access requires explicit acknowledgement of Google's terms.
-5. Read each proposed operation carefully. Check the selected device, input files, commands, and choices such as wipe or slot changes. A device-changing action requires a reviewed plan and its device-specific typed confirmation.
-6. Do not proceed unless you understand the operation and have a recovery path for your device.
+1. Start the app. It does not look for a device on its own.
+2. In **Settings**, select the platform-tools folder. The app checks for both ADB and fastboot.
+3. Connect the phone in the mode the task needs, press **Scan**, then select that device before you inspect or prepare anything.
+4. In **Firmware & Images**, add a supported file or open a Factory / Full OTA catalog. Catalog access requires you to acknowledge Google's terms.
+5. Read the plan. Check the device, input files, commands, and choices such as wipe or slot. Destructive work asks for a typed confirmation for that device.
+6. Do not continue unless you understand the operation and have a way to recover the phone.
 
-The confirmation flow is a safeguard, not a guarantee of firmware authenticity, bootability, compatibility, anti-rollback safety, or successful recovery. A command that completed is not necessarily a verified result. Cancellation cannot undo a write that has already completed.
+The confirmation is a safeguard, not a guarantee of authenticity, compatibility, anti-rollback safety, or a successful boot. Interrupted operations are kept for inspection and are not replayed.
 
-## Safety and validation
+## Safety
 
-Device operations can erase data, prevent a device from booting, or require specialized recovery. In particular, flashing, bootloader unlock/lock, root changes, partition operations, and restores can have serious consequences.
+Flashing, bootloader unlock or lock, root changes, partition writes, and restores can erase data or leave a device unable to boot.
 
-The application prepares a frozen operation plan with the selected target and relevant input hashes. Before running, it rechecks important inputs and target conditions; destructive work remains subject to review and confirmation. Interrupted operations are recorded for inspection and are **not** replayed automatically.
+Before a run, the app freezes the plan (target plus the hashes of the inputs that matter) and rechecks those inputs. That recheck does not make an image trustworthy. Development does not flash, root, unlock, relock, wipe, pair wirelessly, or restore anything on hardware.
 
-These safeguards do not establish that:
+Details: [validation gaps](docs/VALIDATION.md) and [how plans are bounded](docs/ARCHITECTURE.md).
 
-- an image is trustworthy, compatible, or safe to flash;
-- a device operation will succeed or leave the phone bootable;
-- a restored partition or root workflow is correct for your specific device;
-- every upstream PixelFlasher feature is present; or
-- a tested planner fixture represents real-device testing.
+## Command line
 
-**No real device mutations are authorized or performed as part of development.** Flashing, rooting, unlocking, relocking, wiping, wireless pairing, and restore paths have not been validated on hardware. Review [validation evidence and gaps](docs/VALIDATION.md), [architecture and execution boundaries](docs/ARCHITECTURE.md), and [parity status](docs/PARITY.md).
-
-## Command-line use
-
-The desktop executable also supports a small set of non-interactive commands. Run them from PowerShell with the path to the executable or from a directory containing it:
+These commands inspect files and catalogs. They do not flash, and they do not replace the reviewed desktop flow for device writes.
 
 ```powershell
 .\PixelFlasher.exe --inspect .\images\init_boot.img
@@ -109,17 +141,19 @@ The desktop executable also supports a small set of non-interactive commands. Ru
 .\PixelFlasher.exe --catalog ota --acknowledge-google-terms
 ```
 
-- `--inspect` reads image metadata; it does not flash the image.
-- `--process` processes a supported firmware archive; incremental OTA payloads are rejected.
-- `--library` inspects the local Rust Edition library.
-- `--import-legacy` performs a read-only legacy import. It does not modify the source database.
-- `--catalog` retrieves catalog metadata after the explicit Google-terms acknowledgement. It does not download firmware or communicate with a device.
+| Flag | It does | It does not |
+|---|---|---|
+| `--inspect` | Read image metadata | Flash the image |
+| `--process` | Process a supported firmware archive | Accept an incremental OTA |
+| `--library` | Show the local Rust Edition library | Talk to a device |
+| `--import-legacy` | Import a legacy BOOT database, read-only | Modify the source database |
+| `--catalog` | Fetch stable Factory or Full OTA metadata after you acknowledge Google's terms | Download firmware, or contact a device |
 
-These commands do not replace the reviewed desktop workflow for device operations. See [MCP documentation](docs/MCP.md) for the separate optional local-agent interface and its restrictions.
+Optional local MCP is documented in [docs/MCP.md](docs/MCP.md). Leave it off unless you want a local agent to read saved metadata.
 
 ## Build from source
 
-Install the Rust toolchain and platform dependencies for eframe, then from the repository root:
+Install Rust and the native dependencies eframe needs, then:
 
 ```powershell
 git clone https://github.com/contactjayclatty/PixelFlasher-Rust-Edition.git
@@ -127,7 +161,7 @@ cd PixelFlasher-Rust-Edition
 cargo run -j 2
 ```
 
-Run the repository's workspace checks and release build with:
+Checks and a release build:
 
 ```powershell
 cargo fmt --all --check
@@ -136,49 +170,61 @@ cargo clippy --locked --workspace --all-targets -j 2 -- -D warnings
 cargo build --locked --workspace --release -j 2
 ```
 
-Windows CI runs automated checks; CI status is not evidence of device compatibility. To capture the native interface during development:
+Windows CI is not evidence that a device operation works. To capture the UI while developing:
 
 ```powershell
 $env:EFRAME_SCREENSHOT_TO = "screenshot.png"
-$env:PIXELFLASHER_CAPTURE_PAGE = "firmware" # for example: overview, root, apps, backups
+$env:PIXELFLASHER_CAPTURE_PAGE = "firmware" # overview, root, apps, backups
 cargo run --release
 ```
 
-See [Contributing](CONTRIBUTING.md) for code layout and test expectations, and [Releasing](docs/RELEASING.md) for packaging and publication rules.
+Packaging rules are in [docs/RELEASING.md](docs/RELEASING.md). Contributor layout is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Optional local MCP
+## Repository
 
-The separate `pixelflasher-mcp` executable uses newline-delimited JSON-RPC over standard input/output. Enable local agent integration in desktop **Settings**; it is disabled by default. It can inspect saved, potentially stale metadata and queue a limited typed request for local desktop review. It has no device transport or execution capability, and exposes no approval, arbitrary shell, or secret-reading tool. Starting MCP never executes queued work.
-
-See [MCP protocol, tools, and setup](docs/MCP.md) before enabling it.
+| Path | What lives there |
+|---|---|
+| [`crates/core`](crates/core) | Firmware, flash plans, devices, root providers, library, recovery |
+| [`src`](src) | Desktop UI and the compatibility facade |
+| [`crates/mcp`](crates/mcp) | Optional stdio MCP executable |
+| [`docs`](docs) | Parity, architecture, validation, release rules |
+| [`tests`](tests) | Parser, planner, catalog, and studio fixtures |
 
 ## Documentation
 
-| Document | Description |
+| Document | Read it for |
 |---|---|
-| [Feature parity](docs/PARITY.md) | Implemented, partial, hardware-unverified, and pending upstream areas |
-| [Architecture](docs/ARCHITECTURE.md) | Core/UI boundaries, plans, execution controls, data handling |
-| [Implementation plan](docs/IMPLEMENTATION.md) | Approved roadmap and completion gates |
-| [Validation](docs/VALIDATION.md) | Automated evidence, UI captures, and unvalidated workflows |
-| [MCP](docs/MCP.md) | Optional local MCP setup and supported contract |
-| [Contributing](CONTRIBUTING.md) | Repository layout and checks for contributors |
-| [Releasing](docs/RELEASING.md) | Release packaging and publication checklist |
-| [Changelog](CHANGELOG.md) | Changes by release |
-| [Notice](NOTICE.md) | Upstream attribution and license notes |
+| [Feature parity](docs/PARITY.md) | Implemented, partial, unverified, and missing upstream areas |
+| [Architecture](docs/ARCHITECTURE.md) | Core and UI boundaries, plans, and what is allowed to run |
+| [Implementation plan](docs/IMPLEMENTATION.md) | Roadmap and the gates for 1.0 |
+| [Validation](docs/VALIDATION.md) | Automated evidence, UI captures, and untested workflows |
+| [MCP](docs/MCP.md) | The local agent contract and what it cannot do |
+| [Contributing](CONTRIBUTING.md) | Layout and the checks a change should pass |
+| [Releasing](docs/RELEASING.md) | How a Windows package is cut |
+| [Changelog](CHANGELOG.md) | What changed in 0.3.0 through 0.3.4 |
+| [Notice](NOTICE.md) | Upstream attribution and the license record |
 
-The shared core is in `crates/core`; the desktop presentation and compatibility facade are in `src`; the optional MCP executable is in `crates/mcp`.
+## When something looks wrong
 
-## Project status and upstream relationship
+| What you see | What to check |
+|---|---|
+| **Scan** finds nothing | **Settings** points at a folder with both `adb.exe` and `fastboot.exe`. The app does not scan at startup. The phone has to already be in the mode that task needs. |
+| The catalog stays empty | You have not acknowledged Google's terms, or you expected a beta, canary, or watch catalog. Those are not in 0.3.4. |
+| A file or root package is refused | Incremental OTAs are rejected. Live boot accepts boot images only. Root adapters reject package versions they do not pin. |
+| Settings or images vanished | Data is per directory: `%LOCALAPPDATA%\PixelFlasherRust`, or whatever `PIXELFLASHER_DATA_DIR` was at launch. A different path is a different library. |
+| You expected the Python app | This build never starts it. Behavior will not match [upstream](https://github.com/badabing2005/PixelFlasher) feature for feature. See [parity](docs/PARITY.md). |
 
-The upstream application is a Python/wxPython project. Rust Edition is an independent port with a native desktop interface and a different execution-safety model. The current release is a development preview, not a complete conversion or an assurance of behavioral equivalence. The [approved implementation plan](docs/IMPLEMENTATION.md) describes the roadmap to 1.0; the [parity matrix](docs/PARITY.md) tracks current feature coverage.
+## Upstream and license
 
-PixelFlasher Rust Edition is licensed under AGPL-3.0-or-later. Upstream attribution and the license discrepancy record are in [NOTICE.md](NOTICE.md). Pixel is a trademark of Google; this project is not affiliated with Google.
+Upstream PixelFlasher is a Python/wxPython application. Rust Edition is a separate port with a native interface and a different safety model: frozen plans, a recheck before run, and no automatic replay. Publication of 0.3.4 is not a claim that the [1.0 plan](docs/IMPLEMENTATION.md) is done.
+
+Licensed under AGPL-3.0-or-later. Attribution and the license notes are in [NOTICE.md](NOTICE.md). Pixel is a trademark of Google. This project is not affiliated with, endorsed by, or supported by Google.
 
 ## Get help
 
-- Check the [parity matrix](docs/PARITY.md) and [validation record](docs/VALIDATION.md) for known gaps.
-- Search [existing issues](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues) or [open a new issue](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues/new).
-- Include the app version, Windows version, relevant workflow, and sanitized logs when reporting a problem. Remove serials, personal paths, tokens, and other sensitive information before sharing logs.
+- Known gaps: [parity](docs/PARITY.md) and [validation](docs/VALIDATION.md).
+- Search [issues](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues) or [open one](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues/new).
+- Include the app version, Windows version, the workspace you were in, and sanitized logs. Strip serials, personal paths, and tokens before you paste anything.
 
 <div align="center">
 
