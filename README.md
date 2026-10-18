@@ -11,6 +11,10 @@
 
 </div>
 
+<p align="center">
+  <a href="https://contactjayclatty.github.io/PixelFlasher-Rust-Edition/"><img alt="Open the site" src="https://img.shields.io/badge/site-GitHub_Pages-5ecea8?style=flat-square"></a>
+</p>
+
 > [!WARNING]
 > **Not hardware-validated.** Independent Rust port of [PixelFlasher](https://github.com/badabing2005/PixelFlasher), pinned to upstream `081286d6baf8ac969df29e8b0ab3a5b6ae4cfb54` (10.1.1.1). Tests cover parsers, planners, and selected workflows. They do not prove that flashing, rooting, unlocking, wiping, or restore works on a real phone. Read [parity](docs/PARITY.md) and [validation](docs/VALIDATION.md) before you use a device.
 

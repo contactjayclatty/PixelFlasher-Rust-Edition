@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PixelFlasher Rust Edition</title>
+  <meta name="description" content="Native Windows preview for reviewing Pixel firmware and device operations before anything is written. Version 0.3.4. Not hardware-validated.">
+  <meta property="og:title" content="PixelFlasher Rust Edition">
+  <meta property="og:description" content="Review the firmware. Confirm the device. Only then write. Development preview 0.3.4 for Windows x64.">
+  <meta property="og:image" content="https://contactjayclatty.github.io/PixelFlasher-Rust-Edition/screenshots/overview.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="top">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M8 1 L3.5 10 H8 L6.5 17 L15 7 H10 L12 1 Z" fill="#5ECEA8"/>
+        </svg>
+      </span>
+      <span>
+        <b>PIXELFLASHER</b>
+        <small>RUST EDITION</small>
+      </span>
+    </a>
+    <div class="top-actions">
+      <a class="btn primary" href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases">Download</a>
+      <a class="btn" href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition">Source</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <p class="kicker">PIXELFLASHER</p>
+        <p class="eyebrow">RUST EDITION</p>
+        <h1>Review the firmware. Confirm the device. Only then write.</h1>
+        <p class="lede">Native Windows preview of PixelFlasher. Version 0.3.4. Not a drop-in replacement, and not hardware-validated.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span>VERSION</span><strong>0.3.4 preview</strong></div>
+        <div class="fact"><span>PLATFORM</span><strong>Windows x64 only</strong></div>
+        <div class="fact warn"><span>DEVICE WRITES</span><strong>Plan, then confirm</strong></div>
+      </div>
+    </div>
+
+    <div class="wrap layout">
+      <nav class="side" aria-label="On this page">
+        <a href="#start">Start here</a>
+        <a href="#workspaces">Workspaces</a>
+        <a href="#coverage">What 0.3.4 covers</a>
+        <a href="#look">A look around</a>
+        <a href="#install">Install</a>
+        <a href="#session">First session</a>
+        <a href="#safety">Safety</a>
+        <a href="#cli">Command line</a>
+        <a href="#build">Build</a>
+        <a href="#trouble">When it looks wrong</a>
+        <a href="#license">License</a>
+      </nav>
+
+      <div id="content">
+        <div class="alert">
+          <strong>Not hardware-validated.</strong>
+          Independent Rust port of <a href="https://github.com/badabing2005/PixelFlasher">PixelFlasher</a>, pinned to upstream <span class="mono">081286d6baf8ac969df29e8b0ab3a5b6ae4cfb54</span> (10.1.1.1). Tests cover parsers, planners, and selected workflows. They do not prove that flashing, rooting, unlocking, wiping, or restore works on a real phone. Read <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/PARITY.md">parity</a> and <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/VALIDATION.md">validation</a> before you use a device.
+        </div>
+
+        <section id="start">
+          <div class="section-head">
+            <span class="index">01</span>
+            <div>
+              <h2>Start here</h2>
+              <p>Use this preview, or use upstream PixelFlasher.</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>You want</th><th>Use</th></tr></thead>
+              <tbody>
+                <tr><td>The maintained, full application</td><td><a href="https://github.com/badabing2005/PixelFlasher">Upstream PixelFlasher</a></td></tr>
+                <tr><td>This native Rust preview, knowing every device write is still unproven</td><td>This repository, Windows x64</td></tr>
+                <tr><td>macOS, Linux, translations, or complete upstream behavior</td><td>Not this release</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Rust Edition does not launch or embed the Python app. It does not scan or talk to a phone until you press <strong>Scan</strong>. A device-changing action stays a frozen plan until you review the target, files, and commands, then type that device's confirmation.</p>
+        </section>
+
+        <section id="workspaces">
+          <div class="section-head">
+            <span class="index">02</span>
+            <div>
+              <h2>Workspaces</h2>
+              <p>Nine screens. One device bar. Nothing scans until you ask.</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Workspace</th><th>What you do there</th></tr></thead>
+              <tbody>
+                <tr><td>Overview</td><td>Readiness, plus status for the device, images, and platform-tools</td></tr>
+                <tr><td>Update Studio</td><td>Prepare factory, Full OTA, standalone-image, and live-boot plans</td></tr>
+                <tr><td>Root Studio</td><td>Prepare Magisk, KernelSU, KernelSU-Next, SukiSU, Wild_KSU, and APatch workflows</td></tr>
+                <tr><td>Firmware & Images</td><td>Library, Google Factory catalog, Google Full OTA catalog</td></tr>
+                <tr><td>Applications</td><td>Browse packages and prepare supported package actions</td></tr>
+                <tr><td>Backups & Recovery</td><td>Partition backups and checksum-bound restore plans</td></tr>
+                <tr><td>Diagnostics</td><td>Properties, slots, log snapshots, and a subset of integrity checks</td></tr>
+                <tr><td>Settings</td><td>Platform-tools folder, data location, optional local MCP</td></tr>
+                <tr><td>Wireless</td><td>Pair, connect, and disconnect wireless debugging</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="steps" aria-label="Review flow">
+            <div class="step"><b>01</b><span>Scan</span></div>
+            <div class="step"><b>02</b><span>Select the device</span></div>
+            <div class="step"><b>03</b><span>Prepare a frozen plan</span></div>
+            <div class="step"><b>04</b><span>Review target, files, and commands</span></div>
+            <div class="step"><b>05</b><span>Type the device confirmation</span></div>
+            <div class="step"><b>06</b><span>Run</span></div>
+          </div>
+          <p class="note">Stopping the run cannot undo a write that already finished. A command that returned is not proof the phone will boot.</p>
+        </section>
+
+        <section id="coverage">
+          <div class="section-head">
+            <span class="index">03</span>
+            <div>
+              <h2>What 0.3.4 covers</h2>
+              <p>In the app is not the same as proven on a phone.</p>
+            </div>
+          </div>
+          <p class="note"><strong style="color:var(--text)">In the app</strong> means the Rust path exists and is wired up. It does not mean a phone was used. Every device-mutation row below is hardware-unverified.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Area</th><th>0.3.4</th><th>The limit that matters</th></tr></thead>
+              <tbody>
+                <tr><td>Device discovery, labels, properties, slots</td><td>In the app</td><td>Development did not include a live-device scan</td></tr>
+                <tr><td>Platform-tools check</td><td>In the app</td><td>Still warns on platform-tools 34.0.0 through 34.0.4</td></tr>
+                <tr><td>Boot-image library and checksums</td><td>In the app</td><td>Legacy database import is read-only, and only when the recorded SHA-1 still matches the file</td></tr>
+                <tr><td>Factory ZIP and Full OTA payload</td><td>In the app</td><td>Incremental OTAs are rejected. Samsung Odin/AP handling is not equivalent to upstream</td></tr>
+                <tr><td>Factory flash, image flash, OTA sideload, live boot</td><td>Planned in the app</td><td>Live boot accepts boot images only. Nothing here has been flashed on hardware</td></tr>
+                <tr><td>Root providers and modules</td><td>Partial</td><td>Six adapters check APK identity and version. Their scripts are unverified. Unpinned or canary builds are rejected</td></tr>
+                <tr><td>GKI kernel replacement</td><td>Manual plan only</td><td>You pick the kernel. There is no automatic KMI-compatible download</td></tr>
+                <tr><td>Packages, logcat snapshot, scrcpy, Shizuku</td><td>In the app</td><td>Command plans only. They were not run against a phone</td></tr>
+                <tr><td>Partition backup and restore planning</td><td>In the app</td><td>A match checks device, build, slot, and content. That does not prove the restore will boot</td></tr>
+                <tr><td>Google Factory and Full OTA catalogs</td><td>Stable only</td><td>Requires an explicit acknowledgement of Google's terms. Beta, canary, and watch catalogs are absent</td></tr>
+                <tr><td>Local MCP</td><td>Optional, off by default</td><td>Reads saved metadata and can queue a desktop review. It cannot run a device operation, a shell, or read secrets</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Not in this release: macOS and Linux packages, upstream's 23 translations, AVB downgrade and no-wipe downgrade, the automated integrity checker, APatch's alternate patch path, and legacy special Magisk recovery builds.</p>
+          <p>The line-by-line matrix is <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/PARITY.md">docs/PARITY.md</a>. This release is not 1.0. The roadmap is <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/IMPLEMENTATION.md">docs/IMPLEMENTATION.md</a>.</p>
+        </section>
+
+        <section id="look">
+          <div class="section-head">
+            <span class="index">04</span>
+            <div>
+              <h2>A look around</h2>
+              <p>Firmware catalog and Root Studio, from the development UI.</p>
+            </div>
+          </div>
+          <div class="shots">
+            <figure>
+              <img src="screenshots/overview.png" alt="Overview with the device bar, Scan, Inspect, and status rows">
+              <figcaption>Overview. The device bar stays up. Scan does not run until you ask.</figcaption>
+            </figure>
+            <figure>
+              <img src="screenshots/firmware.png" alt="Factory and Full OTA catalog with a model selector and build rows">
+              <figcaption>Pick a catalog and a model, select one build row, then Download.</figcaption>
+            </figure>
+            <figure>
+              <img src="screenshots/root.png" alt="Root Studio with provider selection and manager assets">
+              <figcaption>Pick a provider and prepare only the workflow that provider supports.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="install">
+          <div class="section-head">
+            <span class="index">05</span>
+            <div>
+              <h2>Install</h2>
+              <p>Windows x64. Check the ZIP. Point at platform-tools.</p>
+            </div>
+          </div>
+          <ol class="clean">
+            <li>From <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases">Releases</a>, download the latest Windows ZIP and <span class="mono">checksums.sha256</span>.</li>
+            <li>Check the ZIP's SHA-256 against the matching line in <span class="mono">checksums.sha256</span>.</li>
+            <li>Extract the ZIP and launch <span class="mono">PixelFlasher.exe</span>.</li>
+            <li>Install Android <a href="https://developer.android.com/tools/releases/platform-tools">platform-tools</a>. In <strong>Settings</strong>, select the folder that contains both <span class="mono">adb.exe</span> and <span class="mono">fastboot.exe</span>.</li>
+          </ol>
+          <p>The ZIP does not include platform-tools, scrcpy, or the original Python application.</p>
+          <p>Settings and the image library default to:</p>
+          <pre>%LOCALAPPDATA%\PixelFlasherRust</pre>
+          <p class="note">Set <span class="mono">PIXELFLASHER_DATA_DIR</span> before launch to use another directory. That selects a different workspace. It does not copy the old one.</p>
+        </section>
+
+        <section id="session">
+          <div class="section-head">
+            <span class="index">06</span>
+            <div>
+              <h2>First session</h2>
+              <p>Select the device before you prepare anything.</p>
+            </div>
+          </div>
+          <ol class="clean">
+            <li>Start the app. It does not look for a device on its own.</li>
+            <li>In <strong>Settings</strong>, select the platform-tools folder. The app checks for both ADB and fastboot.</li>
+            <li>Connect the phone in the mode the task needs, press <strong>Scan</strong>, then select that device before you inspect or prepare anything.</li>
+            <li>In <strong>Firmware & Images</strong>, add a supported file or open a Factory / Full OTA catalog. Catalog access requires you to acknowledge Google's terms.</li>
+            <li>Read the plan. Check the device, input files, commands, and choices such as wipe or slot. Destructive work asks for a typed confirmation for that device.</li>
+            <li>Do not continue unless you understand the operation and have a way to recover the phone.</li>
+          </ol>
+          <p class="note">The confirmation is a safeguard, not a guarantee of authenticity, compatibility, anti-rollback safety, or a successful boot. Interrupted operations are kept for inspection and are not replayed.</p>
+        </section>
+
+        <section id="safety">
+          <div class="section-head">
+            <span class="index amber">07</span>
+            <div>
+              <h2>Safety</h2>
+              <p>Cancellation cannot undo a write that already finished.</p>
+            </div>
+          </div>
+          <p>Flashing, bootloader unlock or lock, root changes, partition writes, and restores can erase data or leave a device unable to boot.</p>
+          <p>Before a run, the app freezes the plan (target plus the hashes of the inputs that matter) and rechecks those inputs. That recheck does not make an image trustworthy. Development does not flash, root, unlock, relock, wipe, pair wirelessly, or restore anything on hardware.</p>
+          <p>Details: <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/VALIDATION.md">validation gaps</a> and <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/ARCHITECTURE.md">how plans are bounded</a>.</p>
+        </section>
+
+        <section id="cli">
+          <div class="section-head">
+            <span class="index">08</span>
+            <div>
+              <h2>Command line</h2>
+              <p>Inspect files and catalogs. These flags do not flash.</p>
+            </div>
+          </div>
+          <pre><span>PowerShell</span>
+.\PixelFlasher.exe --inspect .\images\init_boot.img
+.\PixelFlasher.exe --process .\firmware\factory-image.zip
+.\PixelFlasher.exe --library
+.\PixelFlasher.exe --import-legacy .\PixelFlasher4.db
+.\PixelFlasher.exe --catalog factory --acknowledge-google-terms
+.\PixelFlasher.exe --catalog ota --acknowledge-google-terms</pre>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Flag</th><th>It does</th><th>It does not</th></tr></thead>
+              <tbody>
+                <tr><td><span class="mono">--inspect</span></td><td>Read image metadata</td><td>Flash the image</td></tr>
+                <tr><td><span class="mono">--process</span></td><td>Process a supported firmware archive</td><td>Accept an incremental OTA</td></tr>
+                <tr><td><span class="mono">--library</span></td><td>Show the local Rust Edition library</td><td>Talk to a device</td></tr>
+                <tr><td><span class="mono">--import-legacy</span></td><td>Import a legacy BOOT database, read-only</td><td>Modify the source database</td></tr>
+                <tr><td><span class="mono">--catalog</span></td><td>Fetch stable Factory or Full OTA metadata after you acknowledge Google's terms</td><td>Download firmware, or contact a device</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Optional local MCP is documented in <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/MCP.md">docs/MCP.md</a>. Leave it off unless you want a local agent to read saved metadata.</p>
+        </section>
+
+        <section id="build">
+          <div class="section-head">
+            <span class="index">09</span>
+            <div>
+              <h2>Build from source</h2>
+              <p>Rust 2024. Windows CI is not device evidence.</p>
+            </div>
+          </div>
+          <pre><span>PowerShell</span>
+git clone https://github.com/contactjayclatty/PixelFlasher-Rust-Edition.git
+cd PixelFlasher-Rust-Edition
+cargo run -j 2</pre>
+          <pre><span>Checks and a release build</span>
+cargo fmt --all --check
+cargo test --locked --workspace -j 2
+cargo clippy --locked --workspace --all-targets -j 2 -- -D warnings
+cargo build --locked --workspace --release -j 2</pre>
+          <pre><span>Capture the UI while developing</span>
+$env:EFRAME_SCREENSHOT_TO = "screenshot.png"
+$env:PIXELFLASHER_CAPTURE_PAGE = "firmware"  # overview, root, apps, backups
+cargo run --release</pre>
+          <p>Packaging rules are in <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/RELEASING.md">docs/RELEASING.md</a>. Contributor layout is in <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+        </section>
+
+        <section id="trouble">
+          <div class="section-head">
+            <span class="index">10</span>
+            <div>
+              <h2>When something looks wrong</h2>
+              <p>Scan, catalog, a refused file, or a missing library.</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>What you see</th><th>What to check</th></tr></thead>
+              <tbody>
+                <tr><td>Scan finds nothing</td><td><strong>Settings</strong> points at a folder with both adb.exe and fastboot.exe. The app does not scan at startup. The phone has to already be in the mode that task needs.</td></tr>
+                <tr><td>The catalog stays empty</td><td>You have not acknowledged Google's terms, or you expected a beta, canary, or watch catalog. Those are not in 0.3.4.</td></tr>
+                <tr><td>A file or root package is refused</td><td>Incremental OTAs are rejected. Live boot accepts boot images only. Root adapters reject package versions they do not pin.</td></tr>
+                <tr><td>Settings or images vanished</td><td>Data is per directory: %LOCALAPPDATA%\PixelFlasherRust, or whatever PIXELFLASHER_DATA_DIR was at launch. A different path is a different library.</td></tr>
+                <tr><td>You expected the Python app</td><td>This build never starts it. Behavior will not match upstream feature for feature. See <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/PARITY.md">parity</a>.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="license">
+          <div class="section-head">
+            <span class="index">11</span>
+            <div>
+              <h2>Upstream and license</h2>
+              <p>AGPL-3.0-or-later. Not affiliated with Google.</p>
+            </div>
+          </div>
+          <p>Upstream PixelFlasher is a Python/wxPython application. Rust Edition is a separate port with a native interface and a different safety model: frozen plans, a recheck before run, and no automatic replay. Publication of 0.3.4 is not a claim that the <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/IMPLEMENTATION.md">1.0 plan</a> is done.</p>
+          <p>Licensed under <a href="https://www.gnu.org/licenses/agpl-3.0">AGPL-3.0-or-later</a>. Attribution and the license notes are in <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/NOTICE.md">NOTICE.md</a>. Pixel is a trademark of Google. This project is not affiliated with, endorsed by, or supported by Google.</p>
+          <p>Source layout: <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/tree/main/crates/core">crates/core</a>, <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/tree/main/src">src</a>, <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/tree/main/crates/mcp">crates/mcp</a>, <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/tree/main/docs">docs</a>, <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/tree/main/tests">tests</a>.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="site">
+    <div class="wrap">
+      <div>0.3.4 development preview · hardware not validated · AGPL-3.0-or-later</div>
+      <div>
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases">Releases</a>
+        ·
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues">Issues</a>
+        ·
+        <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/blob/main/docs/PARITY.md">Parity</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
