@@ -1,30 +1,31 @@
 <div align="center">
 
-# PixelFlasher Rust Edition
+<img src="docs/brand/hero.svg" alt="PixelFlasher Rust Edition. Review the firmware. Confirm the device. Only then write. Version 0.3.4, Windows x64, development preview." width="100%">
 
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL_3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![CI](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/actions/workflows/ci.yml/badge.svg)](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/actions/workflows/ci.yml)
-[![Latest release](https://img.shields.io/github/v/release/contactjayclatty/PixelFlasher-Rust-Edition?include_prereleases&label=version)](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases)
-[![Rust](https://img.shields.io/badge/Rust-2024-orange.svg)](https://www.rust-lang.org/)
-
-**A native Windows app for reviewing Pixel firmware and device operations before anything is written.**
-
-Version **0.3.4** · development preview · not a drop-in replacement for upstream PixelFlasher
-
-[Download](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases) ·
-[What this build covers](#what-034-actually-covers) ·
-[Parity](docs/PARITY.md) ·
-[Changelog](CHANGELOG.md) ·
-[Issues](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues)
-
-<img src="docs/screenshots/overview.png" alt="Overview with the device bar, Scan, Inspect, and status rows" width="920">
+<p>
+  <a href="https://www.gnu.org/licenses/agpl-3.0"><img alt="License AGPL-3.0" src="https://img.shields.io/badge/License-AGPL_3.0-blue.svg"></a>
+  <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/contactjayclatty/PixelFlasher-Rust-Edition?include_prereleases&label=version"></a>
+  <a href="https://www.rust-lang.org/"><img alt="Rust 2024" src="https://img.shields.io/badge/Rust-2024-orange.svg"></a>
+</p>
 
 </div>
 
 > [!WARNING]
-> **Not hardware-validated.** This is an independent Rust port of [PixelFlasher](https://github.com/badabing2005/PixelFlasher), pinned to upstream `081286d6baf8ac969df29e8b0ab3a5b6ae4cfb54` (10.1.1.1). Automated tests cover parsers, planners, and selected workflows. They do not prove that flashing, rooting, unlocking, wiping, or restore works on a real phone. Read [parity](docs/PARITY.md) and [validation](docs/VALIDATION.md) before you use a device.
+> **Not hardware-validated.** Independent Rust port of [PixelFlasher](https://github.com/badabing2005/PixelFlasher), pinned to upstream `081286d6baf8ac969df29e8b0ab3a5b6ae4cfb54` (10.1.1.1). Tests cover parsers, planners, and selected workflows. They do not prove that flashing, rooting, unlocking, wiping, or restore works on a real phone. Read [parity](docs/PARITY.md) and [validation](docs/VALIDATION.md) before you use a device.
 
-## Start here
+## On this page
+
+| | | |
+|---|---|---|
+| [Start here](#start-here) | [Workspaces](#workspaces) | [What 0.3.4 covers](#coverage) |
+| [Install](#install) | [First session](#first-session) | [Safety](#safety) |
+| [Command line](#command-line) | [Build](#build) | [When something looks wrong](#trouble) |
+| [Upstream and license](#license) | [Documentation](#documentation) | [Get help](#get-help) |
+
+<a name="start-here"></a>
+
+<img src="docs/brand/start.svg" alt="01 Start here. Use this preview, or use upstream PixelFlasher." width="100%">
 
 | You want | Use |
 |---|---|
@@ -34,7 +35,9 @@ Version **0.3.4** · development preview · not a drop-in replacement for upstre
 
 Rust Edition does not launch or embed the Python app. It does not scan or talk to a phone until you press **Scan**. A device-changing action stays a frozen plan until you review the target, files, and commands, then type that device's confirmation.
 
-## Workspaces
+<a name="workspaces"></a>
+
+<img src="docs/brand/workspaces.svg" alt="02 Workspaces. Nine screens. One device bar. Nothing scans until you ask." width="100%">
 
 One device bar (selected device, **Scan**, **Inspect**) and nine workspaces.
 
@@ -61,7 +64,9 @@ flowchart LR
 
 Stopping the run cannot undo a write that already finished. A command that returned is not proof the phone will boot.
 
-## What 0.3.4 actually covers
+<a name="coverage"></a>
+
+<img src="docs/brand/coverage.svg" alt="03 What 0.3.4 covers. In the app is not the same as proven on a phone." width="100%">
 
 **In the app** means the Rust path exists and is wired up. It does not mean a phone was used. Every device-mutation row below is hardware-unverified.
 
@@ -83,14 +88,16 @@ Not in this release: macOS and Linux packages, upstream's 23 translations, AVB d
 
 The line-by-line matrix is [docs/PARITY.md](docs/PARITY.md). This release is not 1.0. The roadmap is [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md).
 
-### A look around
+## A look around
 
 | Firmware & Images | Root Studio |
 |---|---|
 | <img src="docs/screenshots/firmware.png" alt="Factory and Full OTA catalog with a model selector and build rows" width="440"> | <img src="docs/screenshots/root.png" alt="Root Studio with provider selection and manager assets" width="440"> |
 | Pick a catalog and a model, select one build row, then Download. | Pick a provider and prepare only the workflow that provider supports. |
 
-## Install
+<a name="install"></a>
+
+<img src="docs/brand/install.svg" alt="04 Install. Windows x64. Check the ZIP. Point at platform-tools." width="100%">
 
 Published builds are **Windows x64** only.
 
@@ -109,7 +116,9 @@ Settings and the image library default to:
 
 Set `PIXELFLASHER_DATA_DIR` before launch to use another directory. That selects a different workspace. It does not copy the old one.
 
-## First session
+<a name="first-session"></a>
+
+<img src="docs/brand/session.svg" alt="05 First session. Select the device before you prepare anything." width="100%">
 
 1. Start the app. It does not look for a device on its own.
 2. In **Settings**, select the platform-tools folder. The app checks for both ADB and fastboot.
@@ -120,7 +129,9 @@ Set `PIXELFLASHER_DATA_DIR` before launch to use another directory. That selects
 
 The confirmation is a safeguard, not a guarantee of authenticity, compatibility, anti-rollback safety, or a successful boot. Interrupted operations are kept for inspection and are not replayed.
 
-## Safety
+<a name="safety"></a>
+
+<img src="docs/brand/safety.svg" alt="06 Safety. Cancellation cannot undo a write that already finished." width="100%">
 
 Flashing, bootloader unlock or lock, root changes, partition writes, and restores can erase data or leave a device unable to boot.
 
@@ -128,7 +139,9 @@ Before a run, the app freezes the plan (target plus the hashes of the inputs tha
 
 Details: [validation gaps](docs/VALIDATION.md) and [how plans are bounded](docs/ARCHITECTURE.md).
 
-## Command line
+<a name="command-line"></a>
+
+<img src="docs/brand/cli.svg" alt="07 Command line. Inspect files and catalogs. These flags do not flash." width="100%">
 
 These commands inspect files and catalogs. They do not flash, and they do not replace the reviewed desktop flow for device writes.
 
@@ -151,7 +164,9 @@ These commands inspect files and catalogs. They do not flash, and they do not re
 
 Optional local MCP is documented in [docs/MCP.md](docs/MCP.md). Leave it off unless you want a local agent to read saved metadata.
 
-## Build from source
+<a name="build"></a>
+
+<img src="docs/brand/build.svg" alt="08 Build from source. Rust 2024. Windows CI is not device evidence." width="100%">
 
 Install Rust and the native dependencies eframe needs, then:
 
@@ -187,8 +202,10 @@ Packaging rules are in [docs/RELEASING.md](docs/RELEASING.md). Contributor layou
 | [`crates/core`](crates/core) | Firmware, flash plans, devices, root providers, library, recovery |
 | [`src`](src) | Desktop UI and the compatibility facade |
 | [`crates/mcp`](crates/mcp) | Optional stdio MCP executable |
-| [`docs`](docs) | Parity, architecture, validation, release rules |
+| [`docs`](docs) | Parity, architecture, validation, release rules, and these header images |
 | [`tests`](tests) | Parser, planner, catalog, and studio fixtures |
+
+<a name="documentation"></a>
 
 ## Documentation
 
@@ -204,7 +221,9 @@ Packaging rules are in [docs/RELEASING.md](docs/RELEASING.md). Contributor layou
 | [Changelog](CHANGELOG.md) | What changed in 0.3.0 through 0.3.4 |
 | [Notice](NOTICE.md) | Upstream attribution and the license record |
 
-## When something looks wrong
+<a name="trouble"></a>
+
+<img src="docs/brand/trouble.svg" alt="09 When something looks wrong. Scan, catalog, a refused file, or a missing library." width="100%">
 
 | What you see | What to check |
 |---|---|
@@ -214,11 +233,15 @@ Packaging rules are in [docs/RELEASING.md](docs/RELEASING.md). Contributor layou
 | Settings or images vanished | Data is per directory: `%LOCALAPPDATA%\PixelFlasherRust`, or whatever `PIXELFLASHER_DATA_DIR` was at launch. A different path is a different library. |
 | You expected the Python app | This build never starts it. Behavior will not match [upstream](https://github.com/badabing2005/PixelFlasher) feature for feature. See [parity](docs/PARITY.md). |
 
-## Upstream and license
+<a name="license"></a>
+
+<img src="docs/brand/license.svg" alt="10 Upstream and license. AGPL-3.0-or-later. Not affiliated with Google." width="100%">
 
 Upstream PixelFlasher is a Python/wxPython application. Rust Edition is a separate port with a native interface and a different safety model: frozen plans, a recheck before run, and no automatic replay. Publication of 0.3.4 is not a claim that the [1.0 plan](docs/IMPLEMENTATION.md) is done.
 
 Licensed under AGPL-3.0-or-later. Attribution and the license notes are in [NOTICE.md](NOTICE.md). Pixel is a trademark of Google. This project is not affiliated with, endorsed by, or supported by Google.
+
+<a name="get-help"></a>
 
 ## Get help
 
@@ -227,6 +250,8 @@ Licensed under AGPL-3.0-or-later. Attribution and the license notes are in [NOTI
 - Include the app version, Windows version, the workspace you were in, and sanitized logs. Strip serials, personal paths, and tokens before you paste anything.
 
 <div align="center">
+
+<img src="docs/brand/footer.svg" alt="0.3.4 development preview. Hardware not validated. AGPL-3.0-or-later." width="100%">
 
 [Releases](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/releases) ·
 [Issues](https://github.com/contactjayclatty/PixelFlasher-Rust-Edition/issues) ·
